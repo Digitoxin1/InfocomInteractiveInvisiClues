@@ -1,0 +1,1244 @@
+{
+    "revision": 1.0,
+	"header": {
+		"title": "Wishbringer",
+		"year": "1985",
+		"copyright": "© 1985 Infocom, Inc.",
+		"image": "data:image/jpeg;base64,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",
+		"section1": {
+			"title": "What are InvisiClues?",
+			"content": [
+				"The essence of all interactive fiction is solving problems. The purpose of InvisiClues hint booklets is to maximize your enjoyment of the story by giving you only the hints you need to continue and complete the story.",
+				"The invisible hints generally progress from a gentle nudge in the right direction to a full answer. The questions, which naturally have to be visible, have been worded to give away as little as possible. You should not use the presence or absence of a question on a certain topic as an indication of importance, and you should not assume that long answers are associated with important questions. This booklet includes dummy questions and answers in order to minimize the problem."
+			]
+		},
+		"section2": {
+			"title": "How to use this booklet",
+			"content": [
+				"If you are stuck at some point in WISHBRINGER, find the question that most pertains to your problem. Uncap the marker and run it once over the first hint. The writing will appear within a second or two. If you are still stumped, go on to the next hint. (Remember to recap the marker when you are done to prevent it from drying out. And by the way, these books are not immortal. InvisiClues you've developed will start to fade after six months.)",
+				"For example:"
+			]
+		},
+		"section3": {
+			"content": [
+				"Your marker contains more than enough fluid to develop the entire booklet. However, if your marker gets lost or dries out, you can order a replacement marker for a nominal fee.",
+				"Once you've finished the story, try the things in the \"For Your Amusement\" section. Don't look at them before you've finished, though — they may reveal the answers to certain problems."
+			]
+		},
+		"sampleQuestions": {
+			"questions": [
+				{
+					"title": "What is the plural of \"platypus\"?",
+					"answers": [
+						"Platypuses.",
+						"Platypi.",
+						"Both platypuses and platypi are correct."
+					]
+				}
+			]
+		}
+	},
+    "sections": [
+        {
+            "questions": [
+                {
+                    "title": "Somebody inside the Post Office is calling me. What should I do?",
+                    "answers": [
+                        "The Post Office door may give you a clue. EXAMINE it.",
+                        "Since the door is open, why not GO INSIDE and see who's calling?"
+                    ]
+                },
+                {
+                    "title": "Where is the Magick Stone?",
+                    "answers": [
+                        "That's for us to know, and for you to find out."
+                    ]
+                },
+                {
+                    "title": "Who is Mr. Crisp?",
+                    "answers": [
+                        "He's your mean old boss.",
+                        "And he isn't very happy about your idle daydreaming.",
+                        "So you'd better do what he says."
+                    ]
+                },
+                {
+                    "title": "When should I open the envelope that came in my WIHBRINGER package?",
+                    "answers": [
+                        "The story will tell you.  Patience!"
+                    ]
+                },
+                {
+                    "title": "How do I get into the cemetery?",
+                    "answers": [
+                        "WALK INTO THE CEMETERY.",
+                        "You're not going to let the computer scare you away, are you?",
+                        "Go on, chicken! WALK INTO THE CEMETERY and answer YES to the question."
+                    ]
+                },
+                {
+                    "title": "Who is the gravedigger?",
+                    "answers": [
+                        "LOOK AT THE GRAVEDIGGER and find out."
+                    ]
+                },
+                {
+                    "title": "How do I get the flowers out of the hearse?",
+                    "answers": [
+                        "Did you find the vase?",
+                        "It may be hidden amongst the flowers in the hearse.",
+                        "There aren't any flowers in the hearse.",
+                        "There's no hearse or vase, either.",
+                        "Remember the warning in the introduction: Don't let the presence or absence of questions, or the length of the answers, influence the way you play."
+                    ]
+                },
+                {
+                    "title": "What should I do with the umbrella?",
+                    "answers": [
+                        "It might come in handy if it rains.",
+                        "You can't WISH FOR RAIN unless you have an umbrella.",
+                        "So maybe you should hold onto it for later."
+                    ]
+                },
+                {
+                    "title": "How do I get through the locked gate in the Twilight Glen?",
+                    "answers": [
+                        "The gravedigger has the only key to the gate.",
+                        "But the gravedigger is nowhere to be seen.",
+                        "You can't unlock the gate. To leave the cemetery, you must go out through the open gate at Creepy Corner."
+                    ]
+                },
+                {
+                    "title": "Why won't the poodle let me near the cottage?",
+                    "answers": [
+                        "It wouldn't be much of a watchdog if it did, would it?"
+                    ]
+                },
+                {
+                    "title": "Why won't the poodle let me go north, into the village?",
+                    "answers": [
+                        "It doesn't like people walking past the cottage.",
+                        "It doesn't like mail clerks.",
+                        "It doesn't like you."
+                    ]
+                },
+                {
+                    "title": "How do I get past the poodle?",
+                    "answers": [
+                        "I wouldn't PICK UP THE POODLE THEN KICK IT if I were you.",
+                        "Since violence doesn't work, maybe bribery will.",
+                        "You'll have to find something to bribe it with.",
+                        "Have you been to every location you can visit without getting past the poodle?",
+                        "Have you looked all around the cemetery?",
+                        "Have you investigated the open grave in the Spooky Copse?",
+                        "The gravedigger won't let you into the grave while he's watching.",
+                        "Wait until the gravedigger goes away. Then GO INTO THE OPEN GRAVE. PICK UP THE OLD BONE. Bring it to the poodle and FEED THE BONE TO THE POODLE. Now you can GO NORTH into the village."
+                    ]
+                },
+                {
+                    "title": "I left the envelope behind, and the poodle won't let me go back for it! What can I do?",
+                    "answers": [
+                        "You're not a very good mail clerk, are you?",
+                        "There's no way to walk past the poodle once it has finished eating the bone.",
+                        "So you'll have to start all over again.",
+                        "RESTART. Next time, hold on to that envelope!"
+                    ]
+                },
+                {
+                    "title": "Who is Miss Voss?",
+                    "answers": [
+                        "She's in charge of the Festeron Town Library, curator of the Festeron Historical Museum, and author of the best-selling \"Local History Series\" of booklets, including <em>The Legend of Wishbringer</em>.",
+                        "Aren't you glad you asked?"
+                    ]
+                },
+                {
+                    "title": "Why won't Miss Voss give me back my library card?",
+                    "answers": [
+                        "She doesn't like mail clerks.",
+                        "She doesn't like you.",
+                        "What library card?"
+                    ]
+                },
+                {
+                    "title": "What should I do with the violet note?",
+                    "answers": [
+                        "Miss Voss asked you to give it to your boss, Mr. Crisp.",
+                        "But delivering the mysterious envelope is more important right now.",
+                        "So give the note to Mr. Crisp after you deliver the envelope."
+                    ]
+                },
+                {
+                    "title": "Who is \"Corky\"?",
+                    "answers": [
+                        "It might be the name of Miss Voss's poodle.",
+                        "But why would Miss Voss write a note to her dog?",
+                        "Since Miss Voss asked you to give the note to Mr. Crisp, and the note is addressed to \"Corky,\" it's probably Mr. Crisp's nickname."
+                    ]
+                },
+                {
+                    "title": "How do I get inside the Library?",
+                    "answers": [
+                        "Miss Voss probably has the key.",
+                        "Unfortunately, Miss Voss isn't around any more.",
+                        "You don't have time to fool around in the Library right now. The Magick Shoppe closes at five o'clock!",
+                        "Be patient; maybe you can get inside after you deliver the envelope."
+                    ]
+                },
+                {
+                    "title": "Who is Sgt. MacGuffin?",
+                    "answers": [
+                        "He's in charge of Festeron's Police Department."
+                    ]
+                },
+                {
+                    "title": "How do I get the chcolate?",
+                    "answers": [
+                        "Simply TAKE THE CHOCOLATE OFF THE DESK.",
+                        "Of course, Sgt. MacGuffin might have other ideas.",
+                        "Have you tried examining Sgt. MacGuffin?",
+                        "Wait until Sgt. MacGuffin falls asleep before taking the chocolate."
+                    ]
+                },
+                {
+                    "title": "What should I do in the Park?",
+                    "answers": [
+                        "The statue in the middle of the fountain is interesting.",
+                        "But not as interesting as the other objects in the fountain.",
+                        "LOOK INSIDE THE FOUNTAIN.",
+                        "The rest is up to you."
+                    ]
+                },
+                {
+                    "title": "How do I catch the goldfish?",
+                    "answers": [
+                        "Unfortunately, you won't find a net or pole anywhere.",
+                        "What makes you think you have to catch the goldfish?"
+                    ]
+                },
+                {
+                    "title": "The movie theater is closed! How do I get inside?",
+                    "answers": [
+                        "The schedule might give you a hint.",
+                        "The theater opens at seven o'clock. Come back later."
+                    ]
+                },
+                {
+                    "title": "Why can't I take things out of the big mailbox?",
+                    "answers": [
+                        "Public mailboxes are built to discourage prying fingers like yours."
+                    ]
+                },
+                {
+                    "title": "How do I play the video game?",
+                    "answers": [
+                        "By scoring as many points as you can.",
+                        "Naturally, you'll have to put a token in the video machine before you can play.",
+                        "Isn't it getting awfully close to five o'clock?"
+                    ]
+                },
+                {
+                    "title": "What do I do with the seahorse?",
+                    "answers": [
+                        "If you don't do something quickly, it will probably die.",
+                        "A seahorse can't live long out of water.",
+                        "PICK UP THE SEAHORSE THEN THROW IT INTO THE BAY."
+                    ]
+                },
+                {
+                    "title": "What happened to the church mouse?",
+                    "answers": [
+                        "It ran away when it saw you. Surprised?"
+                    ]
+                },
+                {
+                    "title": "How do I get the candle?",
+                    "answers": [
+                        "Try to TAKE THE CANDLE.",
+                        "Try to STEAL THE CANDLE.",
+                        "Taking things that don't belong to you is stealing, especially in a church.",
+                        "At the moment, you can't steal the candle."
+                    ]
+                },
+                {
+                    "title": "What should I do with the pile of leaves?",
+                    "answers": [
+                        "Did you notice the message in the sand near the leaves?",
+                        "Are you going to do what the message says?",
+                        "You might be sorry if you don't."
+                    ]
+                },
+                {
+                    "title": "Who wrote the message in the sand?",
+                    "answers": [
+                        "The person who wrote the message was obviously very concerned that somebody like you might come along and disturb the pile of leaves. Aside from this acute observation, the author of the message is not important."
+                    ]
+                },
+                {
+                    "title": "How do I get to Misty Island?",
+                    "answers": [
+                        "If you had a bathing suit you could put it on and swim over.",
+                        "No bathing suit, eh? Oh, well. You'll just have to wait for the Misty Island ferry.",
+                        "Charter a private seaplane, preferably one equipped with a wet bar and jacuzzi.",
+                        "If all else fails, give up.",
+                        "But watch for new opportunities after you deliver the envelope."
+                    ]
+                },
+                {
+                    "title": "What do I do with the horseshoe?",
+                    "answers": [
+                        "Keep it. It might bring you good luck.",
+                        "Especially if you use it to WISH FOR LUCK after you find the Magick Stone."
+                    ]
+                },
+                {
+                    "title": "How do I get into the lighthouse?",
+                    "answers": [
+                        "It's a phoney lighthouse. You can't go into it.",
+                        "Ever.",
+                        "So stop trying."
+                    ]
+                },
+                {
+                    "title": "What should I feed to the pelican?",
+                    "answers": [
+                        "A flapping, juicy fish would be nice if you can find one.",
+                        "The only fish you'll find is in the fountain.",
+                        "Unfortunately, you can't get the fish in the fountain.",
+                        "What makes you think the pelican is hungry?"
+                    ]
+                },
+                {
+                    "title": "What's the easiest way into the impenetrable forest?",
+                    "answers": [
+                        "Look up the word \"impenetrable\" in a dictionary."
+                    ]
+                },
+                {
+                    "title": "What can I do with the gnarled, rotten tree?",
+                    "answers": [
+                        "You can always CLIMB THE GNARLED TREE.",
+                        "Maybe you should have examined the tree first."
+                    ]
+                },
+                {
+                    "title": "What can I do with the dead branch?",
+                    "answers": [
+                        "It probably won't help you deliver the envelope any faster.",
+                        "But it's a good idea to remember where it is. You might find a use for it later."
+                    ]
+                },
+                {
+                    "title": "Mr. Crisp just fired me! What did I do wrong?",
+                    "answers": [
+                        "You failed to deliver the envelope on time, or didn't read it to the old woman. Next time, make sure you're in the Magick Shoppe before five o'clock, and do what the old woman asks you to do!"
+                    ]
+                }
+            ],
+            "title": "Festeron"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Why is \"Magick\" spelled with a \"k\"?",
+                    "answers": [
+                        "Because.",
+                        "Oh, all right. \"Magick\" is an archaic spelling popularized by Aleister Crowley (a 20th century occultist) and occasionally seen in pulp fantasies and tales of horror. It's supposed to imply an especially old and potent variety of supernatural force."
+                    ]
+                },
+                {
+                    "title": "How do I get into the Magick Shoppe?",
+                    "answers": [
+                        "Just OPEN THE DOOR THEN GO INSIDE."
+                    ]
+                },
+                {
+                    "title": "A gust of wind blew the door shut! How do I open it again?",
+                    "answers": [
+                        "You can't open it by yourself.",
+                        "Relax. Maybe somebody will come along and open it for you."
+                    ]
+                },
+                {
+                    "title": "How do I take the naughty birthday cards?",
+                    "answers": [
+                        "By removing them from the glass case.",
+                        "Unfortunately, you can't reach into the glass case.",
+                        "So you can't take the naughty birthday cards.",
+                        "You rascal."
+                    ]
+                },
+                {
+                    "title": "Why can't I approach the curtain?",
+                    "answers": [
+                        "Maybe it doesn't like mail clerks.",
+                        "It's enchanted in such a way as to discourage nosey visitors."
+                    ]
+                },
+                {
+                    "title": "Who is the old woman?",
+                    "answers": [
+                        "She's the proprietor of the Magick Shoppe.",
+                        "The mysterious envelope is addressed to her.",
+                        "So maybe you ought to give her the mysterious envelope."
+                    ]
+                },
+                {
+                    "title": "Why did the Shoppe become strangely quiet all of a sudden?",
+                    "answers": [
+                        "A noise stopped.",
+                        "A nearby mechanism stopped working.",
+                        "EXAMINE THE GRANDFATHER CLOCK.",
+                        "The clock stopped when the old woman appeared. Creepy, isn't it?"
+                    ]
+                },
+                {
+                    "title": "I found a bug! The clock on my status line stopped. Should I call Infocom?",
+                    "answers": [
+                        "It's not a bug. See the previous question for details.",
+                        "If it was a bug, you could blame it on one of the Infopeople who tested the game. In alphabetical order, they are: \"Hollywood\" Dave Anderson (Manager), Joanne Avtges, Gary Brennan, Amy Briggs, Mark \"Max\" Buxton, Liz Cyr-Jones, Suzanne Frank, Jeff O'Neill, plus dozens of beta- and gamma-testers too numerous to list."
+                    ]
+                },
+                {
+                    "title": "Who is \"The Evil One\"?",
+                    "answers": [
+                        "She's the person who mailed the mysterious envelope.",
+                        "She kidnapped the old woman's pet cat and is demanding a Magick Stone for ransom.",
+                        "If she doesn't get the Stone before the moon sets, she'll probably do something awful to the cat.",
+                        "Doesn't sound like a very nice person, does she?"
+                    ]
+                },
+                {
+                    "title": "What should I do with the metal can?",
+                    "answers": [
+                        "Like all objects in the story, you should EXAMINE it.",
+                        "The rest is up to you."
+                    ]
+                },
+                {
+                    "title": "Why does the metal can rattle?",
+                    "answers": [
+                        "Maybe there are some yummy mixed nuts inside.",
+                        "Then again, maybe not.",
+                        "There's something built into the can that makes it rattle. It's designed to lure innocent victims to their doom by making them believe there may be nuts inside."
+                    ]
+                },
+                {
+                    "title": "Why can't I move when the old woman touches my forehead?",
+                    "answers": [
+                        "She's casting a subtle hypnotic spell on you.",
+                        "So shut up and pay attention."
+                    ]
+                },
+                {
+                    "title": "Who is \"Chaos\"?",
+                    "answers": [
+                        "It's the name of the old woman's pet cat.",
+                        "It's also the name of Dan Horn's pet skunk.",
+                        "Who is Dan Horn? <br>A. &nbsp;He's the owner of a pet skunk named Chaos. <br>B. &nbsp;He works at Infocom. <br>C. &nbsp;He paid $10.00 to see his name in print. <br>D. &nbsp;(This space for sale.)"
+                    ]
+                }
+            ],
+            "title": "Ye Olde Magick Shoppe"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What happened to Festeron? Everything's changed!",
+                    "answers": [
+                        "Exactly.",
+                        "The village seems to have come under an evil, supernatural influence.",
+                        "The influence's initials are T.E.O.",
+                        "The \"T\" stands for \"The\", and the \"O\" stands for \"One\".",
+                        "Sorry. You have to figure out the \"E\" yourself."
+                    ]
+                },
+                {
+                    "title": "Where is Wishbringer, the Magick Stone?",
+                    "answers": [
+                        "It may be a lot closer than you think.",
+                        "It seems odd that the old woman didn't simply give it to you, doesn't it?",
+                        "Maybe the old woman gave it to you without telling you.",
+                        "Have you noticed a persistent rattling sound?",
+                        "Have you investigated the metal can since you left the Magick Shoppe?",
+                        "Have you looked inside the metal can?",
+                        "OPEN THE METAL CAN. SQUEEZE IT."
+                    ]
+                },
+                {
+                    "title": "Where is the Evil One?",
+                    "answers": [
+                        "Don't worry. She'll find you."
+                    ]
+                },
+                {
+                    "title": "Who is Thermofax?",
+                    "answers": [
+                        "He's a fire-breathing dragon mentioned in <em>The Legend of Wishbringer</em>",
+                        "and the opening title screen."
+                    ]
+                },
+                {
+                    "title": "Thermofax won't leave me alone! What should I do?",
+                    "answers": [
+                        "Throw the Magick Stone into his open maw.",
+                        "If that doesn't work, throw yourself into his open maw.",
+                        "Except for brief mentions in <em>The Legend of Wishbringer</em> and the opening title screen, Thermofax does not appear in the story."
+                    ]
+                },
+                {
+                    "title": "How do I get down the steep trail? It's too foggy to see!",
+                    "answers": [
+                        "Use the map you drew on your way up the trail.",
+                        "You did take the story's advice when it told you to draw a map, didn't you?",
+                        "If you forgot to draw a map, you can still feel your way down the steep trail. But it won't be easy. And you might die trying.",
+                        "There's another, safer way to get down the trail without a map.",
+                        "You'll need the Magick Stone.",
+                        "One of the Seven Wishes can clear the fog away.",
+                        "If you're holding Wishbringer and an open umbrella, you can WISH FOR RAIN. The resulting downpour will clear the fog and transport you to the bottom of the cliff."
+                    ]
+                },
+                {
+                    "title": "What's the significance of the vulture?",
+                    "answers": [
+                        "It's watching you.",
+                        "Doesn't that make you uneasy?",
+                        "It ought to. The vulture is the Evil One's spy."
+                    ]
+                },
+                {
+                    "title": "How do I get past the toll gate?",
+                    "answers": [
+                        "Why not just pay the troll?",
+                        "The troll won't take your gold coin? Gee. Tough luck.",
+                        "Maybe there's something else you can give the troll.",
+                        "What about the metal can?",
+                        "Troll still bothering you? This just isn't your lucky day.",
+                        "There are three ways to get past the troll.",
+                        "Two of the ways involve using the Magick Stone.",
+                        "The other way doesn't.",
+                        "The troll may or may not bother to examine your gold coin.",
+                        "If you're lucky, he won't examine it.",
+                        "If you're holding Wishbringer and the horseshoe, and you WISH FOR LUCK before giving the coin to the troll, the troll won't bother to examine the coin.",
+                        "Another way past the troll is to WISH FOR DARKNESS. It will scare him away just as thoroughly as the snake.",
+                        "You can't WISH FOR DARKNESS until you've found the grue's milk.",
+                        "You won't find the milk until after you get past the troll.",
+                        "Using the Darkness Wish to get past the troll is only useful if you have to go past him twice.",
+                        "If you've already released the snake, you'll have to use Magick.",
+                        "The non-Magick way it to give the closed metal can to the troll, or to open it in front of him. The snake will scare him away."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the giant stump?",
+                    "answers": [
+                        "It affords an excellent view of the surrounding area.",
+                        "Have you examined it lately?",
+                        "OPEN THE STUMP. Surprise!"
+                    ]
+                },
+                {
+                    "title": "What is a grue?",
+                    "answers": [
+                        "The grue is a sinister, lurking presence in the dark places of the earth. Its favorite diet is Adventurers, but its insatiable appetite is tempered only by its fear of light. No grue has ever been seen by the light of day, and few have survived its fearsome jaws to tell the tale."
+                    ]
+                },
+                {
+                    "title": "How do I milk a grue?",
+                    "answers": [
+                        "Very carefully.",
+                        "Fortunately, you don't have to milk a grue to finish the story."
+                    ]
+                },
+                {
+                    "title": "Where do I find the grue's milk?",
+                    "answers": [
+                        "Grue's milk must be kept in a cool, well-lighted place to stay spoiled.",
+                        "Grue refrigerators are cool and well-lighted.",
+                        "There's a grue refrigerator in the Grue's Nest."
+                    ]
+                },
+                {
+                    "title": "How do I get the grue's milk without being devoured?",
+                    "answers": [
+                        "Avoid waking up the beast with light or noise.",
+                        "The light source you're carrying is waking up the beast.",
+                        "Cover up the beast so it can't see.",
+                        "Blankets make an excellent cover.",
+                        "Get the blanket in the Jail Cell. COVER THE BEAST WITH THE BLANKET before it wakes up."
+                    ]
+                },
+                {
+                    "title": "How do I get around in the dark?",
+                    "answers": [
+                        "You'll need a source of light.",
+                        "Have you found the small stone yet?",
+                        "Have you examined it?",
+                        "There's another, more conventional source of light.",
+                        "It's in the church.",
+                        "Go into the church and STEAL THE CANDLE."
+                    ]
+                },
+                {
+                    "title": "Why can't I blow out the candle?",
+                    "answers": [
+                        "It's magic.",
+                        "It's Magick."
+                    ]
+                },
+                {
+                    "title": "What is the Boot Patrol?",
+                    "answers": [
+                        "Stay in one place for a while. You'll find out."
+                    ]
+                },
+                {
+                    "title": "The Boot Patrol threw me in jail! How do I get out?",
+                    "answers": [
+                        "Maybe you're not the first person who's tried to escape.",
+                        "Have you investigated everything in the Jail Cell?",
+                        "Have you looked under everything?",
+                        "LOOK UNDER THE BUNK.",
+                        "If this is the first time you've been thrown in jail, just MOVE THE BUNK THEN GO INTO THE HOLE.",
+                        "If not, you'll find that the hole has been cemented over. Now you'll need Magick to get out of the Jail Cell.",
+                        "One of the Seven Wishes might work.",
+                        "EAT THE CHOCOLATE THEN WISH FOR FREEDOM.",
+                        "If you don't have the chocolate or Wishbringer handy, relax. The Boot Patrol will be along in just a few moves, and all your troubles will be over."
+                    ]
+                },
+                {
+                    "title": "How do I get rid of the big mailbox?",
+                    "answers": [
+                        "Give it what it wants.",
+                        "Give it mail.",
+                        "Give it stamped mail.",
+                        "There's another mailbox with some stamped mail in it.",
+                        "Find a shimmering trail.",
+                        "The shimmering trail is at the Rocky Path.",
+                        "OPEN THE SMALL MAILBOX. TAKE THE LEAFLET OUT OF THE BOX. Go to the big mailbox and FEED THE LEAFLET TO THE BIG MAILBOX.",
+                        "Congratulations. You have a new companion."
+                    ]
+                },
+                {
+                    "title": "Why is the small mailbox following me around?",
+                    "answers": [
+                        "It likes mail clerks.",
+                        "It likes you."
+                    ]
+                },
+                {
+                    "title": "How do I get through the Cemetery?",
+                    "answers": [
+                        "Did somebody warn you about going in there after dark?",
+                        "You can't get through the Cemetery. It's a trap."
+                    ]
+                },
+                {
+                    "title": "What is an eldritch vapor?",
+                    "answers": [
+                        "Any relation to Eldridge Cleaver?",
+                        "They're mischievious but generally harmless ghosts that hang around cemeteries at night, annoying passersby with supernatural tricks."
+                    ]
+                },
+                {
+                    "title": "The eldritch vapors stole everything I was carrying! What should I do?",
+                    "answers": [
+                        "Have you looked around the village?",
+                        "Everywhere?",
+                        "The vapors will scatter your possessions randomly around the village, always outdoors. Pesty little critters, aren't they?"
+                    ]
+                },
+                {
+                    "title": "What's inside the pit?",
+                    "answers": [
+                        "Maybe you should LOOK INSIDE THE PIT.",
+                        "If you found a platypus, congratulations.",
+                        "If not, you must have disturbed the pile of leaves that used to cover the pit. Shame on you!",
+                        "You can't possibly finish the story if you disturbed that pile of leaves.",
+                        "RESTART. Next time, heed the message in the sand!"
+                    ]
+                },
+                {
+                    "title": "What is a platypus?",
+                    "answers": [
+                        "Look it up in an encyclopedia."
+                    ]
+                },
+                {
+                    "title": "What do I do with the platypus?",
+                    "answers": [
+                        "Maybe you don't have to do anything with it.",
+                        "Unless you want to finish the story.",
+                        "It'd be really nice if you rescued the platypus.",
+                        "Not as easy as it sounds, eh?",
+                        "There are two ways to rescue the platypus.",
+                        "One of them involves the use of Magick.",
+                        "Platypuses are great swimmers.",
+                        "If you filled the pit with water, the platypus might be smart enough to swim out.",
+                        "One of the Seven Wishes might help you fill the pit with water.",
+                        "While standing at Edge of Lake, OPEN THE UMBRELLA THEN WISH FOR RAIN.",
+                        "If you don't have the umbrella or Wishbringer, or if you've already",
+                        "used the Rain Wish, you'll have to find another way to rescue the platypus.",
+                        "How deep is the pit?",
+                        "There's something you can get that might help you reach into the pit.",
+                        "Did you notice the dead branch at Cliff Bottom?",
+                        "PUT THE BRANCH IN THE PIT. The platypus will hold on to the end of the branch. PULL THE BRANCH OUT OF THE PIT."
+                    ]
+                },
+                {
+                    "title": "Why are there so many platypuses in the story and packaging?",
+                    "answers": [
+                        "That's what our marketing department wanted to know.",
+                        "But we wouldn't explain it to them.",
+                        "And we won't explain it to you, either.",
+                        "Marketing department's note: Actually, Brian Moriarty is a bit strange, and we decided it was best to humor him."
+                    ]
+                },
+                {
+                    "title": "What should I do with the silver whistle?",
+                    "answers": [
+                        "What silver whistle?",
+                        "Oh, that silver whistle! Well, you can always EXAMINE THE WHISTLE.",
+                        "If you're really adventurous, you could even (dare we suggest it?) try to BLOW THE WHISTLE.",
+                        "If nothing happens the first time you blow the whistle, EXAMINE THE WHISTLE. Then take the whistle to the place where you found it, and EXAMINE THE WHISTLE again.",
+                        "The whistle only twinkles when you're at Edge of Lake.",
+                        "BLOW THE WHISTLE only when it's twinkling...unless you just like to hear the music."
+                    ]
+                },
+                {
+                    "title": "How do I get to Misty Island?",
+                    "answers": [
+                        "Read the above hint. You may discover something unexpected."
+                    ]
+                },
+                {
+                    "title": "What should I say to King Anatinus?",
+                    "answers": [
+                        "You don't need to say anything. Just do what he says.",
+                        "If he offers you a gift, take it.",
+                        "TAKE THE HAT.",
+                        "If he asks you to do anything, do it.",
+                        "BLOW THE WHISTLE.",
+                        "Don't annoy the King. You might be sorry."
+                    ]
+                },
+                {
+                    "title": "What should I do with the wizard's hat?",
+                    "answers": [
+                        "Do what the King told you to do.",
+                        "Take the hat to the pelican.",
+                        "GIVE THE HAT TO THE PELICAN."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the pelican?",
+                    "answers": [
+                        "Read the preceding hint."
+                    ]
+                },
+                {
+                    "title": "How do I get into the movie theater?",
+                    "answers": [
+                        "There are two ways into the movie theater.",
+                        "The first way into the theater involves the use of Magick.",
+                        "Go into the theater lobby and WISH FOR DARKNESS. You can sneak inside while the gravedigger is stumbling around in the dark.",
+                        "Or GIVE THE GOLD COIN TO MISS VOSS. GO INSIDE. GIVE THE TICKET TO THE GRAVEDIGGER. GO INTO THE THEATER."
+                    ]
+                },
+                {
+                    "title": "The movie is all fuzzy and indistinct! What's wrong?",
+                    "answers": [
+                        "Did you read the marquee outside the theater?",
+                        "Did you examine the empty carton in the lobby?",
+                        "This is a 3D movie. You need a pair of 3D glasses to see it.",
+                        "Did you look inside the carton in the lobby?",
+                        "Oh, well. Looks like they're all gone. But maybe somebody dropped a pair somewhere.",
+                        "Have you searched everywhere in the theater?",
+                        "LOOK UNDER THE SEATS."
+                    ]
+                },
+                {
+                    "title": "Where can I get a token for the video arcade?",
+                    "answers": [
+                        "Ask one of the humanoids. They seem to have plenty of tokens.",
+                        "Oh, well. Maybe somebody dropped one somewhere.",
+                        "Have you been to the Park lately?",
+                        "LOOK IN THE FOUNTAIN."
+                    ]
+                },
+                {
+                    "title": "I found the token! How do I get it?",
+                    "answers": [
+                        "Simply TAKE THE TOKEN OUT OF THE FOUNTAIN.",
+                        "But the piranha might have other ideas.",
+                        "Remember the poodle?",
+                        "Maybe you can distract the piranha the same way you distracted the poodle.",
+                        "It's not likely that the piranha would be interested in a bone.",
+                        "But it might be interested in something else.",
+                        "If you were a fish, what would you be interested in?",
+                        "Have you found the grue's milk yet?",
+                        "Have you visited the Grue's Nest yet?",
+                        "There's more than one item in the grue refrigerator.",
+                        "TAKE THE WORM OUT OF THE REFRIGERATOR. Then go to the Park and FEED THE WORM TO THE PIRANHA. The piranha will leave you alone long enough to TAKE THE TOKEN OUT OF THE FOUNTAIN."
+                    ]
+                },
+                {
+                    "title": "How do I play the video game?",
+                    "answers": [
+                        "It would help if you turned on the machine.",
+                        "PUT THE TOKEN IN THE SLOT.",
+                        "Have you tried to EXAMINE THE SCREEN?",
+                        "The screen looks just like the map in your <em>Wishbringer</em> package.",
+                        "Did you EXAMINE THE STAR?",
+                        "Did you EXAMINE THE JOYSTICK?",
+                        "To experiment, try to PUSH THE JOYSTICK TO THE WEST. Then EXAMINE THE STAR.",
+                        "Maneuver the star to an interesting square on the grid. When you're satisfied, PUSH THE BIG RED BUTTON.",
+                        "You're not afraid of a bunch of stunted humanoids, are you? Go on! PUSH THE BUTTON!",
+                        "Most of the squares in the video game aren't very interesting.",
+                        "But one of them is VERY interesting.",
+                        "Move the star to square C-5, which is over the Post Office on the map. Then PUSH THE BUTTON. You'll end up outside the Tower, without having to get past the hellhound."
+                    ]
+                },
+                {
+                    "title": "The hellhound won't let me past! What can I do?",
+                    "answers": [
+                        "Maybe you can bribe the hellhound the same way you bribed the poodle.",
+                        "Then again, maybe not.",
+                        "There are three ways to get past the hellhound.",
+                        "One of them involves Magick.",
+                        "One of the Seven Wishes might help you.",
+                        "WISH FOR DARKNESS while standing outside the cottage. The hellhound will cower in fear long enough for you to get past.",
+                        "Another way involves the video game in the arcade.",
+                        "Refer to the previous hint for instructions on how to play the video game.",
+                        "The last way to get past the hellhound only works if you've already been inside the Tower.",
+                        "Have you read all of the mail in the story?",
+                        "Have you read the violet note?",
+                        "You can't open the violet note yourself.",
+                        "Wait until Mr. Crisp opens the violet note. After he leaves, read the note.",
+                        "Then go to the hellhound and say ALEXIS, HEEL. The hellhound will become considerably less ferocious."
+                    ]
+                }
+            ],
+            "title": "Witchville"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I get into the tower?",
+                    "answers": [
+                        "Didn't King Anatinus say something about getting into the Tower?",
+                        "You need a Word of Power.",
+                        "The pelican knows what it is.",
+                        "The pelican won't give you the Word unless you give it something in return.",
+                        "GIVE THE WIZARD'S HAT TO THE PELICAN. A Word will be revealed to you. Go to the tower and say the word (just type it in). The drawbridge will lower automatically."
+                    ]
+                },
+                {
+                    "title": "How did the Princess get captured again?",
+                    "answers": [
+                        "She isn't a very smart platypus, is she?"
+                    ]
+                },
+                {
+                    "title": "Help! Mr. Crisp is getting ready to torture me!",
+                    "answers": [
+                        "He's sleazy enough to take a bribe.",
+                        "Didn't somebody ask you to give him something a long time ago?",
+                        "GIVE THE VIOLET NOTE TO MR. CRISP."
+                    ]
+                },
+                {
+                    "title": "Mr. Crisp is gone, but I'm still in chains! What should I do?",
+                    "answers": [
+                        "There are two ways to get out of the chains.",
+                        "One of them involves Magick.",
+                        "WISH FOR FREEDOM will work.",
+                        "But you wouldn't need Magick if you had the key to the chains.",
+                        "Mr. Crisp dropped the key in his lab coat, remember?",
+                        "He dropped the lab coat on the floor.",
+                        "PICK UP THE WHITE LAB COAT. TAKE THE KEY OUT OF THE COAT. UNLOCK THE CHAINS WITH THE KEY."
+                    ]
+                },
+                {
+                    "title": "Where did Mr. Crisp go?",
+                    "answers": [
+                        "He went to visit his sweetheart, Miss Voss.",
+                        "But who cares, as long as he isn't here to torture you?"
+                    ]
+                },
+                {
+                    "title": "How do I free the Princess from the torture machine?",
+                    "answers": [
+                        "Just do what she says.",
+                        "PULL DOWN THE LEVER."
+                    ]
+                },
+                {
+                    "title": "How do I get out of the torture chamber?",
+                    "answers": [
+                        "The same way Mr. Crisp did.",
+                        "OPEN THE HATCH. CLIMB UP THE LADDER."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the paintings in the Round Chamber?",
+                    "answers": [
+                        "The story they illustrate may sound vaguely familiar.",
+                        "Especially if you read <em>The Legend of Wishbringer</em>.",
+                        "The paintings also conceal an important secret.",
+                        "LOOK BEHIND A PAINTING."
+                    ]
+                },
+                {
+                    "title": "The drawbridge is closed! How do I get out of the Tower?",
+                    "answers": [
+                        "Read the previous hint for clues."
+                    ]
+                },
+                {
+                    "title": "The suit of armor is chasing me! What should I do?",
+                    "answers": [
+                        "Hit it with the dead branch.",
+                        "Throw the stone at it.",
+                        "Light the grue's milk on fire with the candle, then give the milk to the suit of armor to drink. It'll still chase you, but at least it will be laughing.",
+                        "There is no suit of armor in this story."
+                    ]
+                },
+                {
+                    "title": "Why is the room above the Round Chamber all blurry?",
+                    "answers": [
+                        "Blurry, huh? Gee. Maybe you need glasses.",
+                        "PUT ON THE 3D GLASSES after you walk into the blurry room."
+                    ]
+                },
+                {
+                    "title": "What should I do with the telescope in the Laboratory?",
+                    "answers": [
+                        "You could ignore it. It's probably just a prop.",
+                        "The telescope is just a prop.",
+                        "So ignore it!"
+                    ]
+                },
+                {
+                    "title": "What is the significance of the bubbling chemicals?",
+                    "answers": [
+                        "They're not significant at all. Leave them alone."
+                    ]
+                },
+                {
+                    "title": "What is the purpose of the control panel?",
+                    "answers": [
+                        "It has two switches, so it probably controls two things.",
+                        "Have you examined both of the switches?",
+                        "The first switch controls the power in the Palace Theater. (If you watched the entire movie, you'd already know this.)",
+                        "The second switch controls the \"security\" for something. Hmm. Wonder what the Evil One wants to keep secure...",
+                        "TURN OFF THE SECOND SWITCH."
+                    ]
+                }
+            ],
+            "title": "The Tower"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I get into the Library?",
+                    "answers": [
+                        "Wait until Miss Voss opens it tomorrow morning.",
+                        "Unfortunately, you haven't got time to wait. Looks like you'll have to unlock the front door somehow.",
+                        "Miss Voss locked it earlier. Maybe she put the key somewhere.",
+                        "Have you visited Miss Voss's cottage yet?",
+                        "It's easy to get into the cottage once you tame the hellhound. (But that's another hint.)",
+                        "The key to the Library is on Miss Voss's bookcase."
+                    ]
+                },
+                {
+                    "title": "How can I see in the Library? It's Dark.",
+                    "answers": [
+                        "The candle is a source of light.",
+                        "Too bad the candle fizzles out when the Library door closes.",
+                        "Wishbringer is also a source of light.",
+                        "If you haven't found the Stone yet, you're in trouble. But there is another way to see in the Library.",
+                        "Have you examined the wizard's hat?",
+                        "Have you looked inside the wizard's hat?",
+                        "Have you dropped anything inside the wizard's hat?",
+                        "Things you drop into the wizard's hat disappear. But they might turn up someplace else.",
+                        "Things you drop into the hat appear in the Museum's display case.",
+                        "DROP THE CANDLE INTO THE WIZARD'S HAT before it gets blown out. You can later retrieve the candle for use as a source of light."
+                    ]
+                },
+                {
+                    "title": "Where's the key to unlock the circulation desk?",
+                    "answers": [
+                        "The steel key might work. After all, it unlocked the library door.",
+                        "Then again, why should a door key work in a desk?",
+                        "There is no desk key. You can't open the circulation desk."
+                    ]
+                },
+                {
+                    "title": "How do I get the spider out of the Library books?",
+                    "answers": [
+                        "You'll have to pick up the books first.",
+                        "You'll need a library card to take the books.",
+                        "Shucks! You forgot your library card.",
+                        "There isn't any spider in the library books.",
+                        "Or anywhere else, either."
+                    ]
+                },
+                {
+                    "title": "How do I open the glass display case in the Museum?",
+                    "answers": [
+                        "Did you try the rusty key?",
+                        "Did you try the steel key?",
+                        "Did you try the key in the circulation desk?",
+                        "Did you read the above hint about unlocking the circulation desk?",
+                        "You can't unlock the display case.",
+                        "Force may be necessary.",
+                        "You'll need a heavy object to break the case.",
+                        "Try BREAK THE DISPLAY CASE WITH THE HORSESHOE. You can also use the broom, the umbrella, the conch shell, the bottle or the dead branch.",
+                        "Naturally, you remembered to EXAMINE THE DISPLAY CASE before breaking it.",
+                        "You must deactivate the security system before breaking the case.",
+                        "The switch for the security system is in the Laboratory."
+                    ]
+                },
+                {
+                    "title": "How do I get out of the library with the sculpture?",
+                    "answers": [
+                        "Try unlocking the door.",
+                        "Lock's on the outside? Oh, well. Why not WISH FOR FLIGHT?",
+                        "Nope, you're indoors. But you can still WISH FOR FREEDOM.",
+                        "Not confined, eh? There must be another way out, then.",
+                        "Have you tried to EXAMINE THE SCULPTURE yet?",
+                        "Go on to the next hint."
+                    ]
+                },
+                {
+                    "title": "What should I do with the sculpture?",
+                    "answers": [
+                        "Such a fine work of art should probably be examined.",
+                        "Hmm. Seems to be a piece missing.",
+                        "Have you tried to WISH FOR ADVICE?",
+                        "Have you tried to WISH FOR FORESIGHT?",
+                        "Something might fit into the forehead of the statue.",
+                        "PUT THE STONE INTO THE FOREHEAD."
+                    ]
+                },
+                {
+                    "title": "Who's the old woman in the Library?",
+                    "answers": [
+                        "She looks familiar, but somewhat fuzzy.",
+                        "What can you do to make fuzzy things clearer?",
+                        "PUT ON THE 3D GLASSES.",
+                        "Yipes!"
+                    ]
+                },
+                {
+                    "title": "How do I escape from the sinister being?",
+                    "answers": [
+                        "Just walk right past her. She won't mind.",
+                        "Much.",
+                        "You could try bribing her with something.",
+                        "Maybe she'll accept that nice, glowing stone you're holding.",
+                        "But if you want to finish the story, you won't give it to her.",
+                        "Stop fooling around! Kill her before she turns you into something awful!",
+                        "Too tough, eh? Maybe you should continue what you were doing before she interrupted.",
+                        "PUT THE STONE INTO THE FOREHEAD.",
+                        "Don't listen to her! PUT THE STONE INTO THE FOREHEAD!"
+                    ]
+                }
+            ],
+            "title": "The Library"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What Advice can I get from the shell?",
+                    "answers": [
+                        "There are seven bits of Advice. In order of appearance, they are:",
+                        "\"If ye hath not kept a Map, only patience or Magick can help thee.\"",
+                        "\"Magick may help thee cross the Bridge.\"",
+                        "\"Release a Prisoner, and be Rewarded.\"",
+                        "\"Learn the Word of Power, else never gain the Tower.\"",
+                        "\"One path Magick, one path Science; both lead to thy Goal.\"",
+                        "\"Many wonders await thee in the Halls of Knowledge.\"",
+                        "\"Fit the Pieces together, and the Puzzle is complete.\""
+                    ]
+                },
+                {
+                    "title": "Where is WISH FOR RAIN useful?",
+                    "answers": [
+                        "If you're lost in the fog, wishing for Rain will wash you safely down to the Cliff Bottom.",
+                        "If you're at Edge of Lake, wishing for Rain will fill the narrow pit with water and free any creatures that may be trapped there.",
+                        "Wishing for Rain anywhere else is harmless, but the downpour might irritate nearby characters."
+                    ]
+                },
+                {
+                    "title": "When should I WISH FOR FLIGHT?",
+                    "answers": [
+                        "Whenever you want to go back to the Magick Shoppe. Just make sure you're outdoors (or in the Laboratory), and off you go!",
+                        "It's not a good idea to go back to the Magick Shoppe until you've found Chaos, the old woman's black cat.",
+                        "Make sure the black cat you've found is the right one.",
+                        "If you locate the real Chaos, you won't need to WISH FOR FLIGHT.",
+                        "So you'll never need to WISH FOR FLIGHT. It's a trap."
+                    ]
+                },
+                {
+                    "title": "Why would I want to WISH FOR DARKNESS?",
+                    "answers": [
+                        "Some characters might not like the sudden Darkness.",
+                        "One of them is the troll at the toll gate.",
+                        "If you WISH FOR DARKNESS with the troll present, he'll run away across the bridge.",
+                        "The gravedigger is afraid of the dark, too.",
+                        "If you WISH FOR DARKNESS in the Theater Lobby, you may be able to sneak past the terrified gravedigger into the theater. (Not a very good movie usher, is he?)",
+                        "There's one other creature who doesn't like Darkness.",
+                        "It's the hellhound.",
+                        "If you WISH FOR DARKNESS at Outside Cottage, the hellhound will cower in fear long enough for you to sneak past."
+                    ]
+                },
+                {
+                    "title": "What happens when I WISH FOR FORESIGHT?",
+                    "answers": [
+                        "You get a tantalizing, heavily symbolic glimpse of the future, all mixed up with snippets of the past and present.",
+                        "Don't worry about what it means.",
+                        "It's a dream sequence."
+                    ]
+                },
+                {
+                    "title": "Why didn't the WISH FOR MAGICK work?",
+                    "answers": [
+                        "You weren't holding Wishbringer.",
+                        "You weren't holding the Magick Wand.",
+                        "You didn't wave the Magick Wand over the Magick Rutabaga.",
+                        "Magick Wand? Magick Rutabaga? WISH FOR MAGICK?"
+                    ]
+                },
+                {
+                    "title": "Why should I WISH FOR LUCK?",
+                    "answers": [
+                        "Luck gives you all sorts of little benefits that make it easier to finish the story.",
+                        "There are five ways the WISH FOR LUCK can help you.",
+                        "If you're Lucky, the troll won't notice that your gold coin is a \"counterfeit.\"",
+                        "If you scare the troll away by wishing for Darkness, he'll drop your gold coin on the bridge...but only if you're Lucky.",
+                        "Normally, the eldritch vapors in the cemetary will carry you away and scatter all your possessions once they've taken a good look at you. But if you're Lucky, they'll steal your possessions, one at a time, before they carry you away.",
+                        "The hellhound will eat you up if you hang around for more than three moves. But if you're Lucky, it'll just keep roaring at you.",
+                        "Your chances of being eaten by a grue in the dark are much lower if you're Lucky."
+                    ]
+                },
+                {
+                    "title": "I just neutralized my Luck Wish! What should I do?",
+                    "answers": [
+                        "Next time, avoid opening the umbrella indoors or walking under the",
+                        "ladder. These are very Unlucky things to do."
+                    ]
+                },
+                {
+                    "title": "Where should I WISH FOR FREEDOM?",
+                    "answers": [
+                        "It only works in two situations.",
+                        "If you're thrown in jail more than once, the only way out is to WISH FOR FREEDOM. You'll usually end up on Lookout Hill (unless the Boot Patrol is there, in which case the Stone will thoughtfully deposit you outside the Police Station).",
+                        "You can also free yourself from the chains in the Torture Chamber with a WISH FOR FREEDOM.",
+                        "Just make sure Mr. Crisp isn't there when you try it."
+                    ]
+                }
+            ],
+            "title": "The Seven Wishes"
+        },
+        {
+            "questions": [
+				{
+					"orderedList": false,
+					"columns": [
+						{"header": "Action", "width": "85%"},
+						{"header": "Points", "width": "15%", "align": "right"}
+					],
+					"answers": [
+						["Enter the Post Office", "1"],
+						["Take the mysterious envelope", "5"],
+						["Take the old bone", "1"],
+						["Feed the bone to the poodle", "3"],
+						["Take the note from Miss Voss", "3"],
+						["Take the gold coin", "1"],
+						["Arrive at Cliff Edge", "1"],
+						["Give envelope to old woman", "5"],
+						["Read letter to old woman", "1"],
+						["Take metal can from old woman", "3"],
+						["Frighten troll with snake", "3"],
+						["Take the small stone", "5"],
+						["Remove dead branch from pit", "5"],
+						["Take the silver whistle", "3"],
+						["Take the wizard's hat", "1"],
+						["Give wizard's hat to pelican", "5"],
+						["Buy ticket", "3"],
+						["Take the 3D glasses", "3"],
+						["Take the blanket", "3"],
+						["Cover beast with blanket", "3"],
+						["Take the earthworm", "3"],
+						["Take token from fountain", "3"],
+						["Put token in arcade machine", "1"],
+						["Transport to Hilltop", "5"],
+						["Open the drawbridge", "3"],
+						["Take the rusty key", "3"],
+						["Unlock your chains", "1"],
+						["Read the violet note", "3"],
+						["Turn the crank", "1"],
+						["Turn off second power switch", "3"],
+						["ALEXIS, HEEL", "5"],
+						["Take the steel key", "3"],
+						["Unlock the library door", "3"],
+						["Put small stone in sculpture", "5"]
+					]
+				}
+			],
+            "title": "How Points Are Scored"           
+        },
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"columns": [
+						{"header": "Action", "width": "85%"},
+						{"header": "Points", "width": "15%", "align": "right"}
+					],
+					"answers": [
+						["Fail to take the violet note", "-10"],
+						["Disturb the pile of leaves", "-10"],
+						["Give small stone to vulture", "-10"],
+						["Give small stone to pelican", "-10"],
+						["Torture the Princess", "-10"],
+						["Torture the black cat", "-10"],
+						["Feed grue's milk to Chaos", "-10"]
+					]
+				}
+			],
+			"title": "How Points Are Lost"
+		},
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"title": "Have you tried:",
+					"answers": [
+						"reading the theater marquee before delivering the envelope?",
+						"listening to the conch shell before delivering the envelope?",
+						"examining the video game in Festeron? In Witchville?",
+						"opening the metal can inside the Magick Shoppe?",
+						"examining the wanted posters in Festeron? In Witchville?",
+						"staying in the Jail Cell after being captured by the Boot Patrol?",
+						"getting captured three times by the Boot Patrol, after saving the seahorse? Without saving the seahorse?",
+						"ignoring King Anatinus? Dropping the whistle or the hat?",
+						"letting the small mailbox meet the big mailbox?",
+						"looking around the Museum after the mailboxes have met? If the mailboxes never met?",
+						"leaving things in either mailbox, letting the boxes meet, and looking inside the fossil afterward?",
+						"putting things inside the wizard's hat? And finishing the story?",
+						"dropping the lighted candle into the bay, lake or river?",
+						"wishing for freedom while Mr. Crisp is watching?",
+						"pushing the lever on the torture machine UP while the Princess was clamped inside?",
+						"putting interesting objects (like the black cat) into the torture machine, and pushing the lever up?",
+						"torturing the Princess and the black cat at the same time?",
+						"pouring out the grue's milk near the black cat? Near Chaos?",
+						"putting on the 3D glasses just before you put the stone into the sculpture? And then NOT putting it in?",
+						"giving the stone to the old woman in the Museum?"
+					]
+				}
+			],
+			"title": "For Your Amusement"
+		}
+    ]
+}

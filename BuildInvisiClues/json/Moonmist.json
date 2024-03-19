@@ -1,0 +1,660 @@
+{
+    "revision": 1.0,
+	"header": {
+		"title": "Moonmist",
+		"year": "1986",
+		"copyright": "© 1986 Infocom, Inc.",
+		"image": "data:image/jpeg;base64,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",
+		"section1": {
+			"title": "What are InvisiClues?",
+			"content": [
+				"Interactive fiction is partly a story for you to read and partly puzzles for you to solve. If you feel stuck on a puzzle at any point in the story, you can use this InvisiClues hint booklet. It will give you just enough hints so you can still solve the puzzle on your own. Or, if you don't want the thrill of solving it, this booklet will give you the whole answer. Either way, you can then continue in the story.",
+				"These hints are invisible. Usually the first hint after a question is just a nudge in the right direction, and the last one is a full answer. You can even learn a little just by reading the questions, but not much. Just to keep you guessing, we put in some extra questions and hints that have nothing to do with Moonmist. Beware!"
+			]
+		},
+		"section2": {
+			"title": "How to use this booklet",
+			"content": [
+				"If you feel stuck at some point in Moonmist, find the question that sounds most helpful. Uncap the marker and run it once over the first hint. The writing will appear in a second or two. If you still feel stumped after reading this hint and thinking about it, go on to the next hint. (Remember to recap the marker when you are done, or it will dry out. And by the way, InvisiClues that you read will begin to fade away after about six months.)",
+				"Here's a sample question for you to try:"
+			]
+		},
+		"section3": {
+			"content": [
+				"Your marker contains more than enough fluid to develop this entire hint booklet. However, if your marker dries out or gets lost, you can buy another one for a small price.",
+				"After you have finished playing Moonmist, look at the section called \"Have You Tried To...\" If you read this section before you finish, it may spoil some puzzles for you."
+			]
+		},
+		"sampleQuestions": {
+			"questions": [
+				{
+					"title": "Why is Professor Hergenburger standing on a chair and screaming?",
+					"answers": [
+						"Did you ask anyone about the professor's cats?",
+						"Professor Hergenburger is afraid of mice.",
+						"There's a mouse nearby, which is frightening the professor. Get a cat to take care of the mouse."
+					]
+				}
+			]
+		}
+	},
+    "sections": [
+        {
+            "questions": [
+                {
+                    "title": "How do I get through the gate?",
+                    "answers": [
+                        "No one knows you are there. You need to get their attention.",
+                        "If you HONK THE HORN or PUSH THE EYE, the butler will speak with you.",
+                        "Or you can just WAIT 10 MINUTES."
+                    ]
+                },
+                {
+                    "title": "How do I meet the guests?",
+                    "answers": [
+                        "If you WAIT or try to go somewhere, Tamara will guide you to meet them.",
+                        "It's good manners to answer their questions.",
+                        "Then you can ask the guests questions, for example ASK ABOUT THE GHOST or MADAM, DESCRIBE THE GHOST."
+                    ]
+                },
+                {
+                    "title": "How can I find the ghost?",
+                    "answers": [
+                        "Ask the guests about the ghost.",
+                        "The ghost usually appears late at night.",
+                        "The ghost won't appear until after midnight (if at all), so meet the guests and go to dinner first."
+                    ]
+                },
+                {
+                    "title": "Tamara wants to chat. What should I say?",
+                    "answers": [
+                        "You can ask her about different things.",
+                        "You can ASK TAMARA ABOUT: JACK, HERSELF, THE GHOST, BOLITHO, DINNER, DEIRDRE, THE WHITE LADY, and so on. Or TAMARA, DESCRIBE THE GHOST."
+                    ]
+                },
+                {
+                    "title": "What is Bolitho trying to tell me in my bedroom?",
+                    "answers": [
+                        "He is trying to tell you about the ghost. You can ASK BOLITHO TO DESCRIBE THE GHOST.",
+                        "He may give you a device to protect you from hostile \"ghosts.\"",
+                        "He may also give you a hint for finding the secret passage if you haven't already found it."
+                    ]
+                },
+                {
+                    "title": "How should I get ready for dinner?",
+                    "answers": [
+                        "You've been driving all day. You're grimy and rumpled.",
+                        "You can wash up in your bathroom.",
+                        "You can look in your luggage and find something fresh to wear.",
+                        "P.S. You'll get dirty again if you go in the secret passage!"
+                    ]
+                },
+                {
+                    "title": "I heard a dinner bell. What should I do?",
+                    "answers": [
+                        "Remember what Tamara said about dinner?",
+                        "She said that dinner is at eight o'clock, or whenever you hear the gong.",
+                        "It's time to GO TO DINNER."
+                    ]
+                },
+                {
+                    "title": "What should I do at dinner?",
+                    "answers": [
+                        "If you didn't do so earlier, ask the guests about the ghost.",
+                        "At the end of dinner, you'll hear a tape recording.",
+                        "Do as Lionel says: LOOK UNDER THE PUNCHBOWL.",
+                        "The first clue is a hint about what the treasure is.",
+                        "After Lionel mentions the treasure, ask Jack about it.",
+                        "Lionel mentions a second clue; he also says who has it.",
+                        "ASK JACK (or VIVIEN, depending on the variation) FOR THE SECOND CLUE THEN READ THE SECOND CLUE.",
+                        "The second clue is a hint about how to find the treasure."
+                    ]
+                }
+            ],
+            "title": "The Beginning"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Are there any secret passages?",
+                    "answers": [
+                        "In a castle like this, there probably are.",
+                        "Bolitho may give you a hint.",
+                        "Bolitho says you can adjust the wall mirror in your bedroom.",
+                        "But in fact you can't adjust it. EXAMINE THE WALL MIRROR.",
+                        "The mirror is actually a secret door! PUSH THE SWITCH."
+                    ]
+                },
+                {
+                    "title": "It's too dark to see! Where can I find a light?",
+                    "answers": [
+                        "One is used by the servants to go to the basement wine cellar.",
+                        "There's a portable brass lantern in the kitchen."
+                    ]
+                },
+                {
+                    "title": "I got caught in someone else's bedroom and now I can't leave!",
+                    "answers": [
+                        "It isn't polite to snoop around other people's bedrooms.",
+                        "The other guest is probably mad at you for doing so.",
+                        "You should APOLOGIZE to the guest."
+                    ]
+                },
+                {
+                    "title": "Someone is ignoring me. What does this mean?",
+                    "answers": [
+                        "Were you rude to this person earlier?",
+                        "Maybe you ignored a question, or hit or insulted him or her?",
+                        "You should APOLOGIZE to the guest."
+                    ]
+                },
+                {
+                    "title": "Why can't I go somewhere directly by using the GO TO command?",
+                    "answers": [
+                        "If you haven't met all the guests, Tamara won't let you wander off.",
+                        "Otherwise, it's a puzzle to go to that place. You have to use compass directions (like NORTH or IN) to go there."
+                    ]
+                },
+                {
+                    "title": "I used the GO TO command, but I got only part way there!",
+                    "answers": [
+                        "Maybe you bumped into someone on your way.",
+                        "Or you might have gotten lost in the dark."
+                    ]
+                }
+            ],
+            "title": "Getting Around"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Why is Jack troubled by Bolitho's note?",
+                    "answers": [
+                        "Have you read it?",
+                        "ASK JACK FOR THE BUTLER'S NOTE THEN READ IT.",
+                        "After dinner, you should find the maid's note, then read it.",
+                        "The maid's note is on the desk in the sitting room."
+                    ]
+                },
+                {
+                    "title": "How do I begin my search for the ghost?",
+                    "answers": [
+                        "Bolitho saw the ghost. Did he tell you about it?",
+                        "If not, and it's after dinner, you're too late. Bolitho's gone.",
+                        "Say YES when Bolitho asks you if you are the well-known American detective. Or ASK THE BUTLER ABOUT THE GHOST."
+                    ]
+                },
+                {
+                    "title": "How do I identify the ghost?",
+                    "answers": [
+                        "There are two ways. The first way is to find the ghost costume and some evidence of who wore it. The second way is to catch the ghost on its haunt and unmask it.",
+                        "Asking others to describe the ghost will give you clues about its identity, and may give you an idea where to start your search."
+                    ]
+                },
+                {
+                    "title": "How do I follow up on Bolitho's clue?",
+                    "answers": [
+                        "Can you find what the ghost was searching for?",
+						"You should go where Bolitho said the ghost was searching then SEARCH THE ROOM. If you show what you found to other people, you might start to suspect someone.",
+                        "Search the bedroom of the suspected guest for evidence that he or she is the person who lost the item that the ghost was looking for. Then read one of the next four answers (for example, read the RED answer if you're playing the red variation)."
+                    ]
+                },
+				{
+                    "title": "RED:",
+                    "answers": [
+                        "The jewel came from the necklace that used to be Deirdre's. Jack has the necklace in his bedroom because the police gave it back to him."
+                    ]
+                },
+				{
+                    "title": "YELLOW:",
+                    "answers": [
+                        "The jewel came from Tamara's earring in the jewelry case in her bedroom."
+                    ]
+                },
+				{
+                    "title": "BLUE:",
+                    "answers": [
+                        "The contact lens is Vivien's. She is missing one from her plastic box in the wooden box in her bedroom."
+                    ]
+                },
+				{
+                    "title": "GREEN:",
+                    "answers": [
+                        "The contact lens is Wendish's. He is missing one from his plastic box in the medical kit in his bedroom."
+                    ]
+                },
+				{
+                    "title": "I think I know who the ghost is. How do I prove it?",
+                    "answers": [
+                        "Whoever the ghost is probably has a costume hidden. Or sometimes you can catch the ghost while it's haunting. If you still can't find the ghost costume, then read one of the next four answers (for example, read the BLUE answer if you're playing the blue variation)."
+                    ]
+                },
+                {
+                    "title": "RED:",
+                    "answers": [
+                        "If you think Jack is the ghost, ASK BOLITHO TO DESCRIBE THE GHOST and think again. If you think Deirdre is the ghost, then the costume wouldn't be in the castle; you'll have to catch her when she haunts the castle."
+                    ]
+                },
+                {
+                    "title": "YELLOW:",
+                    "answers": [
+                        "The costume is not in the villain's bedroom. Look in the secret passages for it and see the next question."
+                    ]
+                },
+                {
+                    "title": "BLUE:",
+                    "answers": [
+                        "The costume is hidden in Vivien's wooden box (under other items)."
+                    ]
+                },
+                {
+                    "title": "GREEN:",
+                    "answers": [
+                        "The costume is hidden in Wendish's medical kit (under other items)."
+                    ]
+                },               
+                {
+                    "title": "I found a ghost costume in the secret passage!",
+                    "answers": [
+                        "The person haunting must have dropped it there.",
+                        "Probably on purpose — to frame Iris for the haunting. See the next question."
+                    ]
+                },
+                {
+                    "title": "How do I know who wore the costume that I found?",
+                    "answers": [
+                        "Whoever wore it might have left some evidence in it.",
+                        "EXAMINE THE WIG.",
+                        "Whoever wore the costume left some hairs behind!",
+                        "You can EXAMINE the other guests to see whose hair color is the same."
+                    ]
+                },
+                {
+                    "title": "What evidence do I need to arrest the villain?",
+                    "answers": [
+                        "You need to find incriminating evidence, something that shows why the villain would commit a crime.",
+                        "The maid found something incriminating. See the next question."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the maid's note?",
+                    "answers": [
+                        "Apparently the maid found something very upsetting.",
+                        "Whatever she found might incriminate the villain.",
+                        "The last paragraph of her note is a clue.",
+                        "For more hints, look in the section for the variation you're playing."
+                    ]
+                },
+                {
+                    "title": "The villain is about to shoot me! How do I escape?",
+                    "answers": [
+                        "You can escape into the secret passage, but only if the secret door is already open.",
+                        "Or you can spray the villain with the aerosol device, or hit the villain with the wine bottle."
+                    ]
+                },
+                {
+                    "title": "How do I find the treasure?",
+                    "answers": [
+                        "The first clue (under the punchbowl) is a hint about WHAT you are looking for.",
+                        "To find WHERE the treasure is, you have to get the second clue from Vivien (in the red variation) or Jack (in the yellow, blue, and green variations).",
+                        "The second clue will lead to more clues."
+                    ]
+                }
+            ],
+            "title": "After Dinner"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How can I find the ghost?",
+                    "answers": [
+                        "If you are in the yellow variation, read the next hint. Otherwise, skip it.",
+                        "You can't. You'll have to find the ghost costume instead.",
+                        "The ghost haunts after midnight, when other people have gone to bed.",
+                        "And it haunts only in the secret passages where people usually don't go. Read the next two hints only if you are in the red variation.",
+                        "The ghost enters the castle on its way to the secret passages.",
+                        "The ghost enters through the priest hole and goes backstairs."
+                    ]
+                },
+                {
+                    "title": "The ghost never showed up! Why?",
+                    "answers": [
+                        "If you are playing the yellow variation, read the next hint. Otherwise skip over it.",
+                        "The ghost never haunts in the yellow variation.",
+                        "You may have missed the ghost. Try waiting at your entrance or the entrance of the presumed ghost.",
+                        "You may have spooked the ghost. If you disturbed the costume or blowgun, or left the ghost's secret entrance open, the ghost won't haunt.",
+                        "If you already arrested the person who was the ghost, now you need to",
+                        "find the ghost costume."
+                    ]
+                },
+                {
+                    "title": "Egads!! The ghost is trying to kill me!",
+                    "answers": [
+                        "Follow your instincts: fight or flee.",
+                        "Maybe Bolitho gave you something to stop threats.",
+                        "Bolitho tried to give you an aerosol device. If you don't have it, you can flee to the kitchen and get it. Or you can use the wine bottle as a weapon.",
+                        "If you have the aerosol device, SPRAY THE GHOST WITH THE DEVICE.",
+                        "Now you can REMOVE THE GHOST COSTUME and identify the ghost."
+                    ]
+                },
+                {
+                    "title": "Egads!! I found the ghost, but it runs away!",
+                    "answers": [
+                        "The ghost isn't threatening you, so don't scare her away.",
+                        "Be nice to the ghost.",
+                        "Talking to the ghost is one way to get her to open up."
+                    ]
+                },
+                {
+                    "title": "The ghost just \"slimed\" me!!! How do I catch it?",
+                    "answers": [
+                        "First use your negative ionizer backpack to trap the ghost.",
+                        "Now lower the ghost into your portable laser confinement system.",
+                        "Stop playing <em>Ghostbusters</em> from Activision and play <em>Moonmist</em>! The ghost in <em>Moonmist</em> doesn't \"slime\" people."
+                    ]
+                }
+            ],
+            "title": "After Midnight"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How can I tell if a person is left- or right-handed?",
+                    "answers": [
+                        "People tend to use their dominant hand without thinking.",
+                        "Throw something at a person. They'll catch it with their dominant hand."
+                    ]
+                },
+                {
+                    "title": "How did the ghost float over Tamara's bed?",
+                    "answers": [
+                        "There is a physical reason for it.",
+                        "One room is directly over Tamara's.",
+                        "Examine and move objects in the \"lumber\" room.",
+                        "If you move the chest and lift the handle you can look into Tamara's bedroom. And someone in her bed would see your face!"
+                    ]
+                },
+                {
+                    "title": "How do I protect Tamara from the vampire?",
+                    "answers": [
+                        "Did you find the coffin hidden in the secret tomb?",
+                        "You'll need a wooden cross from the chapel and garlic from the kitchen.",
+                        "Find a sharp stick in the lumber room and drive it through the vampire's heart when it returns to sleep in the coffin at dawn.",
+                        "What vampire? There's no vampire in <em>Moonmist</em>."
+                    ]
+                },
+                {
+                    "title": "Who was the White Lady?",
+                    "answers": [
+                        "Ask someone about her.",
+                        "The history book in the library will tell you more about her."
+                    ]
+                },
+                {
+                    "title": "Iris is broken. How do I fix her?",
+                    "answers": [
+                        "Have Waldo replace the faulty chip.",
+                        "If that doesn't work, then send her to robot repair.",
+                        "Wait a minute! Why are you looking up <em>Suspended</em> questions in the <em>Moonmist</em> hint booklet?"
+                    ]
+                }
+            ],
+            "title": "General Questions"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What is the significance of the maid's note?",
+                    "answers": [
+                        "First read the hints for this same question in the section called \"After Dinner.\"",
+                        "Look in the keyholes of bedroom doors.",
+                        "Jack's keyhole is the most important. You'll see a microphone in the door.",
+                        "Move the wyvern to uncover the secret tape recorder. PLAY THE TAPE."
+                    ]
+                },
+                {
+                    "title": "I'm stuck on the second clue. Help!",
+                    "answers": [
+                        "The \"very first lass\" in the Bible was Eve.",
+                        "There's a stained \"glass\" window in the chapel.",
+                        "On the \"forbidden fruit\" (apple) is the third clue."
+                    ]
+                },
+                {
+                    "title": "What does the third clue mean?",
+                    "answers": [
+                        "You need to go to the place mentioned in the clue.",
+                        "\"Bower\" is another word for garden.",
+                        "GO TO THE BOWER (the garden in the hedge maze).",
+                        "The clue is in the dirt in the garden."
+                    ]
+                },
+                {
+                    "title": "Help me figure out the fourth clue.",
+                    "answers": [
+                        "What would you need if you went into the rain?",
+                        "The clues are \"rain\" and \"cain.\"",
+                        "There's an umbrella stand in the foyer.",
+                        "\"Cain\" is a pun for the cane in the umbrella stand."
+                    ]
+                },
+                {
+                    "title": "I have what the fourth clue led me to, but it isn't a treasure.",
+                    "answers": [
+                        "Examine the item you found there.",
+                        "The treasure is disguised.",
+                        "REMOVE THE PAINT to find the real treasure."
+                    ]
+                }
+            ],
+            "title": "Red Variation"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What is the significance of the maid's note?",
+                    "answers": [
+                        "First read the hints for this same question in the section called \"After Dinner.\"",
+                        "Search people's bedrooms, particularly under furniture.",
+                        "Remove the journal from under Tamara's bed, then look there again.",
+                        "Under Tamara's bed is a receipt from a pet store."
+                    ]
+                },
+                {
+                    "title": "Help! What is the meaning of the second clue?",
+                    "answers": [
+                        "What word rhymes with \"tell\" and is something you can hear?",
+                        "A bell. Find a bell and examine it. (The quote is from \"The Bells\" by Edgar Allan Poe.)",
+                        "The bell on the fighting deck has the third clue in it."
+                    ]
+                },
+                {
+                    "title": "Help me figure out the third clue.",
+                    "answers": [
+                        "Somewhere in the castle is a \"tomb.\" (The quote is from \"Annabel Lee\" by Edgar Allan Poe.)",
+                        "Go to the dungeon, then ENTER THE IRON MAIDEN to get to the secret tomb.",
+                        "OPEN THE COFFIN to find the fourth clue."
+                    ]
+                },
+                {
+                    "title": "What does the fourth clue mean?",
+                    "answers": [
+                        "Do you know the story \"A Cask of Amontillado\" by Edgar Allan Poe?",
+                        "It tells the tale of a man who is buried alive behind a brick wall, deep in the catacombs of a wine cellar.",
+                        "Go to the basement, where the wine is kept, and MOVE THE BRICKS.",
+                        "Enter the hole that you opened up,"
+                    ]
+                },
+                {
+                    "title": "I found an item that doesn't look like treasure. Where's the real treasure?",
+                    "answers": [
+                        "EXAMINE THE SKELETON.",
+                        "Take the black pearl necklace."
+                    ]
+                }
+            ],
+            "title": "Yellow Variation"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What is the significance of the maid's note?",
+                    "answers": [
+                        "First read the hints for this same question in the section called \"After Dinner.\"",
+                        "You are looking for someone's diary.",
+                        "In Vivien's wooden box is her diary. (It's under her plastic box.) Reading her diary may not be polite, but it's important!"
+                    ]
+                },
+                {
+                    "title": "What does the second clue mean?",
+                    "answers": [
+                        "Try to fill in the blanks of the second clue with words that make the poem rhyme. Then find objects that match the words.",
+                        "For the first blank: What rhymes with \"wrong\" and is often mentioned with wine (\"grape\") and women (\"wench\")?",
+                        "The word for the first blank is \"song.\" Where might you find a song in the castle?",
+                        "Read the music on the piano.",
+                        "For the second blank: What rhymes with \"laden\"? (Remember that the poem is about three fellows arguing about \"wine, women, and song.\")",
+                        "The word for the second blank is \"maiden.\" Where in the castle is a maiden?",
+                        "It's not the iron maiden in the dungeon.",
+                        "Find the maiden mentioned in the tourist brochure and examine it.",
+                        "For the last blank: What rhymes with \"fine\"? (Remember what the three fellows are arguing about!)",
+                        "The word for the last blank is \"wine.\" Where in the castle will you find wine?",
+                        "Examine the wine bottle in the basement.",
+                        "Put together the parts of words marked with a star.",
+                        "They spell \"SUIT ARMOUR.\" Look in the tourist brochure to find it."
+                    ]
+                },
+                {
+                    "title": "I'm stuck on the third clue. Help!",
+                    "answers": [
+                        "Put the parts of words from the second clue into the blanks in a different order.",
+                        "The order is ARM, SUIT and OUR.",
+                        "What \"alarm\" has \"suite\" (sweet) tones that \"clamour\"?",
+                        "The bell on the fighting deck is an alarm that clamours.",
+                        "LOOK INSIDE THE BELL to find the treasure."
+                    ]
+                },
+                {
+                    "title": "Help! What is the meaning of the fourth clue?",
+                    "answers": [
+                        "Try to climb up one of the fireplaces in the castle.",
+                        "However, you can't go back down the same way. Try to find a different flue to go down.",
+                        "However, if you go down you'll land in a fire and...",
+                        "You've been burned. There is no fourth clue in the blue variation."
+                    ]
+                },
+                {
+                    "title": "I found an item that doesn't look like treasure!",
+                    "answers": [
+                        "Why are you reading this clue?",
+                        "The skull is obviously the treasure."
+                    ]
+                }
+            ],
+            "title": "Blue Variation"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What is the significance of the maid's note?",
+                    "answers": [
+                        "First read the hints for this same question in the section called \"After Dinner.\"",
+                        "You are looking for something written. The library would be a good place to start.",
+                        "In the bookcase is Wendish's lab notebook. It reveals Wendish's fiendish ideas."
+                    ]
+                },
+                {
+                    "title": "Help me figure out the second clue.",
+                    "answers": [
+                        "You are doing two things: finding the next clue (by finding an \"eye\" that doesn't see) and beginning to spell a word which starts with the letter \"I.\"",
+                        "The blind \"eye\" you are looking for is in the game room.",
+                        "The third clue is behind the rhino's glass eye."
+                    ]
+                },
+                {
+                    "title": "Help! What is the meaning of the third clue?",
+                    "answers": [
+                        "The second letter is \"N\" (in \"never,\" but not in \"ever\").",
+                        "The next clue is at the dead \"end\" in the secret (hidden) passages. You can find it on the complete map.",
+                        "You can see the clue (but not reach it) if you SEARCH THE WALL in the gallery and then look through the peephole."
+                    ]
+                },
+                {
+                    "title": "I'm stuck on the fourth clue. Help!",
+                    "answers": [
+                        "The third letter is \"K\" (a silent letter in \"knight\").",
+                        "Putting the three letters together spells \"ink.\" Find some ink.",
+                        "There is an inkwell in the office."
+                    ]
+                },
+                {
+                    "title": "I found an item that doesn't look like treasure!",
+                    "answers": [
+                        "The treasure isn't the inkwell.",
+                        "It's the \"ink\" inside the inkwell — the Moonmist drug."
+                    ]
+                }
+            ],
+            "title": "Green Variation"
+        },
+        {
+            "questions": [
+				{
+					"orderedList": false,
+					"columns": [
+						{"header": "Secret Entrance", "width": "35%"},
+						{"header": "How to Open It", "width": "65%"}
+					],
+					"answers": [
+						["Your Bedroom", "EXAMINE WALL MIRROR. PUSH SWITCH"],
+						["Vivien's Bedroom", "MOVE FIGURINE"],
+						["Wendish's Bedroom", "MOVE SCONCE"],
+						["Ian's Bedroom", "MOVE ANDIRONS"],
+						["Library", "SEARCH BOOKCASE. GET HISTORY BOOK"],
+						["Tamara's Bedroom", "MOVE POST"],
+						["Jack's Bedroom", "MOVE TELESCOPE"],
+						["Sitting Room (one-way)", "SIT ON WINDOW SEAT. MOVE WYVERN"],
+						["Drawing Room", "LOOK BEHIND TAPESTRY. OPEN SECRET DOOR"]
+					]
+				}
+			],
+            "title": "Secret Passage Entrances",
+			"subTitle": "Don't read this list unless you are really stuck or really curious. Some exits (not listed) open only from the inside."
+        }, 
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"answers": [
+						"...read the magazine in the lumber room? (especially in the blue variation)",
+						"...kiss Iris if you are playing as a man, or kiss Jack or Ian if you are playing as a woman?",
+						"...drink Moonmist? (in the green variation only)",
+						"...take Dr. Wendish's mustache? (in the green variation)",
+						"...show the villain the incriminating evidence in his or her own bedroom, before or after you have taken the blowgun? (in the green and blue variations only)",
+						"...play the secret tape in Jack's door with Tamara following you? (in the red variation)",
+						"...ring the bell on the fighting deck after dinner and then wait?",
+						"...pray?",
+						"...shoot billiards in the game room?",
+						"...play the piano?",
+						"...ask the other guests to play the piano?",
+						"...turn on the computer in the office?",
+						"...ASK VIVIEN ABOUT TAMARA (in the blue variation) or ASK TAMARA ABOUT IRIS (in the yellow variation)?"
+					]
+				}
+			],
+			"title": "Have You Tried To...",
+			"tocTitle": "Have You Tried To"
+		},
+		{
+			"questions": [
+				{
+					"customLabels": true,
+					"alwaysShow": true,
+					"answers": [
+						["", "The authors thank the Moonmist testers at lnfocom: Tomas Bok, Gary Brennan, Amy Briggs, Max Buxton, Liz Cyr-Jones, Suzanne Frank, and Matt Hillman. Numerous \"outside\" testers also gave us their valuable input.<br>Thanks to Carl Genatossio and Elizabeth Langosy for their excellent work on the package design and the package contents, including the tourist brochure and the \"Legendary Ghosts of Cornwall\" book."]
+					]
+				}
+			],
+			"title": "Thanks!"
+		}
+    ]
+}

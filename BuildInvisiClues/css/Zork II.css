@@ -1,0 +1,14 @@
+.logo {
+	line-height: 0.8em;
+}
+.logo div {
+	text-align: center;
+	display: inline-block;
+	width: 14.28%;
+}
+.logo div:first-child {
+	text-align: left;
+}
+.answer-padding {
+	padding-left: 8em;
+}

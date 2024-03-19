@@ -1,0 +1,7 @@
+.answer p {
+	text-indent: 2em;
+	padding-right: 1.2em;
+}
+.answer p:first-of-type {
+	text-indent: 0;
+}

@@ -1,0 +1,1019 @@
+{
+	"revision": 1.0,
+	"header": {
+		"title": "Enchanter",
+		"year": "1983",
+		"copyright": "© 1983 Infocom, Inc.",
+		"image": "data:image/jpeg;base64,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",
+		"section1": {
+			"title": "What are InvisiClues?",
+			"content": [
+				"The essence of all INTERLOGIC™ games is solving problems. The purpose of InvisiClues hint booklets is to maximize your enjoyment of the game by giving you only those hints that you need to continue playing and complete the game.",
+				"The invisible hints generally progress from a gentle nudge in the right direction to a full answer. The questions, which naturally have to be visible, have been worded to give away as little as possible. You should not use the presence or absence of a question on a certain topic as an indication of importance, and you should not assume that long answers are associated with important questions. This booklet includes dummy questions and answers in order to minimize this problem."
+			]
+		},
+		"section2": {
+			"title": "How to use this booklet",
+			"content": [
+				"If you are stuck at some point in ENCHANTER, find the question that most pertains to your problem. Uncap the marker and run it once over the first hint. The writing will appear within a second or two. If you are still stumped, go on to the next hint. (Remember to recap the marker when you are done to prevent it from drying out. And by the way, these books are not immortal. InvisiClues you've developed will start to fade after six months.)",
+				"For example:"
+			]
+		},
+		"section3": {
+			"content": [
+				"Your marker contains more than enough fluid to develop the entire booklet. However, if your marker gets lost or dried out, you can order a replacement marker for a nominal fee.",
+				"Once you have finished ENCHANTER, try the things in the \"For Your Amusement\" section. Don't look at them before you've finished, though — they may reveal the answers to certain problems."
+			]
+		},
+		"sampleQuestions": {
+			"questions": [
+				{
+					"title": "Why did the dragon wear red sneakers?",
+					"answers": [
+						"Search the laundry room.",
+						"NITFOL the dragon and ask him.",
+						"Because his blue ones were in the wash."
+					]
+				}
+			]
+		}
+	},
+	"sections": [
+		{
+			"title": "Starting Out",
+			"questions": [
+				{
+					"title": "Why was I chosen for this task?",
+					"answers": [
+						"Otherwise it wouldn't be much of a game.",
+						"Apparently, Belboz feels that Krill could easily spot and destroy a powerful Enchanter."
+					]
+				},
+				{
+					"title": "How many times must I go west before I arrive at my destination?",
+					"answers": [
+						"It isn't called the Long Road for nothing.",
+						"Have you read the signs along the road?",
+						"There's nothing out there. The entire game lies to the east."
+					]
+				},
+				{
+					"title": "Is there anything important in the shack?",
+					"answers": [
+						"There is a jug lying in the corner.",
+						"Have you tried examining the oven?",
+						"There is a fresh loaf of bread inside the oven."
+					]
+				},
+				{
+					"title": "What can I do about the crone?",
+					"answers": [
+						"She is rather helpful in presenting you with a spell scroll.",
+						"You can summon her from anywhere in the game if you have the proper spell.",
+						"There's nothing else she can do for you."
+					]
+				},
+				{
+					"title": "What is the significance of the Lonely Mountain?",
+					"answers": [
+						"It is arguably the most beautiful spot in the region.",
+						"It clearly shows the castle to the east."
+					]
+				},
+				{
+					"title": "How do I signal the monsters approaching by sea?",
+					"answers": [
+						"Have you tried waving at them?",
+						"You might fire a signal flare.",
+						"What monsters? What signal flare? What a concept?"
+					]
+				}
+			]
+		},
+		{
+			"title": "Eating, Drinking and Sleeping",
+			"questions": [
+				{
+					"title": "What do I do when I get thirsty?",
+					"answers": [
+						"Have you tried drinking anything?",
+						"The water from the swamp or ocean isn't good for drinking.",
+						"The water at the Shady Brook tastes great.",
+						"The jug can be used to carry a good deal of water."
+					]
+				},
+				{
+					"title": "What do I do when I get hungry?",
+					"answers": [
+						"Eat.",
+						"There is bread somewhere in the shack.",
+						"It's in the oven."
+					]
+				},
+				{
+					"title": "What do I do when I get tired?",
+					"answers": [
+						"Guess!",
+						"You could simply SLEEP. Be careful, though. Evil things may be lurking outside the castle.",
+						"It would be safest to find a bed to sleep on.",
+						"There is a bed in the castle.",
+						"In the bedroom, of course."
+					]
+				},
+				{
+					"title": "Where did some of my possessions go while I slept?",
+					"answers": [
+						"Perhaps the tooth fairy removed them.",
+						"Remember that there is great evil in the castle. Something or someone may have come in the night and removed them.",
+						"You can use the BLORB spell to protect something valuable (the spell book is the most important thing to protect). You should use it before going off to sleep."
+					]
+				},
+				{
+					"title": "Where are the magic pajamas?",
+					"answers": [
+						"Have you tried looking under the bed?",
+						"Have you met the Prince of Kaldorn?",
+						"You don't need pajamas and there is no Prince of Kaldorn."
+					]
+				},
+				{
+					"title": "What is the significance of the dream with the damsel?",
+					"answers": [
+						"The woman is playing with the bedpost. Have you examined it?",
+						"Examining the post reveals a button. Have you pushed it?",
+						"In case you wondered, you can't find the button unless you have experienced the dream."
+					]
+				},
+				{
+					"title": "What is the significance of the dream with the cartoon figure?",
+					"answers": [
+						"The figure is the adventurer. His opening of a door is significant. See the section on the adventurer."
+					]
+				},
+				{
+					"title": "What is the significance of the dream in which something seems to be lost?",
+					"answers": [
+						"It indicates that you no longer have something that you need.",
+						"The thing is a spell scroll that you have used in the wrong location.",
+						"The spell is the KULCAD spell. You can use it successfully in a number of places, but only once correctly.",
+						"The climbing aspect of the dream is also significant. Have you been anyplace that implies climbing endlessly?",
+						"It is the Winding Stair."
+					]
+				},
+				{
+					"title": "What is the significance of the dream with the dancing penguins?",
+					"answers": [
+						"Have you seen any other penguins in the game?",
+						"Did the guidebook to Antarctica help in any way?",
+						"Have you asked the walrus?",
+						"Are you still developing answers?",
+						"Why?"
+					]
+				},
+				{
+					"title": "What is the significance of the dream with the glowing face?",
+					"answers": [
+						"Is there any place in the castle which is filled with faces of many types?",
+						"The place is the portrait gallery. The room in the dream was darkened and one face was glowing.",
+						"If you go into the gallery without a light, you can see that one of the portraits is lit from behind.",
+						"Looking behind the lighted portrait reveals a secret niche, which contains a spell scroll."
+					]
+				},
+				{
+					"title": "What is a leading cause of insomnia?",
+					"answers": [
+						"INTERLOGIC games."
+					]
+				},
+				{
+					"title": "What is a leading cure for insomnia?",
+					"answers": [
+						"InvisiClues."
+					]
+				},
+				{
+					"title": "What is as leading cause of Interlogic games?",
+					"answers": [
+						"Insomnia."
+					]
+				}
+			]
+		},
+		{
+			"title": "Inside The Castle",
+			"questions": [
+				{
+					"title": "How do I get into the castle?",
+					"answers": [
+						"Have you tried opening the gates?",
+						"Do you have a spell that might be helpful?",
+						"Try casting the REZROV spell on the gates.",
+						"The crone in the hovel will give you the REZROV scroll.",
+						"The hovel is in the village. Try entering it."
+					]
+				},
+				{
+					"title": "What do I use for light in the castle?",
+					"answers": [
+						"There is a lantern in the shack.",
+						"All right. So it doesn't work. How about a spell?",
+						"Casting the FROTZ spell on any object you are carrying will cause it to give off light for the rest of the game. Poetic justice might suggest the battered lantern from the shack, but it's pretty heavy to carry around."
+					]
+				},
+				{
+					"title": "What's going on in the Dungeon?",
+					"answers": [
+						"There is a prison cell next to the dungeon. There is also a path leading down into a series of Translucent Rooms.",
+						"Have you examined or read the walls or graffiti?",
+						"After examining the graffiti, try moving the irregular block."
+					]
+				},
+				{
+					"title": "What can I do with the silver spoon?",
+					"answers": [
+						"Have you tried digging a hole with it?",
+						"Have you tried feeding someone with it?",
+						"Have you tried gagging someone with it?",
+						"If you answered \"no\" to the previous questions, so much the better. Besides being \"valuable,\" there is nothing to do with it."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Hall of Mirrors",
+			"questions": [
+				{
+					"title": "Are the mirrors useful for anything?",
+					"answers": [
+						"They make a mess if you break them.",
+						"They are windows, from your viewpoint.",
+						"Have you noticed anyone wandering through the underground world as depicted in the mirror?",
+						"Occasionally, a bedraggled and weary adventurer will wander through the area in the mirror.",
+						"You might be able to summon him with the right spell.",
+						"The ZIFMIA spell is the one."
+					]
+				},
+				{
+					"title": "Who is the adventurer?",
+					"answers": [
+						"Some ZORK player, most likely.",
+						"It doesn't much matter. You can bet on the fact that he is interested in finding treasures, though."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Library",
+			"questions": [
+				{
+					"title": "Read any good books lately?",
+					"answers": [
+						"The book of legends contains interesting knowledge. You should read the two legible legends.",
+						"The Legend of the Unseen Terror is rather frightening.",
+						"It is also significant."
+					]
+				},
+				{
+					"title": "What can be done with the rat tracks?",
+					"answers": [
+						"Have you tried following them?",
+						"They lead into a hole in the wall. Any idea of what's in the hole?",
+						"Try reaching in. (Don't be scared!)"
+					]
+				}
+			]
+		},
+		{
+			"title": "The Egg",
+			"questions": [
+				{
+					"title": "What is the egg good for?",
+					"answers": [
+						"Breakfast?",
+						"It certainly appears valuable, but the more interesting thing is that it has handles, cranks, and the like connected to some machinery inside.",
+						"Have you tried turning, pushing, or otherwise manipulating the handles, cranks, knobs, and buttons?"
+					]
+				},
+				{
+					"title": "Can the egg be opened?",
+					"answers": [
+						"Sure. Try all of the devices on the outside. After playing with them, the egg will open.",
+						"There is an easier way to open the egg, which doesn't require any manipulation at all.",
+						"Try the REZROV spell on it."
+					]
+				},
+				{
+					"title": "What can I make with the egg?",
+					"answers": [
+						"An omelette, but you will need more than one.",
+						"Try finding a chicken.",
+						"What do you think this is, \"The Joy of Cooking\"?"
+					]
+				},
+				{
+					"title": "Can I fix what's inside the egg?",
+					"answers": [
+						"The mechanism is working just fine, but the shredded scroll needs some help.",
+						"Some magic spell might be of use.",
+						"Use the KREBF spell.",
+						"The scroll is located in the forest area."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Temple",
+			"questions": [
+				{
+					"title": "How can I avoid being taken prisoner in the Temple and adjoining areas?",
+					"answers": [
+						"Going into the Temple or Junction will cause you to be taken prisoner unless you are \"protected from evil.\"",
+						"If you enter the Temple or Junction directly, there is no way to avoid being captured.",
+						"In the Banquet Hall or Library, you will get a warning when the guards approach."
+					]
+				},
+				{
+					"title": "Can I stop the guards from taking me away?",
+					"answers": [
+						"The guards are not very friendly.",
+						"You can make them friendly with the appropriate magic.",
+						"You can also kill or \"newtralize\" them with the proper magic."
+					]
+				},
+				{
+					"title": "Do the guards become bolder as the game goes on?",
+					"answers": [
+						"They certainly do. The more suspicious Krill becomes about your presence, the bolder they become."
+					]
+				},
+				{
+					"title": "Once I'm taken prisoner, is there any escape?",
+					"answers": [
+						"Have you tried befriending the guards?",
+						"No, there is no way to avoid the sacrifice."
+					]
+				},
+				{
+					"title": "Can I survive the sacrifice?",
+					"answers": [
+						"That would require a bit of magic.",
+						"There is a magic spell that can protect you from the sacrifice.",
+						"It is the OZMOO spell. A clue to finding it can be found in a dream."
+					]
+				},
+				{
+					"title": "Can I get the dagger from the being that sacrifices me?",
+					"answers": [
+						"If you can survive the sacrifice, you can have the dagger.",
+						"Really."
+					]
+				},
+				{
+					"title": "Is Krill the being that sacrifices me?",
+					"answers": [
+						"What do you think?"
+					]
+				},
+				{
+					"title": "When the statue approaches, should I pray or run?",
+					"answers": [
+						"Have you tried both possibilities?",
+						"Did you think to use the spray paint?",
+						"When the statue approaches, magic has occurred beyond the wisdom of the implementers."
+					]
+				},
+				{
+					"title": "Will the BOZBAR spell be of use to me?",
+					"answers": [
+						"Only if you can find it. And a horse.",
+						"Look behind the cupboard in the basement of the mansion, just to the right of the 85-foot yacht and immediately in front of the microwave tower.",
+						"You can use it to eradicate lice infestation in ospreys.",
+						"Note: This spell does not work reliably on Thursdays."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Jewelled Box",
+			"questions": [
+				{
+					"title": "What is a Gordian Knot?",
+					"answers": [
+						"Read a mythology text. The rope tied around the jewelled box is a good example of one."
+					]
+				},
+				{
+					"title": "How can I unravel the rope?",
+					"answers": [
+						"You can't do it by hand. It would take forever."
+					]
+				},
+				{
+					"title": "Can I cut the rope?",
+					"answers": [
+						"Perhaps, but then only with a magical blade.",
+						"Have you seen any blade that might be magical?",
+						"Have you ever been killed by one? If not, don't read the next hints until you have.",
+						"The one used to sacrifice you in the Temple might be useful, if only you could get it without getting it. Get it?",
+						"See the questions relating to the sacrifice."
+					]
+				},
+				{
+					"title": "Can the adventurer cut the rope?",
+					"answers": [
+						"His sword is useless against the magic in the rope. Perhaps there is a blade with more magic.",
+						"If you could dispel the magic in the rope, he could probably cut the rope with his sword."
+					]
+				},
+				{
+					"title": "How can I use magic to open the box?",
+					"answers": [
+						"You can't use REZROV because the magic of the rope is stronger.",
+						"You might use KULCAD (if you have it) to dispel its magic. Then you could open it easily.",
+						"Or maybe that's not such a good idea..."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Sea",
+			"questions": [
+				{
+					"title": "How can I swim away from the castle?",
+					"answers": [
+						"The backstroke would be easiest.",
+						"You can't swim in the ocean."
+					]
+				},
+				{
+					"title": "Is the turtle significant?",
+					"answers": [
+						"He is significant among turtles, certainly.",
+						"Have you tried talking to him?",
+						"You can use the NITFOL spell to speak to the turtle.",
+						"Once you have cast NITFOL on him, you can ask him to do things for you. Consult your manual for details.",
+						"Among the more interesting things he will do for you is follow you around. Try: TURTLE, FOLLOW ME."
+					]
+				},
+				{
+					"title": "How do I make turtle soup?",
+					"answers": [
+						"Find a good cookbook.",
+						"\"The Joy of Cooking\" is recommended.",
+						"You don't make soup in this game. You were probably thinking of Starcross&trade;."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Engine Room",
+			"questions": [
+				{
+					"title": "Is there any way to shut off the machinery from the Engine Room?",
+					"answers": [
+						"The Control Room happens to be across the way. Unless you can get there you don't have a chance."
+					]
+				},
+				{
+					"title": "Is there any way to shut off the machinery from the Control Room?",
+					"answers": [
+						"No."
+					]
+				},
+				{
+					"title": "Can I reliably get to the Control Room without becoming a pancake?",
+					"answers": [
+						"Yes, but you're not normally fast enough.",
+						"Do you have any magic that might make you move faster?",
+						"The EXEX spell can make you fast enough.",
+						"The EXEX scroll is in the Dungeon area."
+					]
+				},
+				{
+					"title": "Can I get back from the Control Room safely?",
+					"answers": [
+						"Apparently not. Even if you have made yourself move quickly, you get hit by spears and the like.",
+						"Perhaps someone or something else in the game could survive those spears.",
+						"Turtles have pretty tough shells.",
+						"If you could get the turtle into the Control Room, he would probably survive the return trip. If you haven't seen the turtle, don't continue to the next clues.",
+						"If you haven't spoken with the turtle, don't continue to the next clues.",
+						"You can lead the turtle to the Engine Room, and then get him to go into the Control Room for you.",
+						"First, you must EXEX the turtle. Then, ask him to go the southeast and bring you the scroll. You might, for example, type \"TURTLE, GO SE. TAKE SCROLL. GO NW.\""
+					]
+				},
+				{
+					"title": "How can I talk to the turtle when it's too noisy?",
+					"answers": [
+						"You can't talk to him, but you could try getting his attention.",
+						"You can either yell or wave at him."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Forest",
+			"questions": [
+				{
+					"title": "Where is the forest?",
+					"answers": [
+						"It is north of the castle.",
+						"It is beyond the rusty gate."
+					]
+				},
+				{
+					"title": "How do I get into the forest?",
+					"answers": [
+						"Open the rusty gate.",
+						"Since the gate is so rusty, you must use special means to open it.",
+						"You have to REZROV the rusty gate to open it."
+					]
+				},
+				{
+					"title": "How do I avoid the herd of dragons in the forest?",
+					"answers": [
+						"You might try to VAXUM them.",
+						"You might try using the MELBOR spell on yourself.",
+						"You might GUNCHO them.",
+						"What forest dragons?"
+					]
+				},
+				{
+					"title": "Is there anything important in the forest?",
+					"answers": [
+						"Have you noticed the scroll sitting there in plain sight?",
+						"The forest borders on the swamp, which is an interesting place.",
+						"That's all, folks (except for the dragons)."
+					]
+				},
+				{
+					"title": "What is the significance of the frogs?",
+					"answers": [
+						"The frogs know everything about the swamp.",
+						"You should listen to them.",
+						"You have to NITFOL the frogs before you can understand them.",
+						"The frogs will tell you where to find a scroll.",
+						"There is a scroll under a lily pad."
+					]
+				},
+				{
+					"title": "How can I turn one of the frogs into the Prince of Kaldorn?",
+					"answers": [
+						"Kiss them.",
+						"KREBF them.",
+						"KULCAD them.",
+						"OK, so they're real frogs...",
+						"Frogs can dream, can't they?"
+					]
+				}
+			]
+		},
+		{
+			"title": "Magical Spells and Objects",
+			"questions": [
+				{
+					"title": "What is Thaumaturgy?",
+					"answers": [
+						"The study of magic."
+					]
+				},
+				{
+					"title": "How, exactly, does one cast a spell?",
+					"answers": [
+						"There are two ways, long and short. Assuming there is a spell named BOZBAR, you can type either \"BOZBAR something\" or \"CAST BOZBAR AT/ON something.\" You can cast a few spells without any particular object in mind, in which case you can type either \"BOZBAR\" or \"CAST BOZBAR.\""
+					]
+				},
+				{
+					"title": "How long do spells last?",
+					"answers": [
+						"That depends on the spell. Some last forever. Others last only a short period of time."
+					]
+				},
+				{
+					"title": "Is there a limit to how many times I can cast a spell?",
+					"answers": [
+						"You can cast most spells whenever needed.",
+						"You can use some only once. This is most often true with spells of great power."
+					]
+				},
+				{
+					"title": "Do I always need to copy spells into my book?",
+					"answers": [
+						"No, you can cast a spell exactly once from the scroll you find it on. If you do this, the scroll disappears.",
+						"It is always a good idea to copy them into your book, when possible. You can then use them many times."
+					]
+				},
+				{
+					"title": "Why can't I copy some spells into my spell book?",
+					"answers": [
+						"They are clearly different in some way from the others.",
+						"They are the most powerful spells. You can use them only once, after which they disappear."
+					]
+				},
+				{
+					"title": "What on earth is the FILFRE spell good for?",
+					"answers": [
+						"Effect."
+					]
+				},
+				{
+					"title": "How many spells can I keep memorized?",
+					"answers": [
+						"Initially three, plus the GNUSTO spell, which is yours forever.",
+						"Each day it becomes possible to keep one additional spell memorized."
+					]
+				},
+				{
+					"title": "Why do I have trouble with spells when I get tired?",
+					"answers": [
+						"When you get tired, you tend to forget spells that you have memorized. In addition, it becomes harder to memorize new spells."
+					]
+				},
+				{
+					"title": "What happens when I've exceeded the number of spells I can memorize?",
+					"answers": [
+						"You will probably forget one."
+					]
+				},
+				{
+					"title": "Why does Belboz take powerful spells away from me?",
+					"answers": [
+						"He doesn't trust you with them.",
+						"This is to prevent you from solving problems by getting yourself killed. You can't get those spells back once Belboz has taken them from you."
+					]
+				},
+				{
+					"title": "How can I use the KULCAD spell?",
+					"answers": [
+						"If you haven't seen the KULCAD scroll, don't read further.",
+						"Many objects in the game are magical or have had magical spells cast upon them. The KULCAD spell will dissipate that magic.",
+						"Are there any objects in the game that seem to be unreal?",
+						"Are there objects that seem impossible or act illogically? Don't read further unless you are completely stumped.",
+						"Among other illusions are the banquet setting, the guarded door, and the infinite Winding Stair. Other magical objects include the map, pencil, and rope. There are others too, and each can be changed with the KULCAD spell, some with disastrous results. Have fun finding them!",
+						"Of course, you can use the spell only once, so you'll have to figure out which of the objects you can't deal with in another way. Some may be best to ignore."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Adventurer",
+			"questions": [
+				{
+					"title": "How can I meet the adventurer?",
+					"answers": [
+						"If you haven't even seen any adventurer, don't continue.",
+						"If you haven't gotten the ZIFMIA spell, don't continue.",
+						"When the adventurer appears in the \"mirror,\" you can cast the ZIFMIA spell to summon him to you."
+					]
+				},
+				{
+					"title": "Why doesn't the adventurer seem to like me?",
+					"answers": [
+						"Maybe it's your breath?",
+						"Have you found the mouthwash?",
+						"More likely, he sees you as an unpredictable wizard, like the ones he's read about. He's probably more frightened than unfriendly.",
+						"He will be much more inclined to do as you request if you make him your friend.",
+						"There is a spell that makes people/things friendly. If you haven't seen it, don't continue.",
+						"Casting the VAXUM spell on the adventurer will make him friendly."
+					]
+				},
+				{
+					"title": "What can the adventurer do for me?",
+					"answers": [
+						"If you haven't summoned him, don't continue.",
+						"If you haven't made him your friend, don't continue.",
+						"When he is your friend, he will do simple things for you, like giving you items he has or opening doors.",
+						"Have you ever dreamed about the cartoonish figure who opens a door and wanders up a flight of stairs? Why do you suppose it was such a frightening dream?",
+						"Have you ever noticed that he doesn't find anything interesting about the Guarded Door room?",
+						"The monstrous door is a powerful illusion, and as with other forms of magic, it is most effective on magic users.",
+						"You can KULCAD the door and dispel the illusion.",
+						"However, you then lose the ability to use KULCAD elsewhere.",
+						"If you either point at the door with the adventurer present, or ask him to open it for you, the illusion will be broken."
+					]
+				},
+				{
+					"title": "How can I get the adventurer where I need him?",
+					"answers": [
+						"If you aren't sure where you need him, don't continue.",
+						"What is the distinguishing property of adventurers?",
+						"Greed.",
+						"If you are holding a treasure and you have charmed the adventurer (using VAXUM), he will follow you. Also, you might try leaving a treasure at the place you need him. He will see it and enter."
+					]
+				}
+			]
+		},
+		{
+			"title": "Maps",
+			"questions": [
+				{
+					"title": "Are any of the maps useful?",
+					"answers": [
+						"The ones on the walls are useful for a student of history.",
+						"The one on the ground is very useful for a student of thaumaturgy.",
+						"You are a student of thaumaturgy.",
+						"It is useful to you. Q.E.D."
+					]
+				},
+				{
+					"title": "How can I remove the globe?",
+					"answers": [
+						"Have you tried the SWANZO spell?",
+						"There's no SWANZO spell in this game. You can't remove the globe."
+					]
+				},
+				{
+					"title": "What is the map on the ground good for?",
+					"answers": [
+						"Does the configuration of points and lines remind you of anyplace in the game?",
+						"The map is a representation of the Translucent Rooms and their connections."
+					]
+				},
+				{
+					"title": "What can I do with the pencil?",
+					"answers": [
+						"Have you tried writing with it?",
+						"Have you tried writing with it on the map?",
+						"Have you tried connecting points on the map or erasing lines between points?",
+						"Connecting and disconnecting the points on the map CHANGES the Translucent Room maze to agree with the map."
+					]
+				},
+				{
+					"title": "Can I sharpen the pencil?",
+					"answers": [
+						"Did you try?",
+						"No, this is a magic pencil. You can't sharpen it. For that matter, you can't get any more eraser, either."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Translucent Rooms",
+			"questions": [
+				{
+					"title": "What is the evil presence I feel in the Translucent Rooms?",
+					"answers": [
+						"If you haven't felt it, don't read any of the following questions and their answers.",
+						"Read any good legends lately?",
+						"The Legend of the Unseen Terror is strange, but true. The Terror lives in the unconnected room in the Translucent Room maze. If you can feel its presence, you have given it a chance to escape!"
+					]
+				},
+				{
+					"title": "Once the evil presence is released, can I stop it?",
+					"answers": [
+						"If you can trap it within the Translucent Room area, you will be safe.",
+						"Try erasing lines on the map to disconnect passages. The presence moves once per turn, much as you do."
+					]
+				},
+				{
+					"title": "Why stir up the evil presence anyway?",
+					"answers": [
+						"Re-read the Legend of the Unseen Terror in the legend book.",
+						"The Terror was lured by a spell of great power. It might be helpful in defeating Krill."
+					]
+				},
+				{
+					"title": "How, exactly, do I get the powerful scroll?",
+					"answers": [
+						"Please don't read these answers unless you have read the preceding ones. The problem will otherwise be ruined.",
+						"You can use the pencil to make new passages in the Translucent Rooms. Similarly, you can use the eraser to disconnect passages. You can type anything like MAKE A LINE BETWEEN POINT X AND POINT Z and DISCONNECT THE LINE BETWEEN P AND J.",
+						"There are a number of solutions to the problem, which can be stated this way: How can I connect passages in such a way as to re-trap the Terror within the maze while allowing access to its lair?",
+						"The following sequence will work: Start at room M. CONNECT P AND F. CONNECT M AND P. ERASE M AND V. ERASE P AND F. Then, you can simply go into room P and collect the scroll which is lying there."
+					]
+				}
+			]
+		},
+		{
+			"title": "The Winding Stair",
+			"questions": [
+				{
+					"title": "How long does the Winding Stair continue?",
+					"answers": [
+						"How far have you gone?",
+						"The stair appears to continue infinitely in both directions.",
+						"Doesn't that seem a bit peculiar?",
+						"The stair cannot be real. It must be magical.",
+						"Thus, you can dispel the illusion with the KULCAD spell. Be careful!"
+					]
+				}
+			]
+		},
+		{
+			"title": "Krill",
+			"questions": [
+				{
+					"title": "Who is Krill?",
+					"answers": [
+						"Ask the game."
+					]
+				},
+				{
+					"title": "What is he doing?",
+					"answers": [
+						"He is in the process of subjugating the land by means of a potent spell that he is composing.",
+						"If you don't stop him, eternal night will fall over the land.",
+						"And that will be that."
+					]
+				},
+				{
+					"title": "Why do things in the castle seem to deteriorate with time?",
+					"answers": [
+						"Perhaps entropy is increasing dramatically in the area.",
+						"You may have had a dream that tells you why.",
+						"Krill is doing it, by means of some terrible spell, which he is brewing during the course of the game. The effects of the spell are the dissolution of rooms in the castle and the lengthening of night."
+					]
+				},
+				{
+					"title": "How can I find Krill?",
+					"answers": [
+						"Did you try summoning him?",
+						"His fortress is protected by a magic spell.",
+						"Unless you have the KULCAD spell, don't continue.",
+						"There is a dream involving climbing which is a hint.",
+						"The endless stair is an illusion. If you KULCAD it, you can enter his hideaway. But watch out!"
+					]
+				},
+				{
+					"title": "How do I survive the bottomless pit?",
+					"answers": [
+						"Presumably, you have used KULCAD on the Winding Stair. If not, proceed no further.",
+						"The bannister turns into a useful scroll. (What a coincidence!)",
+						"The scroll contains the IZYUK spell, which allows you to fly.",
+						"Don't waste time using GNUSTO first, especially since you don't have your spell book. Cast it directly from the scroll.",
+						"Krill's hideaway is to the east. Be careful!"
+					]
+				},
+				{
+					"title": "How can I defeat Krill?",
+					"answers": [
+						"If you haven't found the KREBF spell, don't continue.",
+						"You can undo some of the damage he is causing by casting KREBF in the various rooms that have been damaged by him.",
+						"This is only a temporary measure, however, and somewhat of a waste of time.",
+						"If you haven't entered the Warlock's Tower, don't continue.",
+						"You must fend off the two monsters that he sets after you and then deliver the coup de grace.",
+						"If you haven't gotten the GUNCHO scroll, read no further.",
+						"You must use the GUNCHO spell on him when you get the chance.",
+						"Remember that you had best memorize all the spells you'll need before entering Krill's presence."
+					]
+				},
+				{
+					"title": "How do I defeat the dragon?",
+					"answers": [
+						"Did you try throwing the water at him?",
+						"Did you try befriending him?",
+						"Do you have any spell that might be more appropriate?",
+						"Use the GONDAR spell. See the section on the Library."
+					]
+				},
+				{
+					"title": "How do I defeat the shape?",
+					"answers": [
+						"It's pretty mean.",
+						"It could certainly be friendlier.",
+						"Use the VAXUM spell on it. Alternately, the CLEESH spell will also work."
+					]
+				},
+				{
+					"title": "How do I defeat the mongoose?",
+					"answers": [
+						"If you haven't found the FILFRE spell, don't continue.",
+						"Have you read the book \"Mongoose on the Loose?\"",
+						"How about using the YUMZO spell?",
+						"There is no mongoose in this game.",
+						"By the way, do you know the plural of mongoose?",
+						"Just checking."
+					]
+				}
+			]
+		},
+		{
+			"title": "Odds and Ends",
+			"questions": [
+				{
+					"title": "What is happening when my mind is \"probed\"?",
+					"answers": [
+						"Krill is the one doing the probing.",
+						"Whenever you try to write or cast a spell of great power, both Krill and Belboz, being powerful wizards, take notice."
+					]
+				},
+				{
+					"title": "Is Enchanter really Zork IV?",
+					"answers": [
+						"Is the sky green?",
+						"Does a bear build laser weapons in the woods?"
+					]
+				},
+				{
+					"title": "Will there be a sequel to Enchanter?",
+					"answers": [
+						"Certainly.",
+						"ZORK V."
+					]
+				}
+			]
+		},
+		{
+			"title": "When You're Done",
+			"questions": [
+				{
+					"title": "Do the spells' names have any meaning?",
+					"answers": [
+						"Some do, some don't.",
+						"GONDAR is an anagram of DRAGON. NITFOL is a backwards, and somewhat modified, rendering of Hugh Lofting's name (he is the author of the Dr. Doolittle stories).",
+						"EXEX is an obscure reference to a very slow mainframe computer. FILFRE is a modification of the expression \"Feel Free,\" which is commonly uttered by game writers.",
+						"The others are either obliquely related to the original mainframe version of ZORK, or totally arbitrary. Any relation between the names of spells and persons, living or dead, is a pity for the persons involved."
+					]
+				},
+				{
+					"title": "Do spells work on unintended objects?",
+					"answers": [
+						"Oh yes. Try a bunch of spells on random objects."
+					]
+				}
+			]
+		},
+		{
+			"title": "Have You Tried...?",
+			"tocTitle": "Have You Tried?",
+			"subTitle": "(When you think you've seen everything)",
+			"questions": [
+				{
+					"orderedList": false,
+					"answers": [
+						"casting the KULCAD spell on everything remotely magical?",
+						"casting the GUNCHO spell on everything that moves?",
+						"talking to or befriending the guards in the cell? the dragon?",
+						"listening to the guards' conversation while in the cell?",
+						"sleeping outside the grounds of the castle?",
+						"using BLORB on yourself? the adventurer?",
+						"giving something to the adventurer after he says \"Hello, Sailor\"?",
+						"using ZIFMIA to summon the implementers? Krill? Belboz? Entharion? the Terror?",
+						"using CLEESH on Krill? the adventurer? yourself? the guards?",
+						"reading all of the signs along the Long Road?",
+						"leading the adventurer or turtle onto the Winding Stair?",
+						"writing on spell scrolls with the pencil?"
+					]
+				}
+			]
+		},
+		{
+			"title": "Scoring Points",
+			"subTitle": "(As a last resort)",
+			"questions": [
+				{
+					"orderedList": false,
+					"answers": [
+						"20 points for opening the iron gate",
+						"20 points for making light",
+						"25 points for finding the GONDAR scroll (in the Library)",
+						"10 points for opening the egg",
+						"5 points for repairing the scroll destroyed by the egg",
+						"25 points for finding the OZMOO scroll (in the gallery)",
+						"35 points for surviving the sacrifice",
+						"25 points for opening the jewelled box",
+						"20 points for finding the VAXUM scroll (in the bedroom)",
+						"10 points for summoning the adventurer",
+						"35 points for getting behind the guarded door",
+						"50 points for getting the GUNCHO scroll and re-trapping the Terror",
+						"25 points for getting the KULCAD scroll using the turtle",
+						"10 points for eating food (the first time)",
+						"15 points for drinking water (the first time)",
+						"20 points for dispelling the stair illusion",
+						"50 points for defeating Krill",
+						"400 Total points"
+					]
+				}
+			]
+		},
+		{
+			"title": "The Spells and Their Locations",
+			"subTitle": "(Use only as a last resort)",
+			"questions": [
+				{
+					"orderedList": false,
+					"columns": [
+						{"header": "Spells", "width": "20%"},
+						{"header": "Locations", "width": "80%"}
+					],
+					"answers": [
+						["GNUSTO", "Spell Book"],
+						["BLORB", "Spell Book"],
+						["NITFOL", "Spell Book"],
+						["FROTZ", "Spell Book"],
+						["REZROV", "Hovel (given by the crone)"],
+						["KREBF", "Forest"],
+						["CLEESH", "Swamp (under a lily pad)"],
+						["GONDAR", "Library (in the rat hole)"],
+						["OZMOO", "Gallery (behind the lighted portrait)"],
+						["VAXUM", "Bedroom (in the bedpost)"],
+						["EXEX", "Dungeon cell (behind a loosened block)"],
+						["MELBOR", "Closet (in the jewelled box)"],
+						["ZIFMIA", "Jewel Room (in the egg)"],
+						["FILFRE", "Map Room"],
+						["KULCAD", "Control Room"],
+						["IZYUK", "Winding Stair/Bottomless Pit"],
+						["GUNCHO", "Translucent Room \"P\""]
+					]
+				}
+			]
+		}
+	]	
+}

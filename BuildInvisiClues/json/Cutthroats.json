@@ -1,0 +1,1110 @@
+{
+	"revision": 1.0,
+	"header": {
+		"title": "Cutthroats",
+		"year": "1984",
+		"copyright": "© 1984 Infocom, Inc.",
+		"image": "data:image/jpeg;base64,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",
+		"section1": {
+			"title": "What are InvisiClues?",
+			"content": [
+				"The essence of all interactive fiction is solving problems. The purpose of InvisiClues hint booklets is to maximize your enjoyment of the story by giving you only the hints that you need to continue and complete the story.",
+				"The invisible hints generally progress from a gentle nudge in the right direction to a full answer. The questions, which naturally have to be visible, have been worded to give away as little as possible. You should not use the presence or absence of a question on a certain topic as an indication of importance, and you should not assume that long answers are associated with important questions. This booklet includes dummy questions and answers in order to minimize the problem."
+			]
+		},
+		"section2": {
+			"title": "How to use this booklet",
+			"content": [
+				"If you are stuck at some point in CUTTHROATS, find the question that most pertains to your problem. Uncap the marker and run it once over the first hint. The writing will appear within a second or two. If you are still stumped, go on to the next hint. (Remember to recap the marker when you are done to prevent it from drying out. And by the way, these books are not immortal. InvisiClues you've developed will start to fade after six months.)",
+				"For example:"
+			]
+		},
+		"section3": {
+			"content": [
+				"Your marker contains more than enough fluid to develop the entire booklet. However, if your marker gets lost or dries out, you can order a replacement marker for a nominal fee.",
+				"Once you have finished CUTTHROATS, try the things in the \"For Your Amusement\" section. Don't look at them before you've finished, though — they may reveal the answers to certain problems."
+			]
+		},
+		"sampleQuestions": {
+			"questions": [
+				{
+					"title": "What are those furry little things jumping off my boat?",
+					"answers": [
+						"Could they be lemmings?",
+						"They're rats deserting a sinking ship.",
+						"The rising water in your cabin should have tipped you off."
+					]
+				}
+			]
+		}
+	},
+	"sections": [
+		{
+			"questions": [],
+			"title": "Merchants of Hardscrabble Island",
+			"subSections": [
+				{
+					"questions": [
+						{
+							"title": "Who slipped the note under my door?",
+							"answers": [
+								"Have you read it?",
+								"If you have then you know...",
+								"...Johnny slipped you the note."
+							]
+						},
+						{
+							"title": "I can't find my room key. What should I do?",
+							"answers": [
+								"Did you leave it in the lock?",
+								"No? Then it must be where you left it last night.",
+								"Look in the dresser."
+							]
+						},
+						{
+							"title": "If I'm a diver, where's all my gear?",
+							"answers": [
+								"Have you searched your room thoroughly?",
+								"Obviously not or you would have found it.",
+								"Look in the closet."
+							]
+						},
+						{
+							"title": "Should I trust the desk clerk?",
+							"answers": [
+								"Is there any reason not to?",
+								"You can trust him to give you the time of day.",
+								"But that is about all he's good for in this story."
+							]
+						},
+						{
+							"title": "Someone broke into my room. Should I call the police?",
+							"answers": [
+								"There's only one thing on this island shabbier than your room and that's the security at the Red Boar Inn.",
+								"No need to call the police, they would only tell you what you already know.",
+								"Don't leave your door unlocked when you leave."
+							]
+						}
+					],
+					"title": "Red Boar Inn"
+				},
+				{
+					"questions": [
+						{
+							"title": "What is McGinty Salvage?",
+							"answers": [
+								"This is the island's only salvage outfit.",
+								"Most of the locals have worked for McGinty at one time or another."
+							]
+						},
+						{
+							"title": "What was McGinty Salvage built on top of?",
+							"answers": [
+								"An empty lot?",
+								"The Old Indian Burial Ground.",
+								"Find the pickaxe and start digging in the cellar.",
+								"Be careful not to rupture a water main or the cellar will fill with water and you will drown.",
+								"Did you find the axe? It's pretty tough to find since there isn't one in this story. Only develop the answers you need."
+							]
+						}
+					],
+					"title": "McGinty Salvage"
+				},
+				{
+					"questions": [
+						{
+							"title": "How do I rent a boat?",
+							"answers": [
+								"You can't afford it alone.",
+								"You'll have to throw in with Johnny.",
+								"Let Johnny take care of it."
+							]
+						},
+						{
+							"title": "Johnny stormed out of Outfitters. What went wrong?",
+							"answers": [
+								"If you haven't met Johnny at Point Lookout, don't develop any more answers for this question.",
+								"One of two things may have gone wrong.",
+								"You carried your passbook into Outfitters, and McGinty was there and saw it...",
+								"...so he knew you were up to something.",
+								"Or you tried to rent or buy something in front of McGinty...",
+								"...so he knew you were up to something.",
+								"Wait for McGinty to leave before you buy or rent anything."
+							]
+						}
+					],
+					"title": "Outfitters International"
+				},
+				{
+					"questions": [
+						{
+							"title": "Diving Book",
+							"answers": [
+								"You already know the ins and outs of diving.",
+								"Therefore, you don't need the diving book."
+							]
+						},
+						{
+							"title": "Nautical Charts",
+							"answers": [
+								"Hmmmm, a chart would come in handy...",
+								"...but $150 is a lot of clams.",
+								"Better use the one in the shipwreck book."
+							]
+						},
+						{
+							"title": "Flashlight",
+							"answers": [
+								"You'll need one if you're going diving. It's dark down there.",
+								"$24 is a lot of clams for a flashlight...",
+								"...and this is a lot of flashlight.",
+								"Buy it."
+							]
+						},
+						{
+							"title": "Dry Cell",
+							"answers": [
+								"You'll need it to power something."
+							]
+						},
+						{
+							"title": "Recording of Popular Whale Songs",
+							"answers": [
+								"You won't want to miss this monster album.",
+								"Hits like \"Oooouuououm if you love me,\" and the ever-popular \"Oooooouuuuuuaaaaaaaaauuuoop\" (dance track).",
+								"These are songs that your whole family will enjoy.",
+								"This recording is not available in any store, not even Outfitters.",
+								"So why are you wasting your time developing this clue?"
+							]
+						},
+						{
+							"title": "Tube of Putty",
+							"answers": [
+								"This waterproof putty will fix any crack or leak you encounter.",
+								"It might come in handy when you're underwater.",
+								"If you are salvaging the Leviathan, you'll need the putty."
+							]
+						},
+						{
+							"title": "C Battery",
+							"answers": [
+								"You'll need this to power something."
+							]
+						},
+						{
+							"title": "Net",
+							"answers": [
+								"Do you plan on doing some fishing?",
+								"If you do, then you'll want to bring this along.",
+								"But why would you want to go fishing when there is treasure to be found?",
+								"You don't need the net."
+							]
+						},
+						{
+							"title": "Spear Gun",
+							"answers": [
+								"A spear gun would be nice to have.",
+								"Especially if you plan on doing some diving in dangerous waters.",
+								"It's too bad that Outfitters doesn't have any in stock."
+							]
+						},
+						{
+							"title": "Compass",
+							"answers": [
+								"Why would you want a compass, with your keen sense of direction?",
+								"Unfortunately, not everyone is so clear-headed.",
+								"Outfitters doesn't have any in stock."
+							]
+						},
+						{
+							"title": "Location Box",
+							"answers": [
+								"You have only $603 in your bank account. You'll need another $397.",
+								"How are you going to get the extra cash?",
+								"Have you tried robbing the bank?",
+								"Well, maybe that isn't such a good idea.",
+								"There's no way that you can possibly afford the location box...",
+								"...and you don't need it anyway."
+							]
+						},
+						{
+							"title": "Portable Electromagnet",
+							"answers": [
+								"It seems to be quite attractive (groan!).",
+								"You may find a need for it.",
+								"If you've rented the Mary Margaret, then you don't have enough money to buy the magnet.",
+								"If you are salvaging the Leviathan, you'll need the electromagnet."
+							]
+						},
+						{
+							"title": "Water Wings",
+							"answers": [
+								"You don't need to buy the water wings. They're free with every purchase of $10 or more.",
+								"Water wings? What water wings?",
+								"Remember, Diver Dan says, \"For safety's sake, don't assume the presence of a question means it's important. Also don't assume long answers are always associated with important questions.\""
+							]
+						},
+						{
+							"title": "Shark Repellent Canister",
+							"answers": [
+								"Have you tried diving without any protection from sharks?",
+								"If you have, you'll realize that $20 is a small price to pay for your legs.",
+								"You'd better buy the shark repellent."
+							]
+						},
+						{
+							"title": "Winch",
+							"answers": [
+								"This might come in handy if you're looking for a way to pull something up...",
+								"...but you might as well save your money...",
+								"...because you and the crew will be able to haul up just about anything.",
+								"You don't need the winch."
+							]
+						},
+						{
+							"title": "Anchor",
+							"answers": [
+								"It's likely the ship you rent will come equipped with one.",
+								"You don't need the anchor."
+							]
+						}
+					],
+					"title": "Should I Buy Any of the Following Items?",
+					"toc": false
+				},
+				{
+					"questions": [
+						{
+							"title": "Small Air Compressor",
+							"answers": [
+								"Have you examined your air tank?",
+								"Pretty low, huh?",
+								"Diver Dan says, \"For safety's sake, never dive without air in your tank.\"",
+								"If you're renting the Night Wind, you'll need to rent the compressor.",
+								"The Mary Margaret comes equipped with an air compressor."
+							]
+						},
+						{
+							"title": "Diving Cage",
+							"answers": [
+								"You don't have enough money.",
+								"So you can't rent it.",
+								"Which is convenient since you don't need it."
+							]
+						}
+					],
+					"title": "Should I Rent Any of the Following Items?",
+					"toc": false
+				},
+				{
+					"questions": [
+						{
+							"title": "I'm awfully hungry. How's the food at The Shanty?",
+							"answers": [
+								"Not bad. It'll really hit the spot.",
+								"If you want some food, type BUY A MEAL or ORDER FOOD."
+							]
+						},
+						{
+							"title": "I'm awfully thirsty. I could use a drink.",
+							"answers": [
+								"What'll you have, water or grog?",
+								"If you'd like water, type BARTENDER, GIVE ME SOME WATER.",
+								"If it's grog you want, type BARTENDER, GIVE ME SOME GROG.",
+								"But Diver Dan says, \"For safety's sake, don't drink too much. Remember: Friends don't let friends dive drunk.\"",
+								"And besides, if you drink too much, you'll probably end up passing out and getting killed."
+							]
+						},
+						{
+							"title": "I'm drunk. How do I sober up?",
+							"answers": [
+								"What about a cold shower?",
+								"There doesn't seem to be any shower on the island.",
+								"No wonder everyone on the island smells so bad.",
+								"There's really only one thing to do. Just wait for your head to clear.",
+								"But if you've drunk too much too fast, you're finished."
+							]
+						},
+						{
+							"title": "What does the parrot do?",
+							"answers": [
+								"He provides comic relief."
+							]
+						}
+					],
+					"title": "The Shanty"
+				},
+				{
+					"questions": [
+						{
+							"title": "What is the Sunken Chip?",
+							"answers": [
+								"It's Hardscrabble Island's premiere computer store.",
+								"They carry a complete line of Infocom's interactive fiction.",
+								"The Sunken Chip? You must have had a few too many at The Shanty.",
+								"You'd better sober up and recheck your map.",
+								"Hey — you aren't drunk! You're cheating!!",
+								"We're going to send Pete the Rat over to your house to cook dinner!",
+								"Bet you've never tried rat chops."
+							]
+						}
+					],
+					"title": "The Sunken Chip"
+				},
+				{
+					"questions": [
+						{
+							"title": "Hey, I'm almost broke! How do I get some more money?",
+							"answers": [
+								"You have a savings account.",
+								"Bring your passbook to Mariners' Trust.",
+								"Type WITHDRAW $(amount)."
+							]
+						},
+						{
+							"title": "I've got my money. What now?",
+							"answers": [
+								"What do you usually do with your passbook?",
+								"You'd better put it in a safe place.",
+								"Put it in your room...",
+								"...and be sure to lock the door."
+							]
+						}
+					],
+					"title": "Mariners' Trust"
+				}
+			]
+		},
+		{
+			"questions": [],
+			"title": "Points of Interest on Hardscrabble Island",
+			"subSections": [
+				{
+					"questions": [
+						{
+							"title": "What can I do here?",
+							"answers": [
+								"Absolutely nothing...",
+								"...unless you're looking for a shortcut to the alley.",
+								"Type GO SOUTH."
+							]
+						}
+					],
+					"title": "The Vacant Lot"
+				},
+				{
+					"questions": [
+						{
+							"title": "Why is this a point of interest?",
+							"answers": [
+								"Good question. It's not really very interesting...",
+								"...except for the fact that it runs parallel to Wharf Road.",
+								"Therefore, the back doors of all of the Wharf Road establishments are located along this alley.",
+								"Unfortunately, they are all locked.",
+								"There is also a window here.",
+								"It leads into McGinty Salvage.",
+								"If you open the window and climb through it, you can get into McGinty's office, but be careful...",
+								"...if McGinty sees you enter through the window, he'll shoot you.",
+								"Be sure to look in the window to make sure McGinty isn't inside before you climb through."
+							]
+						}
+					],
+					"title": "The Back Alley"
+				},
+				{
+					"questions": [
+						{
+							"title": "How can I take a ferry to the mainland?",
+							"answers": [
+								"You'll need a token to board the ferry.",
+								"You can try to buy one at Outfitters.",
+								"They're all out? Try Mariners' Trust.",
+								"No luck there either? Oh well, it seems that there's really no way to get on board the ferry.",
+								"In fact, you can't get to the mainland at all.",
+								"Sorry."
+							]
+						}
+					],
+					"title": "The Ferry"
+				},
+				{
+					"questions": [
+						{
+							"title": "How do I find Hevlin's tombstone?",
+							"answers": [
+								"Have you examined all of them?",
+								"Examine the tombstone three to the left of Big Chief Swanzo's.",
+								"To decode the message, you'll need the 3-D glasses from the Sunken Ship.",
+								"Then chant the message three times while diving off of Point Lookout, wearing your water wings on your feet.",
+								"Well, maybe that isn't such a good idea... ",
+								"...since there isn't any Indian Burial Ground.",
+								"There's plenty of developing fluid, but save it for the answers you really need."
+							]
+						}
+					],
+					"title": "The Old Indian Burial Ground"
+				}
+			]
+		},
+		{
+			"questions": [],
+			"title": "The Meetings",
+			"subSections": [
+				{
+					"questions": [
+						{
+							"title": "Johnny wants me to join him. What should I do?",
+							"answers": [
+								"This is the first exciting thing to happen to you in weeks.",
+								"Go along with him.",
+								"Anyhow, there's no way to continue the story if you don't join up with him."
+							]
+						}
+					],
+					"title": "At the Shanty, 8:30 a.m."
+				},
+				{
+					"questions": [
+						{
+							"title": "What time do I have to be at the lighthouse?",
+							"answers": [
+								"If you didn't accept Johnny's offer at The Shanty, don't bother coming to the lighthouse. The deal has been called off.",
+								"Otherwise, be at the lighthouse at 9:30 a.m."
+							]
+						},
+						{
+							"title": "Johnny showed me the dinner plate. What should I do?",
+							"answers": [
+								"Type EXAMINE THE DINNER PLATE.",
+								"Have you read your shipwreck book?",
+								"There's only one wreck listed that used to be owned by the Hollywood Cruise Lines.",
+								"So you know that you have to salvage the Leviathan."
+							]
+						},
+						{
+							"title": "Johnny showed me the china teacup. What should I do?",
+							"answers": [
+								"Show him the teabag that Pete the Rat gave you.",
+								"You haven't found the tea bag yet? That's not surprising, since there isn't any tea bag in this story.",
+								"Furthermore, there isn't any teacup."
+							]
+						},
+						{
+							"title": "Johnny showed me the gold coin. What should I do?",
+							"answers": [
+								"Have you tried typing EXAMINE THE COIN?",
+								"Did you read your shipwreck book?",
+								"There is only one Portuguese wreck listed in the book.",
+								"So you know you have to salvage the Sao Vera."
+							]
+						},
+						{
+							"title": "Johnny showed me the Chile con Carne recipe. What should I do?",
+							"answers": [
+								"Don't let Pete the Rat prepare it, whatever you do!",
+								"Chile con Carne recipe?",
+								"You must be daydreaming! There's no Chile con Carne recipe in this story."
+							]
+						},
+						{
+							"title": "Okay, I know which wreck to salvage. What now?",
+							"answers": [
+								"Play it cool. You don't need to tell anyone yet.",
+								"Wait until someone asks you for the wreck's depth...",
+								"...and no one will ask you for this yet. Be patient.",
+								"Johnny will ask you for the depth at a later meeting. There's nothing more you can do here."
+							]
+						},
+						{
+							"title": "I got killed at the lighthouse. What went wrong?",
+							"answers": [
+								"Did you have your passbook with you at the time?",
+								"You did? Did you notice someone following you?",
+								"You did? Was it McGinty?",
+								"Yes? McGinty saw your passbook and got suspicious, so he followed you.",
+								"And you know the rest of the story.",
+								"You don't need to bring your passbook to the lighthouse."
+							]
+						}
+					],
+					"title": "At the Lighthouse"
+				},
+				{
+					"questions": [
+						{
+							"title": "What time should I be at Point Lookout?",
+							"answers": [
+								"If you didn't go to the meeting at the lighthouse, don't bother coming to this one. The deal has been called off.",
+								"Otherwise, get to Point Lookout at 10:45 a.m."
+							]
+						},
+						{
+							"title": "Johnny wants to see the money. What do I do?",
+							"answers": [
+								"If you have it, show it to him.",
+								"If you don't have it, you're dead."
+							]
+						},
+						{
+							"title": "Johnny wants to know if the treasure is deeper than 200 feet. What should I tell him?",
+							"answers": [
+								"It depends on what he showed you at the lighthouse.",
+								"If he showed you the plate, then you'll be salvaging the Leviathan.",
+								"If he showed you the coin, then you'll be salvaging the Sao Vera.",
+								"Check the map in the book of shipwrecks for the depth of the wreck you'll be salvaging.",
+								"Tell Johnny whether it's deeper than 200 feet."
+							]
+						}
+					],
+					"title": "At Point Lookout"
+				},
+				{
+					"questions": [
+						{
+							"title": "Should I attend this meeting?",
+							"answers": [
+								"You weren't invited, were you?",
+								"Do you usually go to meetings uninvited?",
+								"Nothing important happens at this meeting.",
+								"Skip it. You don't need to be there."
+							]
+						}
+					],
+					"title": "At the Shanty, 11:45 a.m."
+				},
+				{
+					"questions": [
+						{
+							"title": "I wasn't invited to a meeting at the ferry. What meeting?",
+							"answers": [
+								"The one you weren't invited to.",
+								"It takes place at the ferry landing at noon.",
+								"It's a secret meeting, but you can go and see what transpires.",
+								"McGinty meets the Weasel...",
+								"...and they make a deal.",
+								"McGinty tells the Weasel to kill you once the Weasel has the treasure. Then McGinty and the Weasel will have it all to themselves.",
+								"The Weasel also hands something to McGinty.",
+								"McGinty takes it back to his office.",
+								"Of course, the meeting won't take place if McGinty has no reason to be suspicious (like if he never saw you and Johnny together in Outfitters International)."
+							]
+						},
+						{
+							"title": "After the meeting at the ferry landing, McGinty puts something suspicious on his desk. What can I do with it?",
+							"answers": [
+								"Have you examined the object?",
+								"It is an envelope containing the Weasel's collateral for the deal made at the ferry landing.",
+								"Have you tried taking it?",
+								"It seems to be quite important to McGinty, doesn't it?",
+								"It would be perfect proof that the Weasel is a traitor."
+							]
+						},
+						{
+							"title": "How can I prove my suspicions about the traitor?",
+							"answers": [
+								"If you don't know about the envelope, see the previous question.",
+								"You'll have to get the envelope in McGinty's office.",
+								"But you won't be able to take it while McGinty is in his office.",
+								"After McGinty gets back from his meeting at the ferry landing, he drops off the envelope and leaves again.",
+								"Go into McGinty Salvage once he leaves.",
+								"The front door is locked? You'll have to find another way.",
+								"McGinty's also has a back door...",
+								"...and a rear window.",
+								"Open the window, climb through it, and take the envelope."
+							]
+						},
+						{
+							"title": "Okay, I have my proof. Now what?",
+							"answers": [
+								"You should show it to someone.",
+								"How about Johnny? He's the captain.",
+								"But you'll have to wait for the right moment.",
+								"Don't show it to Johnny until you've put out to sea. You'll need every crew member to make the voyage."
+							]
+						},
+						{
+							"title": "Who took my proof?",
+							"answers": [
+								"The only person who has reason to.",
+								"The Weasel took the envelope.",
+								"You'll have to hide the envelope.",
+								"There's only one safe hiding place on the boat.",
+								"Hide the envelope under your mattress."
+							]
+						}
+					],
+					"title": "At the Ferry Landing"
+				}
+			]
+		},
+		{
+			"questions": [],
+			"title": "The Boats",
+			"subSections": [
+				{
+					"questions": [
+						{
+							"title": "What can I do with the small machine?",
+							"answers": [
+								"Have you examined it?",
+								"Open the compartment. Did you buy the dry cell at Outfitters?",
+								"If not, you'd better buy one before you leave.",
+								"Once the dry cell is in the compartment, try turning the machine on and walking around the boat.",
+								"The machine clicks faster around metal, doesn't it?",
+								"Therefore, the machine is a metal detector."
+							]
+						},
+						{
+							"title": "How do I use my deep-sea diving suit?",
+							"answers": [
+								"Go to the aft deck.",
+								"Put on the suit.",
+								"Connect the airhose to the suit.",
+								"Turn the compressor on."
+							]
+						}
+					],
+					"title": "The Mary Margaret"
+				},
+				{
+					"questions": [
+						{
+							"title": "How do I use the drill?",
+							"answers": [
+								"Did you buy the C battery at Outfitters?",
+								"If not, you'd better buy it before you set out to sea.",
+								"Put the C battery in the panel, and close it.",
+								"To drill something, type TURN ON THE DRILL. DRILL (OBJECT).",
+								"But use it sparingly; the C battery wears down quickly."
+							]
+						},
+						{
+							"title": "What diving equipment should I bring on board the Night Wind?",
+							"answers": [
+								"Since the Night Wind has no compressor, you'd better supply your own.",
+								"You can rent a portable model at Outfitters.",
+								"You'll also need your SCUBA gear: the mask, tank, flippers, and wet suit."
+							]
+						},
+						{
+							"title": "How do I prepare for my dive?",
+							"answers": [
+								"Air in your tank would be nice.",
+								"Use the air compressor to fill your tank.",
+								"Put on your wet suit and your other SCUBA gear.",
+								"Then dive."
+							]
+						}
+					],
+					"title": "The Night Wind"
+				}				
+			]
+		},
+		{
+			"questions": [
+				{
+					"title": "I'm ready to make the dive. How do I get into the water?",
+					"answers": [
+						"Type DIVE."
+					]
+				},
+				{
+					"title": "Yow! Sharks are around me. What should I do?",
+					"answers": [
+						"Did you buy the shark repellent at Outfitters?",
+						"If so, now is the time to use it.",
+						"To activate the repellent, open the canister.",
+						"But only open it underwater. The fumes are deadly."
+					]
+				}
+			],
+			"title": "Taking the Plunge"
+		},
+		{
+			"questions": [],
+			"title": "The Wrecks",
+			"subSections": [
+				{
+					"questions": [
+						{
+							"title": "I'm having trouble finding The Fianna. How do I get there?",
+							"answers": [
+								"Have you checked your book of shipwrecks?",
+								"It says that The Fianna might have drifted slightly.",
+								"Have you tried slightly shifting the coordinates when you give them to Johnny?",
+								"You won't find The Fianna because it washed away."
+							]
+						},
+						{
+							"title": "I found the golden statuette, but I can't carry it. What now?",
+							"answers": [
+								"You could leave it behind.",
+								"But the others wouldn't like that and would probably kill you.",
+								"Drop your air tank.",
+								"Take the statue and swim for the surface.",
+								"If you don't make it, that's okay. There is no golden statuette.",
+								"Stick to developing answers you really need."
+							]
+						}
+					],
+					"title": "The Fianna"
+				},
+				{
+					"questions": [
+						{
+							"title": "What should I do with the mine?",
+							"answers": [
+								"Did you try to move the mine out of the way?",
+								"Maybe that isn't such a good idea after all.",
+								"Perhaps one of the things you brought along will be of help.",
+								"Try the electromagnet.",
+								"Type PUT THE ELECTROMAGNET AGAINST THE MINE.",
+								"Then turn on the electromagnet and drop it."
+							]
+						},
+						{
+							"title": "I can't get through the narrow passageway. What should I do?",
+							"answers": [
+								"Turn back?",
+								"If you are wearing the deep sea diving suit, the airhose will tear.",
+								"You should be wearing your skin-diving suit and gear.",
+								"Take off your air tank and swim through the narrow passage."
+							]
+						},
+						{
+							"title": "What do I do with the lobster?",
+							"answers": [
+								"Take it.",
+								"Board the ship and have Pete the Rat boil some water.",
+								"Make sure that you tie its claws before you boil it.",
+								"Hold on! What lobster? There isn't a lobster in this story!",
+								"You must be having a culinary hallucination."
+							]
+						},
+						{
+							"title": "How do I open the safe?",
+							"answers": [
+								"What would a safe cracker use?",
+								"Yeah, but Outfitters doesn't sell dynamite.",
+								"How about a drill?",
+								"Drill the safe with the drill...",
+								"...but only if you bought the C battery for the drill."
+							]
+						},
+						{
+							"title": "Oh no! The case is filling with water. What now?",
+							"answers": [
+								"You have a little time before the water reaches the stamps and ruins them.",
+								"Take the stamps to a dry place so you can seal the crack.",
+								"Take the case to the air-filled room.",
+								"If you opened the door in the air-filled room, consider the stamps ruined. You can't drain the case unless the room is filled with air.",
+								"Drain the water out of the case...",
+								"...by drilling a hole in it.",
+								"Seal the crack with the putty you bought at Outfitters.",
+								"You didn't buy the putty? Type RESTART...",
+								"...you'll need the putty to seal the case.",
+								"Now you can carry the case safely to the surface."
+							]
+						},
+						{
+							"title": "Why does the drill sputter and die?",
+							"answers": [
+								"Cheap battery?",
+								"It's only a C battery; it can't last forever.",
+								"Use the drill sparingly.",
+								"Don't keep it on any longer than necessary."
+							]
+						}
+					],
+					"title": "The Leviathan"
+				},
+				{
+					"questions": [
+						{
+							"title": "How do I get below deck?",
+							"answers": [
+								"Use the elevator?",
+								"You can't get below deck.",
+								"You can do all you have to do here on the top deck.",
+								"You don't do anything here.",
+								"There is no treasure here.",
+								"You went to the wrong wreck."
+							]
+						},
+						{
+							"title": "What can I do with the air tank I found here?",
+							"answers": [
+								"You could try breathing from it...",
+								"...but it's filled with laughing gas.",
+								"Ha ha ha ha ha ha ha ha ha ha ha ha...",
+								"...ha ha ha ha ha ha ha ha ha ha ha ha.",
+								"Laughing gas? ha ha ha There's no air tank here! ha ha ha",
+								"The laugh's on you."
+							]
+						}
+					],
+					"title": "The Intransigent"
+				},
+				{
+					"questions": [
+						{
+							"title": "The ladder broke when I climbed down it, and now I'm trapped. What should I do?",
+							"answers": [
+								"Don't worry about that now. You'll be able to get back up later. Just concentrate on getting the treasure."
+							]
+						},
+						{
+							"title": "How do I get past the bunks?",
+							"answers": [
+								"You must move the bunks.",
+								"You'll need a lever.",
+								"Use the iron bar. The iron bar is with the bunch of pikes on the middle deck (two rooms forward of the room with the bunks).",
+								"Type MOVE THE BUNKS WITH THE BAR."
+							]
+						},
+						{
+							"title": "Okay, I've gotten past the bunks, but they keep on falling back again. What should I do?",
+							"answers": [
+								"You'll need something to hold the bunks in place.",
+								"How about using something to prop them up?",
+								"Use the iron bar.",
+								"Type WEDGE THE BAR UNDER THE BUNKS or PUT THE BAR UNDER THE BUNKS."
+							]
+						},
+						{
+							"title": "What do I do with the squid?",
+							"answers": [
+								"Fried Calamari is an excellent dish. Kill the squid.",
+								"Oh, it killed you? Sorry.",
+								"Don't do anything with it.",
+								"Don't spend more than one turn with the squid...",
+								"...and it will let you go about your business."
+							]
+						},
+						{
+							"title": "I found two chests. How do I know which one contains the treasure?",
+							"answers": [
+								"You can't open the chests underwater.",
+								"So you'll have to think of another way to figure out which chest is which.",
+								"Since there are only two chests, you have a 50% chance of being correct if you make a guess.",
+								"Maybe something you brought along with you will help you to decide.",
+								"Use the small machine.",
+								"It's a metal detector.",
+								"Did you buy the dry cell and put it into the machine before you dove?",
+								"If you did, then just turn it on when you're in the room with a chest. It'll click fast when you're in the room with the treasure."
+							]
+						},
+						{
+							"title": "Okay, I know which chest contains the treasure. How can I get it to the boat?",
+							"answers": [
+								"You can't carry it.",
+								"There is another way to get it out of the wreck.",
+								"Type PUSH THE CHEST TO THE WEST.",
+								"When the orange line swings by, tie it to the chest.",
+								"When you get back up to the boat, Johnny will pull up the chest."
+							]
+						},
+						{
+							"title": "What should I do in the skeleton room?",
+							"answers": [
+								"Have you examined the skeletons?",
+								"Try looking in the scabbard.",
+								"Take the sword, you'll need it."
+							]
+						},
+						{
+							"title": "How do I climb up the broken ladder to the middle deck?",
+							"answers": [
+								"Have you tried standing on something?",
+								"You still have one chest left.",
+								"Push the chest into the room with the broken ladder.",
+								"Stand on the chest and climb up the ladder."
+							]
+						},
+						{
+							"title": "How do I climb up the broken ladder to the top deck?",
+							"answers": [
+								"Actually, you can't...",
+								"...although the solution to this problem is similar to that of the one before.",
+								"In this case, use the cask instead of the chest.",
+								"Stand on the cask.",
+								"You'll need the rope on the broken mast to get back up, although there's no way you can reach the rope while it's wrapped around the mast.",
+								"Perhaps if you cut it, one end may be freed.",
+								"You can use an item that you've picked up.",
+								"How about the sword?",
+								"Type CUT THE ROPE WITH THE SWORD.",
+								"Climb up the rope."
+							]
+						}
+					],
+					"title": "The Sao Vera"
+				}               
+			]
+		},
+		{
+			"questions": [
+				{
+					"title": "When is high tide?",
+					"answers": [
+						"Look it up on your tide chart.",
+						"You don't know today's date?",
+						"There's only one way to find out.",
+						"The date is printed on something you have.",
+						"Look at your passbook after you have gone to the bank."
+					]
+				},
+				{
+					"title": "I found a bug! The clock on the status line stopped. Should I call Infocom?",
+					"answers": [
+						"No. Don't call Infocom. It's not a bug.",
+						"The clock is actually your watch.",
+						"Perhaps you should examine it.",
+						"Maybe even listen to it.",
+						"It's a wind-up watch.",
+						"So it must be wound."
+					]
+				},
+				{
+					"title": "Someone is following me everywhere I go. What should I do?",
+					"answers": [
+						"There's nothing you can do now. It's too late.",
+						"Remember McGinty's double take?",
+						"He saw you with the passbook.",
+						"Now he knows you're up to something and will stop you from renting a boat."
+					]
+				},
+				{
+					"title": "How many wrecks are there in this story?",
+					"answers": [
+						"Well, the book of shipwrecks says there are four.",
+						"But that book was written a long time ago.",
+						"Since then one of the wrecks was washed away.",
+						"That wreck was The Fianna.",
+						"You can go to the other three...",
+						"...but you won't find any treasure in the Intransigent.",
+						"The only wrecks with treasure are the Leviathan and the Sao Vera."
+					]
+				}
+			],
+			"title": "General Questions"
+		},
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"columnHeaders": false,
+					"columns": [
+						{"width": "85%"},
+						{"width": "15%", "align": "right"}
+					],
+					"answers": [
+						["Joining up with Johnny at The Shanty", "20"],
+						["Meeting Johnny at the lighthouse", "20"],
+						["Showing your money to Johnny at Point Lookout", "20"],
+						["Taking the passbook (for the first time)", "10"],
+						["Johnny renting a boat at Outfitters", "20"],
+						["Getting out to sea", "20"],
+						["Touching down on the Sao Vera or the Leviathan", "20"],
+						["Returning to the boat from ocean floor or wreck", "25"],
+						["Bringing back the treasure", "25"],
+						["Not getting your throat cut at the end", "20"]
+					]
+				},
+				{
+					"orderedList": false,
+					"title": "The Fianna:",
+					"columnHeaders": false,
+					"columns": [
+						{"width": "85%"},
+						{"width": "15%", "align": "right"}
+					],
+					"answers": [
+						["There are no points awarded for salvaging this wreck", "0"]
+					]
+				},
+				{
+					"orderedList": false,
+					"title": "The Leviathan:",
+					"columnHeaders": false,
+					"columns": [
+						{"width": "85%"},
+						{"width": "15%", "align": "right"}
+					],
+					"answers": [
+						["Getting in the room aft of the air-filled room", "25"],
+						["Taking the glass case", "25"]
+					]
+				},
+				{
+					"orderedList": false,
+					"title": "The Intransigent:",
+					"columnHeaders": false,
+					"columns": [
+						{"width": "85%"},
+						{"width": "15%", "align": "right"}
+					],
+					"answers": [
+						["There are no points awarded for salvaging this wreck", "0"],
+						["This space intentionally left blank"],
+						["This space intentionally left blank"],
+						["This space intentionally left blank"]
+					]
+				},
+				{
+					"orderedList": false,
+					"title": "The Sao Vera:",
+					"columnHeaders": false,
+					"columns": [
+						{"width": "85%"},
+						{"width": "15%", "align": "right"}
+					],
+					"answers": [
+						["Getting past the fallen bunks", "10"],
+						["Tying the orange line to a chest", "15"],
+						["Climbing back up to the middle deck", "10"],
+						["Cutting the rope on the mast", "15"]
+					]
+				},
+				{
+					"orderedList": false,
+					"columnHeaders": false,
+					"columns": [
+						{"width": "85%"},
+						{"width": "15%", "align": "right"}
+					],
+					"answers": [
+						["Total", "250"]
+					]
+				}
+			],
+			"title": "How Points Are Scored",
+			"subTitle": "(use only as a last resort)"
+		},
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"title": "Have you tried:",
+					"answers": [
+						"Getting drunk?",
+						"Robbing the bank or yourself or someone else?",
+						"Typing TELL TIME?",
+						"Looking up?",
+						"Placing your passbook on the bank table?",
+						"Asking the teller about money or the bank?",
+						"Throwing something at someone?",
+						"Giving the coordinates of the island to Johnny on the boat?",
+						"Searching the Weasel (more than once)?",
+						"Touching yourself?",
+						"Taking McGinty's cigar?",
+						"Typing FOLLOW ME?",
+						"Smelling Pete the Rat (or any other character)?",
+						"Typing SWING ME?",
+						"Eating another character?"
+					]
+				}
+			],
+			"title": "For Your Amusement",
+			"subTitle": "(after you have finished the game)"
+		}
+	]
+}

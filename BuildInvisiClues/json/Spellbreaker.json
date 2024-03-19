@@ -1,0 +1,1402 @@
+{
+	"revision": 1.0,
+	"numberedList": true,
+    "header": {
+		"title": "Spellbreaker",
+		"year": "1985",
+		"copyright": "© 1985 Infocom, Inc.",
+		"image": "data:image/jpeg;base64,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",
+		"section1": {
+			"title": "What are InvisiClues?",
+			"content": [
+				"Spellbreaker is an expert-level interactive story. Although it is designed to allow players who are relatively inexperienced to see many of the puzzles, even expert players may find some of them difficult to solve without help. Even the best players playing the \"easiest\" games sometimes get stuck or just don't know what to do next. The purpose of InvisiClues is to help get you past such bottlenecks.",
+				"The invisible hints are designed to progress from a gentle (or sometimes silly) nudge in the right direction to a full answer. The questions and section headings attempt to give away as little as possible. Usually the section heading is a relatively innocuous geographical marker, and some questions and answers for the puzzles will appear in two sections in slightly altered form. You should not assume that a question on a certain topic indicates that the topic even exists in the story. Also, the length of the responses may or may not mean anything. This booklet includes dummy questions and dummy clues to help confuse that issue."
+			]
+		},
+		"section2": {
+			"title": "How to use this booklet.",
+			"content": [
+				"If you are stuck at some point in Spellbreaker, find the question that most pertains to your problem. Uncap the marker and run it once over the first hint. The writing will appear within a second or two. If you are still stumped, go on to the next hint. (Remember to recap the marker when you are done to prevent it from drying out. And by the way, these books are not immortal. InvisiClues you've developed will start to fade after six months.)",
+				"For example:"
+			]
+		},
+		"section3": {
+			"content": [
+				"Your marker contains more than enough fluid to develop the entire booklet. However, if your marker gets lost or dries out, you can order a replacement marker for a nominal fee.",
+				"Once you have finished the story, try the things in the \"For Your Amusement\" section. Don't look at them before you've finished, though — they may reveal too much about certain puzzles."
+			]
+		},
+		"sampleQuestions": {
+			"questions": [
+				{
+					"title": "How can I get into the secret conference room?",
+					"answers": [
+						"Perhaps you don't need to get in at all.",
+						"Some magic spells work over a distance.",
+						"If you use GILCH (astral travel) on yourself, you can pass through the walls taking only your mind, and listen to the meeting within."
+					]
+				}
+			]
+		}
+	},
+    "sections": [
+        {
+            "questions": [
+                {
+                    "title": "Why are the guildmasters so angry at me?",
+                    "answers": [
+                        "Listen and find out.",
+                        "They seem to think you and your fellow mages are responsible for the deterioration of magic."
+                    ]
+                },
+                {
+                    "title": "Who is this \"shadowy figure\" who turned all of the other guildmasters into amphibians?",
+                    "answers": [
+                        "The \"shadowy figure\" left the cloud in Belwit Square when it teleported away.",
+                        "The word \"shadowy\" is an indication of the figure's persona.",
+                        "You'll find out more about this \"shadowy figure\" as the story progresses..."
+                    ]
+                },
+                {
+                    "title": "Belwit Square is filled with orange smoke. How do I get rid of it?",
+                    "answers": [
+                        "There are two ways you can do it.",
+                        "You can use a spell in your spell book that will do the trick.",
+                        "Try LESOCH.",
+                        "Or you can wait for the smoke to dissipate."
+                    ]
+                },
+                {
+                    "title": "How do I get into the storied Manse?",
+                    "answers": [
+                        "The guard at the door seems remarkably surly, no?",
+                        "Actually, you can't get into the Manse."
+                    ]
+                },
+                {
+                    "title": "What's this cube I found?",
+                    "answers": [
+                        "The story tells you that it's just a white featureless cube.",
+                        "Actually, it is completely featureless, but you can do more than use your normal senses.",
+                        "JINDAK before you pick up the cube and you'll see one feature of the cube.",
+                        "Then see the next question."
+                    ]
+                },
+                {
+                    "title": "How do I get out of Belwit Square to get to the rest of the story?",
+                    "answers": [
+                        "Have you examined all of the items you're carrying?",
+                        "Your spell book in particular.",
+                        "Did you notice anything that wasn't there before?",
+                        "The BLORPLE spell will \"explore an object's mystic connections.\"",
+                        "If you haven't gotten the orange smoke in Belwit Square to dissipate then don't continue developing this question.",
+                        "JINDAK may indicate an object of interest.",
+                        "CAST BLORPLE on some of your items and see what happens.",
+                        "One item in particular has lots of \"mystic connections\" that need to be explored.",
+                        "That item is the featureless cube that remains after the orange smoke dissipates. BLORPLE THE FEATURELESS CUBE."
+                    ]
+                }
+            ],
+            "title": "The Council Chamber"
+        },
+        {
+            "questions": [
+                {
+                    "title": "I just arrived in Packed Earth, and it's pitch black! What do I do?",
+                    "answers": [
+                        "If you can't get light somehow, you're in big trouble!",
+                        "FROTZ any item you're carrying, or yourself."
+                    ]
+                },
+                {
+                    "title": "I just arrived in Packed Earth; where did the cube go?",
+                    "answers": [
+                        "Actually, the cube didn't go anywhere.",
+                        "You are, in a magical sense, within the cube.",
+                        "Don't worry, you'll get it back when you leave the room."
+                    ]
+                },
+                {
+                    "title": "Why can't I force my way through the north exit?",
+                    "answers": [
+                        "Because it is a magic exit.",
+                        "It's very strong magic, so you need very special conditions to be able to get through this exit.",
+                        "More on this later..."
+                    ]
+                },
+                {
+                    "title": "I went west from Packed Earth to get to Cave Entrance, but going east from Cave Entrance doesn't get me back to Packed Earth. What happened? How do I get back to Packed Earth?",
+                    "answers": [
+                        "Packed Earth is a \"magic\" room. It is not connected to other rooms in a physical way.",
+                        "To get back to Packed Earth, go there the same way you got there in the first place.",
+                        "BLORPLE THE CUBE."
+                    ]
+                },
+                {
+                    "title": "I've gotten past the ogre, but I can't take anything from his lair.",
+                    "answers": [
+                        "You must have used GIRGOL to pass the ogre.",
+                        "Bad idea. Everything is frozen in place and the ogre kills you as soon as the time stop wears off. There's another solution to the puzzle. See the next question."
+                    ]
+                },
+                {
+                    "title": "How do I get past the ogre?",
+                    "answers": [
+                        "Have you listened to the sounds the ogre makes?",
+                        "Have you YOMINed the ogre?",
+                        "The ogre has a bad case of hay fever.",
+                        "If there was a drugstore nearby you could help the ogre out.",
+                        "But since there's no such thing in this story, you'll have to take advantage of this weakness.",
+                        "Do you have anything that could aggravate his allergy?",
+                        "If not, then you'll have to solve another puzzle first.",
+                        "What about the weed in the Meadow (south from the Soft Room)?",
+                        "What? Shaking the weed at the ogre didn't affect the ogre very much? Perhaps if the weed was bigger.",
+                        "Must this one be spelled out for you?",
+                        "THROCK the weed.",
+                        "Make sure to plant the weed first, though.",
+                        "PLANT THE WEED THEN THROCK IT (in Ogre Cave or at Cave Entrance)."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the box?",
+                    "answers": [
+                        "JINDAK before you pick it up. It's magic.",
+                        "You can identify any cube by putting it into the box and looking at the design that appears on the box.",
+                        "The box has another feature. More on this later if you can't figure it out by then."
+                    ]
+                },
+                {
+                    "title": "Help! I have all these featureless white cubes and I'm having trouble keeping them straight. What can I do?",
+                    "answers": [
+                        "You can use the box to identify the cubes. See above.",
+                        "You probably could find a way to label the cubes.",
+                        "If you have the burin, you can WRITE \"WORD\" ON THE CUBE. From then on you can refer to the \"word\" cube."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the avalanche?",
+                    "answers": [
+                        "It keeps people like you from reaching the hut at the top of the mountain.",
+                        "It kills people not smart enough to get out of its way."
+                    ]
+                },
+                {
+                    "title": "How do I get to the small building at the top of the mountain?",
+                    "answers": [
+                        "You can't go up without starting an avalanche...",
+                        "...but you don't have to die if the rocks are frozen in place.",
+                        "If you haven't found the GIRGOL scroll, don't continue developing clues in this question.",
+                        "If you've already used up the GIRGOL scroll in another place, you won't be able to get up the mountain. Bad move.",
+                        "CAST GIRGOL.",
+                        "If you still can't go up, try casting GIRGOL when the rocks are more spread out.",
+                        "Try starting an avalanche before casting GIRGOL.",
+                        "Start the avalanche, then GIRGOL when the rocks form almost a continuous curtain. Then go up."
+                    ]
+                },
+                {
+                    "title": "Where can I find some mountaineering equipment?",
+                    "answers": [
+                        "If you haven't GIRGOLed the cliff, don't continue.",
+                        "There is no mountaineering equipment. There's a way to freeze the rocks in place when they're not so jumbled. See the previous question."
+                    ]
+                },
+                {
+                    "title": "How do I start an avalanche at Cliff Top?",
+                    "answers": [
+                        "You must be crazy!! Why would you want to do a thing like that???",
+                        "Well, if you really want to, type MOVE A ROCK or PUSH A ROCK."
+                    ]
+                },
+                {
+                    "title": "Why won't the hermit let me take his cube?",
+                    "answers": [
+                        "ASK THE HERMIT ABOUT THE CUBE."
+                    ]
+                },
+                {
+                    "title": "How do I get the hermit to give me the cube?",
+                    "answers": [
+                        "You can't bribe the hermit with food or buy the cube from him with the coin, so you'll have to find another way to get the hermit to let you have the cube.",
+                        "Have you noticed how poorly built the hut is? It needs the cube as a keystone to hold it up.",
+                        "You could fix up the hut a little.",
+                        "A spell could help here.",
+                        "If you haven't been to the roc's nest, you don't have that spell.",
+                        "If you've found the CASKLY spell, now is the time to use it.",
+                        "CASKLY THE HUT THEN TAKE THE CUBE."
+                    ]
+                },
+                {
+                    "title": "What can I do to get by the serpent?",
+                    "answers": [
+                        "The serpent is huge, and makes a complete loop (having swallowed its own tail). It fills the corridor. You probably can't force or sneak your way by it.",
+                        "If you haven't gotten past the ogre, don't go any further.",
+                        "You'll have to find a way to shrink the serpent.",
+                        "Have you found the LISKON spell yet?",
+                        "LISKON THE SERPENT."
+                    ]
+                },
+                {
+                    "title": "What is the zipper?",
+                    "answers": [
+                        "Have you tried opening and closing it?",
+                        "Or JINDAKing it?",
+                        "The zipper is really a huge container...",
+                        "...which safely stores anything in a different dimension.",
+                        "It's bigger on the inside than on the outside."
+                    ]
+                },
+                {
+                    "title": "Is there anything else interesting about the zipper?",
+                    "answers": [
+                        "It's hard to tell. It's dark inside the zipper.",
+                        "There are three ways to find out if anything's in there.",
+                        "Try putting a FROTZed item into the zipper for light, then looking.",
+                        "Or REACH INTO THE ZIPPER.",
+                        "Or CLIMB INTO THE ZIPPER THEN LOOK. You can fit."
+                    ]
+                },
+                {
+                    "title": "Why can't I go down through the muddy hole?",
+                    "answers": [
+                        "Well, the story tells you that \"you pull back\" when you realize that there isn't solid ground down there.",
+                        "But, if you're persistent (or foolhardy)...",
+                        "...why not try going down again?"
+                    ]
+                },
+                {
+                    "title": "How do I get down off a roc?",
+                    "answers": [
+                        "You can't. You get down off a goose.",
+                        "You can't. Relax and enjoy the ride."
+                    ]
+                },
+                {
+                    "title": "How do I get the cube from In Roc Nest?",
+                    "answers": [
+                        "The mother roc is very protective of her egg. You won't be able to get near the cube while she's in the nest.",
+                        "There is a way to get to the roc's nest without being taken there by the mother roc.",
+                        "If you haven't been to the Air Room, leave the nest and work on another puzzle for now. Don't forget to take the stained scroll while you are here; it's useful.",
+                        "Have you managed to get the magic carpet in the bazaar? If not, get it.",
+                        "You can fly to the roc's nest on the magic carpet.",
+                        "Is the mother roc still there? There's a time when you can get to the roc's nest without the mother roc being home.",
+                        "Have you been to the Guard Tower above the Dungeon? If not, don't continue.",
+                        "The speck on the horizon is the mother roc.",
+                        "If you fly on the magic carpet to the roc's nest (four turns to the west from the tower) the mother roc will be away from the nest, searching for food. Now's your chance to get the cube."
+                    ]
+                },
+                {
+                    "title": "Holy farmer's breakfast! The roc's egg hatched! What do I do???",
+                    "answers": [
+                        "This time, you're really outmatched. Don't fight the baby roc.",
+                        "All you can do is run away.",
+                        "You have one turn to get away, so if you don't have any means of immediate escape, you might as well type KILL ME."
+                    ]
+                },
+                {
+                    "title": "How do I get out of the roc's nest?",
+                    "answers": [
+                        "It's a long way down.",
+                        "You can BLORPLE out.",
+                        "You can fly back on your magic carpet, but only if you know the location of the Guard Tower."
+                    ]
+                }
+            ],
+            "title": "The Packed Earth Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What do I do with the idol?",
+                    "answers": [
+                        "Have you examined it?",
+                        "It's kind of difficult from down here.",
+                        "Try climbing the idol.",
+                        "Then try examining its features...",
+                        "...such as its eye or mouth."
+                    ]
+                },
+                {
+                    "title": "How do I get the eye?",
+                    "answers": [
+                        "Why not use a tool to help you out?",
+                        "Try PRY THE OPAL WITH THE BURIN or PRY THE EYE WITH THE KNIFE."
+                    ]
+                },
+                {
+                    "title": "I've found a cube here, but I can't take it.",
+                    "answers": [
+                        "It's because your hand is too big or, if you LISKONed yourself, your arm is too short to fit between the fangs and reach the cube.",
+                        "The idol is solid basalt, so you can't break into its mouth or REZROV it open.",
+                        "Maybe you can get the rodent idol to open its mouth.",
+                        "You'll probably have to MALYON THE IDOL.",
+                        "At what time is your mouth open widest?",
+                        "Right. When you're yawning.",
+                        "Try to CAST ESPNIS ON THE IDOL to make it yawn.",
+                        "Basalt idols can't yawn, so you'll need to MALYON THE IDOL before you CAST ESPNIS ON IT. This will get it to yawn."
+                    ]
+                },
+                {
+                    "title": "I've gotten the idol to \"open up\" to me, but it \"closed\" again. What do I do?",
+                    "answers": [
+                        "He who hesitates isn't always lost.",
+                        "Wait for one turn after casting MALYON before casting ESPNIS. This will catch the idol in a full cheek-stretching yawn."
+                    ]
+                }
+            ],
+            "title": "The Temple"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How can I get through the west exit?",
+                    "answers": [
+                        "See the north exit question for Packed Earth."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the rabbit?",
+                    "answers": [
+                        "The author of the story is fond of rabbits, so he put one in the meadow.",
+                        "He is fond of various other creatures as well."
+                    ]
+                },
+                {
+                    "title": "I followed the rabbit down into the rabbit hole. What do I do with the cakes I found?",
+                    "answers": [
+                        "Wait a minute. This isn't <em>Alice in Wonderland</em>...",
+                        "...or even <em>Zork II</em>.",
+                        "Phony questions deserve phony answers!"
+                    ]
+                },
+                {
+                    "title": "How do I get the weed out of the ground? It's stuck.",
+                    "answers": [
+                        "You can cut it with the shears.",
+                        "If you do that you won't be able to use the weed later. The shears are a trap. There is another way to get the weed.",
+                        "Just PULL THE WEED again. It will come out the second time with its roots intact."
+                    ]
+                },
+                {
+                    "title": "Why doesn't the weed grow?",
+                    "answers": [
+                        "Perhaps conditions in the vicinity aren't optimal, even when a THROCK is cast.",
+                        "Plants need water, light, and nutrients to grow.",
+                        "Have you tried planting the weed?"
+                    ]
+                }
+            ],
+            "title": "The Soft Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Oh no!! Some of my possessions got damaged when I went south! What can I do??",
+                    "answers": [
+                        "There are two ways to prevent your spell book and scrolls from being ruined by water and one way to fix them after the fact.",
+                        "If you have CASKLY and BLORPLE memorized, you can BLORPLE out of the wet area, then CASKLY your book or scroll back to perfection. If you don't have them learned, you have to RESTORE.",
+                        "You can leave your items behind and come back to pick them up later. Don't forget to learn BLORPLE so you can come back to them.",
+                        "Or you can put your spell book and any scrolls into the zipper, then close it before you enter the water. You still need to learn BLORPLE because you can't get your spell book in order to learn spells without ruining your spell book."
+                    ]
+                },
+                {
+                    "title": "How can I stop the grouper from eating my cube?",
+                    "answers": [
+                        "You could TAKE THE CUBE before the grouper can eat it...",
+                        "...but then the grouper eats the bottle...",
+                        "...and you need the bottle to finish the story.",
+                        "Can you think of anything of yours that it might rather eat?",
+                        "Did you pick up the fish or bread when you were in the Guild Hall? If so, skip the next clue.",
+                        "You can get back there if you die and then go north from the Boneyard. Type KILL ME.",
+                        "If you have fish or bread, drop it when you first arrive in mid-ocean...",
+                        "...then you can get the bottle and the cube.",
+                        "Take the cube first. It's sinking while the bottle is floating."
+                    ]
+                },
+                {
+                    "title": "What's so special about the bottle, anyhow?",
+                    "answers": [
+                        "Ever heard of a message in a bottle?",
+                        "Well, that phrase applies here. OPEN THE BOTTLE.",
+                        "But make sure you're on dry land! Otherwise you'll ruin the contents!"
+                    ]
+                },
+                {
+                    "title": "Can I do anything useful with the grouper?",
+                    "answers": [
+                        "Yes.",
+                        "Unless you haven't found the Dungeon Cell.",
+                        "Have you found the moldy book? If so, you might have a spell to cast on the grouper.",
+                        "SNAVIG THE GROUPER and go DOWN."
+                    ]
+                },
+                {
+                    "title": "I found another cube! But I can't get it. What should I do?",
+                    "answers": [
+                        "Wait until you \"become yourself\" again...",
+                        "...then get the cube and swim upward. Don't forget the stuff you dropped when you turned into a grouper.",
+                        "But don't hesitate or you'll drown!"
+                    ]
+                },
+                {
+                    "title": "How do I get up through the trap door in the Oubliette?",
+                    "answers": [
+                        "You can REZROV it open. But you still can't reach it.",
+                        "Maybe you could reach it if the water level were higher?",
+                        "Then again, the pipes are too big to block with anything. You need magic to reach the top.",
+                        "Unless you've been to the Air Room, don't continue.",
+                        "There is an item off the Air Room that will help you go up.",
+                        "It's a spell, not the carpet.",
+                        "You should protect your spell book since you're going to be swimming in water again. This is becoming a habit.",
+                        "TINSOT WATER to freeze the channel to raise the water level.",
+                        "AGAIN. The first time didn't completely freeze it since the water is running so quickly.",
+                        "You can't quite reach the top. If you only had a platform to float on?",
+                        "All your items sink, but ice doesn't.",
+                        "TINSOT THE WATER to create an ice floe.",
+                        "Now climb on the ice floe, then go up through the trap door."
+                    ]
+                },
+                {
+                    "title": "Is there anything to do with the narrow channel?",
+                    "answers": [
+                        "You can do something with it to reach the trap door. See the previous question.",
+                        "Have you tried to reach into either pipe?",
+                        "If so, you'll know that the pipes extend quite a ways in.",
+                        "It would be nice to be able to find out what goes on in there.",
+                        "A spell will help.",
+                        "If you haven't gotten the bottle from mid-ocean, don't go on.",
+                        "LISKON ME. ENTER OUTFLOW PIPE.",
+                        "Did you remember to keep your spell book protected again?"
+                    ]
+                },
+                {
+                    "title": "I've found a moss-covered cube. How do I get it?",
+                    "answers": [
+                        "Type GET CUBE."
+                    ]
+                }
+            ],
+            "title": "The Water Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How can I get off the Glacier without dying?",
+                    "answers": [
+                        "There is no direction that is safe.",
+                        "But you can BLORPLE off."
+                    ]
+                },
+                {
+                    "title": "Can I get a carpet from the merchant?",
+                    "answers": [
+                        "What do you think?",
+                        "Yes."
+                    ]
+                },
+                {
+                    "title": "How do I get a carpet?",
+                    "answers": [
+                        "There's no such thing as a free carpet.",
+                        "Perhaps you can get an idea of the going price for a carpet by consulting your Frobozz Magic Magic Equipment Company catalog.",
+                        "You can bargain by offering increasing numbers of zorkmids until he agrees on a price.",
+                        "If you don't start at 100 zorkmids or more and increase by at least 50 zorkmids per offer, the merchant will think you're trying to cheat him.",
+                        "If you agree on a price above 500 zorkmids, you will have to offer him the opal instead of the coin, as the coin is only worth 500 zorkmids.",
+                        "If you agree on a price of 500 zorkmids, you can give him the coin."
+                    ]
+                },
+                {
+                    "title": "Hey! I didn't get the carpet I wanted!",
+                    "answers": [
+                        "Did you indicate your interest in the blue carpet before he sold it to you, by ASKing MERCHANT ABOUT BLUE CARPET, or offering something to the merchant for the blue carpet?",
+                        "If you didn't, go back and try that.",
+                        "Even so, you can see that the merchant is a very slippery fellow.",
+                        "If you GET BLUE CARPET or ASK MERCHANT FOR BLUE CARPET or GIVE RED CARPET TO MERCHANT after he gives the wrong one to you, he'll give you the right one."
+                    ]
+                },
+                {
+                    "title": "What does the red carpet do?",
+                    "answers": [
+                        "Nothing, it's shabby and nonmagical.",
+                        "This space intentionally left blank.",
+                        "This space intentionally left blank."
+                    ]
+                },
+                {
+                    "title": "What does the blue carpet do?",
+                    "answers": [
+                        "Have you looked under it?",
+                        "Have you JINDAKed it?",
+                        "If so, you'll know that it's a magic carpet.",
+                        "If you SIT ON THE BLUE CARPET and then FLY UP, you'll see how it works."
+                    ]
+                }
+            ],
+            "title": "The Air Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I open the cabinet?",
+                    "answers": [
+                        "You could try unlocking it, if you have a key.",
+                        "No luck, eh? You could try smashing it.",
+                        "You're a thinker, not a brute-force, smelly-armored adventurer.",
+                        "Try a spell.",
+                        "REZROV THE CABINET."
+                    ]
+                },
+                {
+                    "title": "What use is a moldy book?",
+                    "answers": [
+                        "You could try to sell it to a used book dealer.",
+                        "You could wait a while and hope it dries out.",
+                        "Perhaps there's a spell to improve its imperfect condition.",
+                        "CASKLY THE MOLDY BOOK."
+                    ]
+                },
+                {
+                    "title": "What is the speck on the horizon?",
+                    "answers": [
+                        "What speck? Perhaps your glasses are dirty.",
+                        "No glasses, huh?",
+                        "Just wait, you'll find out.",
+                        "It won't even hurt.",
+                        "Much."
+                    ]
+                },
+                {
+                    "title": "I'm in the Boneyard and I didn't die. What happened?",
+                    "answers": [
+                        "Maybe you died and didn't notice.",
+                        "No, you BLORPLEd the cube that leads to the Boneyard. There's more than one way to skin a cat."
+                    ]
+                }
+            ],
+            "title": "The Dungeon"
+        },
+        {
+            "questions": [
+                {
+                    "title": "I don't see anything of value here. Is there?",
+                    "answers": [
+                        "There's a volcano erupting. The scientific interest alone should keep you excited.",
+                        "Oops! What was that?"
+                    ]
+                },
+                {
+                    "title": "Yipes! That lava fragment almost hit me. How do I keep from getting hit by another flying fragment?",
+                    "answers": [
+                        "Don't worry, there'll only be one."
+                    ]
+                },
+                {
+                    "title": "How do I get the fragment?",
+                    "answers": [
+                        "You could take it.",
+                        "Didn't work? Too hot? Maybe it'll cool in time.",
+                        "Didn't cool? You could try cooling it.",
+                        "There are two ways to do that. One is mundane, the other magical.",
+                        "The mundane way is to pour some water on the fragment. Of course, you should have a bottle full of water if you expect to do that.",
+                        "The magical way is to TINSOT THE FRAGMENT. Of course, you must have the TINSOT spell first."
+                    ]
+                }
+            ],
+            "title": "The Light Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Who is Belboz?",
+                    "answers": [
+                        "Type WHO IS BELBOZ."
+                    ]
+                },
+                {
+                    "title": "I don't see anything of value at the Enchanter's Retreat. Is there?",
+                    "answers": [
+                        "Perhaps you can get answers to some of your questions.",
+                        "Perhaps Belboz will be willing to help you if you can convince him you are in need."
+                    ]
+                },
+                {
+                    "title": "How do I know the answer to the question?",
+                    "answers": [
+                        "Look it up on your Enchanter Cards that came with your package.",
+                        "If you don't have them, you can order a new set from Infocom with your proof of purchase.",
+                        "If you bought the hint booklet and not the game, that's a shame. We're not going to tell you the answer in the hint booklet."
+                    ]
+                }
+            ],
+            "title": "The String Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Of what significance is the filigreed carving of a compass rose?",
+                    "answers": [
+                        "We are a computer software company, not art critics.",
+                        "The carving is a decorative hint of things to come.",
+                        "Have you found a real compass rose yet?",
+                        "You can find the real compass rose in the Bare Room, north of the Changing Room.",
+                        "The carving is so well crafted, it might almost be a mold for the real compass.",
+                        "PUT THE ROSE IN THE CARVING. Then see what happens."
+                    ]
+                },
+                {
+                    "title": "How do I get out of the Octagonal Room?",
+                    "answers": [
+                        "You shouldn't leave anything important behind.",
+                        "You should have brought the compass rose with you.",
+                        "If not, you can still BLORPLE out, go back to the Carving Room, and retrieve the compass rose.",
+                        "Putting the compass rose in the carving again \"recharges\" it."
+                    ]
+                },
+                {
+                    "title": "Why are some of the runes silver and some lead?",
+                    "answers": [
+                        "As silver is a precious metal, there is probably something special about the walls with silver runes.",
+                        "Have you tried fiddling with the runes, or touching them?",
+                        "Did you bring the compass rose with you from the Carving Room?",
+                        "TOUCH THE ROSE TO a silver runed wall (other than the north wall) such as THE WEST WALL."
+                    ]
+                },
+                {
+                    "title": "Why are some of the arms of the compass rose silver and some lead?",
+                    "answers": [
+                        "The north arm of the rose turned to lead when the hole appeared in the north wall of the Carving Room.",
+                        "If you haven't done anything successful (gotten anything to happen/change) in the Octagonal Room, don't read on.",
+                        "Have you noticed that whenever you open a hole in the wall, the corresponding arm of your compass rose changes to lead?",
+                        "Q: What is better than a compass that tells you where to go?",
+                        "A: A compass that tells you where you've been!"
+                    ]
+                },
+                {
+                    "title": "Something's changed in the Octagonal Room, but I still don't know WHAT THE *#(?$)@ IS GOING ON?!!",
+                    "answers": [
+                        "Each time you squeeze through an octagonal hole, you go to a new room, NOT to the same room with changed runes.",
+                        "This puzzle is a symmetrical maze; each room has a slightly different",
+                        "description. See the next question for a full explanation."
+                    ]
+                },
+                {
+                    "title": "I don't know, I don't know, I just don't know.",
+                    "answers": [
+                        "This is it. Read the following ONLY if you are completely defeated.",
+                        "The Octagonal Maze is a three by three \"square\" of adjoining Octagonal Rooms.",
+                        "You can go only through walls with silver runes, and only if the corresponding arm of the compass rose is silver. In other words, you can go in any direction only once. (See question \"arms/silver/lead,\" clue 3, above.)",
+                        "Within each room, any wall that borders another interior wall has a silver rune; each wall that faces out of the \"square\" has a lead rune. There are three exceptions: in the Central room, only the north, east, south and west runes are silver; in the Southeast room, the south wall is silver (since it leads back to the Carving Room); in the North room, the west rune is gold.",
+                        "The Carving Room (or Maze Antechamber) leads you north to the Southeast room of the maze, transmutating the north arm of the compass rose. Therefore, you cannot go north again (see 3, above). The cube you seek is in the Northwest room of the maze. You can enter this room only from the North room (work out the logic for yourself). See the next question for how to cross that bridge.",
+                        "There are four possible routes to the north room of the maze, all using the compass rose, of course: <br><span class=\"answer-indent\">W, then NW, then NE.<br><span class=\"answer-indent\">NW, then W, then NE.</span><br><span class=\"answer-indent\">W, then NE, then NW.</span><br><span class=\"answer-indent\">Actually, there are only three.</span>"
+                    ]
+                },
+                {
+                    "title": "I've found a gold rune! What do I do now?",
+                    "answers": [
+                        "You can't do anything to the gold rune.",
+                        "Maybe you can open the plug.",
+                        "REZROV THE PLUG."
+                    ]
+                }
+            ],
+            "title": "The Changing Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "I've done everything I can think of, and I still can't get to the Dragon cube!",
+                    "answers": [
+                        "Don't read the following if you are not completely stumped. This is the complete unabridged unexpurgated solution and explanation to the whole puzzle.",
+                        "In fact, some question has been raised whether we should tell you at all.",
+                        "Our censors say not to.",
+                        "On the other hand, you did pay good money for this, so you are entitled to an answer.",
+                        "On the third hand, there isn't even a Dragon cube in this story, so if you are looking for an answer for it, you've got the wrong hint booklet."
+                    ]
+                }
+            ],
+            "title": "The Good Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How can I get the green eyed rock to help me?",
+                    "answers": [
+                        "Have you tried getting on it and then ordering it around?",
+                        "What is the green eyed rock most interested in...besides itself?",
+                        "Food.",
+                        "ASK THE GREEN EYED ROCK ABOUT FOOD."
+                    ]
+                },
+                {
+                    "title": "How do I get what the rock wants?",
+                    "answers": [
+                        "You may have something in your possession that contains phosphorus.",
+                        "Igneous rock.",
+                        "If you haven't got anything that fits that description, you might try checking out the grouper.",
+                        "Find a lava fragment.",
+                        "Give the fragment to the rock and then climb onto it."
+                    ]
+                },
+                {
+                    "title": "How do I get to the brown eyed rock?",
+                    "answers": [
+                        "Your first step is to map the plain.",
+                        "The northwest corner, or lack of it, is the only irregularity.",
+                        "It's the key to the puzzle.",
+                        "Once you maneuver the green eyed rock through the diagonal, you can trap the brown eyed rock. In chess, this is called \"gaining a tempo.\"",
+                        "If you get close enough, the brown eyed rock will become mesmerized by the presence of the green eyed rock."
+                    ]
+                },
+                {
+                    "title": "How do I get the cube from the brown eyed rock?",
+                    "answers": [
+                        "If you aren't right next to the brown eyed rock, go no further.",
+                        "It's easier than you think.",
+                        "Just jump onto the brown eyed rock and take the cube."
+                    ]
+                }
+            ],
+            "title": "The Plain"
+        },
+        {
+            "questions": [
+                {
+                    "title": "I'm in a dark room. How do I get out?",
+                    "answers": [
+                        "Have you looked for an exit?",
+                        "It's too dark to see an exit. Maybe you should try going in various directions.",
+                        "Remember, there are ten possible directions.",
+                        "Going up will reveal one of those exits that \"you can't seem to force your way through.\"",
+                        "Going down is the normal way out."
+                    ]
+                },
+                {
+                    "title": "Okay, I'm out of the dark room, but it's still dark. What's wrong?",
+                    "answers": [
+                        "Light doesn't behave normally here.",
+                        "Your FROTZ spell won't behave normally here either.",
+                        "Have you gone down from the Dark Cave yet?",
+                        "This is \"grue heaven,\" a place ideally suited for grues, as all light is subdued at best and stays out of the way of the creatures."
+                    ]
+                },
+                {
+                    "title": "I can't get past the grues. Help!",
+                    "answers": [
+                        "Perhaps you would have better luck if you were less conspicuous.",
+                        "When in Rome...",
+                        "In the Grue Cave, SNAVIG A GRUE.",
+                        "Of course, carrying a light when you do this will have bad consequences.",
+                        "If you are a light source, you will have to extinguish yourself first.",
+                        "But you should leave a light source in the Dark Cave to prevent the grues from getting you as you blunder around in the dark."
+                    ]
+                },
+                {
+                    "title": "How do I keep from waking the baby grue?",
+                    "answers": [
+                        "Did you get the blanket from the jail cell?",
+                        "Did you get the bottle of grue's milk from the refrigerator?",
+                        "What blanket? What bottle? What refrigerator?",
+                        "What baby grue? You're in the wrong grue lair.",
+                        "You're even in the wrong hint booklet!"
+                    ]
+                },
+                {
+                    "title": "I keep dying in the light pool!",
+                    "answers": [
+                        "This is not a very safe place for a grue to be.",
+                        "A prudent grue would get out of there pretty quickly.",
+                        "There's a way out of the pool other than back up to the cave.",
+                        "There's a nice pillar in front of you.",
+                        "CLIMB THE PILLAR."
+                    ]
+                }
+            ],
+            "title": "The Dark Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I get back to the Volcano Base from the Volcano?",
+                    "answers": [
+                        "The same way you got there before.",
+                        "This is the same volcano, but you can't get there from here directly."
+                    ]
+                },
+                {
+                    "title": "What is that outcropping?",
+                    "answers": [
+                        "It's an outcropping.",
+                        "It's made of something that has a very high melting point.",
+                        "Isn't it frustrating that you can't get to it?",
+                        "If you LOOK AT OUTCROPPING, you might want to get there even more."
+                    ]
+                },
+                {
+                    "title": "How do I get to the outcropping?",
+                    "answers": [
+                        "You do have a magic carpet; you could try to fly there.",
+                        "But be sure to SAVE before you try it.",
+                        "You could try to TINSOT THE CARPET to protect it from the extreme heat.",
+                        "The magic carpet isn't the answer.",
+                        "Have you tried to build a bridge from all the cubes you've collected? You might be able to freeze them together...",
+                        "It won't work! You're a magician, not an engineer! Bridges aren't the answer!"
+                    ]
+                },
+                {
+                    "title": "How do I avoid the heat of the lava?",
+                    "answers": [
+                        "Any sufficiently arcane magic is indistinguishable from technology.",
+                        "There must be a magic item or spell that would help.",
+                        "Have you ever wondered about those exits from the cube rooms that don't seem to be open?",
+                        "You should figure out how you can use the gold box. It does have an interesting property that you might be able to use. Try leaving it behind.",
+                        "Try this sequence: Get your favorite cube. Put it into the box. Remove the cube from the box.",
+                        "Toss the box onto the outcropping. Now BLORPLE the cube you just removed from the box. Try something different: go through the cube room exit that you couldn't go through before. (For example, the East exit is the magical exit from the Water Room.)",
+                        "Surprise! If you did everything right, you should have been able to get through the magical exit, and you now should be standing on the outcropping!",
+                        "Don't forget to take the cube once you get there."
+                    ]
+                },
+                {
+                    "title": "How can I get off the outcropping now?",
+                    "answers": [
+                        "How about a BLORPLE?"
+                    ]
+                }
+            ],
+            "title": "The Volcano"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What use is the treasure?",
+                    "answers": [
+                        "This space intentionally left blank."
+                    ]
+                },
+                {
+                    "title": "How do I get the vault door open?",
+                    "answers": [
+                        "Try REZROVing it.",
+                        "If this doesn't work, then your REZROV spell isn't strong enough. You have to find some way of augmenting it.",
+                        "There's no YONK spell in this story.",
+                        "You can't augment your REZROV spell unless you've found the outcropping and gotten to it. Don't read any further if you haven't gotten there yet.",
+                        "Did you notice the feeling of power when you picked up the cube from the outcropping?",
+                        "If you have that cube in your possession, then REZROV will open the vault door."
+                    ]
+                },
+                {
+                    "title": "I have a pile of junk in my inventory. How did that get there?",
+                    "answers": [
+                        "Do you notice what's missing in your inventory?",
+                        "The \"treasure\" turned into junk when you left the Inner Vault by BLORPLing.",
+                        "Why are you collecting treasure anyway? You're supposed to be collecting cubes in order to save the world."
+                    ]
+                },
+                {
+                    "title": "What happens to all the cubes I took from the Outer Vault?",
+                    "answers": [
+                        "You can never leave the Outer Vault with a BLORPLE spell without losing all the cubes you picked up there.",
+                        "However, if you BLORPLE one of the Outer Vault cubes and don't end up in the Nondescript Room, you'll get back the cube you BLORPLEd when you leave that room as you normally do."
+                    ]
+                },
+                {
+                    "title": "What's going on in here?",
+                    "answers": [
+                        "Only one of the cubes is the \"real cube,\" and the rest are magical fakes.",
+                        "You're supposed to get the real cube and BLORPLE out of the Outer Vault with it.",
+                        "If you BLORPLE a fake cube you end up in a Nondescript Room.",
+                        "The real cube changes position each time you enter the Outer Vault.",
+                        "You can't SAVE and RESTORE to solve this puzzle by brute force. Isn't that nasty?"
+                    ]
+                },
+                {
+                    "title": "How do I prevent the alarm fairy and guards from showing up?",
+                    "answers": [
+                        "You can't.",
+                        "If you cast a REZROV spell in the Outer Vault they will show up immediately.",
+                        "Otherwise they will show up after a predetermined number of spells cast.",
+                        "The number is three, unless you brought the treasure into the Outer Vault with you, in which case it is two. It can take three spells to determine the right cube, so it's best to leave the treasure behind, since you don't need it. No doubt it was placed there to trip up thieves.",
+                        "Also, putting a cube into the gold box counts as a spell, as the box works by magic."
+                    ]
+                },
+                {
+                    "title": "How do I get past the guards and down the hallway out of the Bank?",
+                    "answers": [
+                        "You can't get past the guards.",
+                        "Don't even try spells. Well, try some, just for fun."
+                    ]
+                },
+                {
+                    "title": "How do I find out which cube I want?",
+                    "answers": [
+                        "A spell will help you identify the correct cube. But you only have three spells (maximum) to do it. Then the alarm fairy and the guards show up.",
+                        "The spell isn't BLORPLE, it's JINDAK!",
+                        "JINDAK when you first enter the room. You'll notice something unusual about the two piles.",
+                        "The \"real cube\" doesn't glow at the same intensity as the fake cubes. But...",
+                        "...it could be brighter OR dimmer.",
+                        "You have enough time for only two more JINDAKs (three in all) before you have to grab the correct cube and BLORPLE it out of here.",
+                        "This is a variation of a classic coin-weighing puzzle.",
+                        "To get the correct cube from the Outer Vault, enter the Outer Vault without the treasure. Have all your items in the zipper so you can easily move cubes around. Have JINDAK memorized thrice and BLORPLE memorized once. Develop clue 9 and follow the directions.",
+                        "The first JINDAK should be done with four cubes on each pile. TAKE X1, X2, X7, X8. JINDAK. (X3, X4, X5, X6 on the first pile. X9, X10, X11, X12 on the second pile.) If the piles are even then develop clue 10. If the piles are uneven, notice which pile is brighter, then develop clue 13.",
+                        "TAKE X3, X4. PUT X1, X2 IN THE FIRST PILE. JINDAK. (X1, X2, X5, X6 on the first pile. The second pile remains the same.) If the piles are even then develop clue 11. If the piles are uneven, then develop clue 12.",
+                        "TAKE X1. PUT X7 ON THE FIRST PILE. JINDAK. (X7, X2, X5, X6 on the first pile. The second pile remains the same.) If the piles are even then BLORPLE X8. If the piles are uneven then TAKE X7. BLORPLE IT. Now develop clue 17.",
+                        "TAKE X1. PUT X7 ON THE FIRST PILE. JINDAK. (X7, X2, X5, X6 on the first pile. The second pile remains unchanged.) If the piles are even then BLORPLE X1. If the piles are uneven then TAKE X2. BLORPLE IT. Now develop clue 17.",
+                        "PUT X1, X2, X7 ON THE SECOND PILE. GET X9, X10, X11, X12. PUT X9 ON THE FIRST PILE. GET X6. PUT X6 ON THE SECOND PILE. JINDAK. (X3, X4, X5, X9 on the first pile. X6, X1, X2, X7 on the second pile.) If both piles are equal, then develop clue 14. If the piles are uneven the same way they were in clue 9, then develop clue 15. If the piles are uneven in the opposite way they were in clue 9, then develop clue 16.",
+                        "Take all of the cubes off of both piles. PUT X10 ON THE FIRST PILE. PUT X11 ON THE SECOND PILE. JINDAK. If the piles are even then GET X12. BLORPLE IT. If the piles are uneven the same way they were in clue 9, then GET X11. BLORPLE IT. If the piles are uneven in the opposite way they were in clue 9, then GET X10. BLORPLE IT. Now develop clue 17.",
+                        "Take all of the cubes off of both piles. PUT X3 ON THE FIRST PILE. PUT X1 ON THE SECOND PILE. JINDAK. If the piles are even, then TAKE X5. BLORPLE IT. If the piles are uneven the same way they were in clue 9, then GET X3. BLORPLE IT. If the piles are uneven in the opposite way they were in clue 9, then GET X4. BLORPLE IT. Now develop clue 17.",
+                        "Take all of the cubes off of both piles. PUT X6 ON THE FIRST PILE. PUT X1 ON THE SECOND PILE. JINDAK. If the piles are even then GET X9. BLORPLE IT. If the piles are uneven, then GET X6. BLORPLE IT. Now develop clue 17.",
+                        "If you've ended up in the Sand Room: congratulations! If you've ended up in the Nondescript Room: too bad, you didn't follow the directions accurately."
+                    ]
+                }
+            ],
+            "title": "The Vault"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Like wow, man, deja vu! Haven't I been here before?",
+                    "answers": [
+                        "Yes, you have. So to speak.",
+                        "But when you were here before, you were hereafter. Or you will be if you try to BLORPLE out of here without solving the puzzle.",
+                        "Does the description of the Sand Room remind you of anything?",
+                        "Marilyn Monroe? The Wicked Witch of the West? An hour glass?",
+                        "Do the room descriptions seem slightly different from the time you were here before?",
+                        "Time is the key word here.",
+                        "The Sand Room, going UP or DOWN, sends you back in time, to long before you became an Enchanter. Or even to before you started the story.",
+                        "You must leave each room, the Dungeon Cell (past) and the Ruins Room (past), exactly as you (will) find them in the present. We call this \"establishing the past.\" Otherwise you create a paradox, and since nature abhors a paradox almost as much as a vacuum, you die."
+                    ]
+                },
+                {
+                    "title": "I went UP from the Sand Room, and I keep dying when I try to leave!",
+                    "answers": [
+                        "If you haven't been DOWN from the Sand Room, and survived, don't read any further.",
+                        "If you have been, you have the right idea. Leave things as they were. (Or is it, as they will be?)",
+                        "You want to BLORPLE out of the room, having dropped the closed zipper, which contains ONLY the flimsy scroll. EMPTY THE ZIPPER INTO THE SACK is a helpful command. Leave nothing else behind. Oh, and one more thing...",
+                        "Well, you'll figure it out."
+                    ]
+                },
+                {
+                    "title": "I went DOWN from the Sand Room, and I keep dying when I try to leave!",
+                    "answers": [
+                        "If opening the cabinet with the key is killing you, you're reading the wrong hint.",
+                        "Have you read all the clues to the first question in this section?",
+                        "Since you are back in time, you must leave everything the way you (will) find it when you enter the Cell from the Dungeon East End. That is, off the Water Room cube.",
+                        "Thus, you must leave ONLY a spell book in the cabinet. (It will get moldy on its own.) And, of course, don't forget to take the vellum scroll. Leave the cabinet locked. (The lock will get rusty on its own.)",
+                        "Remember, there should be no door left on the Cell when you have established the past, either. REZROV proves very handy in such cases. You need the Magic Room cube in your possession for your REZROV spell to be powerful enough, though."
+                    ]
+                },
+                {
+                    "title": "GAK! I finally found a use for the key, but it's booby-trapped!",
+                    "answers": [
+                        "If you die when you use the key, then you answered Belboz incorrectly.",
+                        "Crafty little devil, isn't he? He would revolutionize the modern public school system.",
+                        "You need your Enchanter Cards to answer Belboz correctly.",
+                        "If you haven't got Enchanter Cards, see the last question in the section entitled \"The String Room.\""
+                    ]
+                }
+            ],
+            "title": "The Sand Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I get through the east exit?",
+                    "answers": [
+                        "You can't unless you have all of the cubes in your possession (except the cube you used to BLORPLE to this room.)",
+                        "There are twelve cubes besides the Magic Room cube."
+                    ]
+                },
+                {
+                    "title": "How can I save the world?",
+                    "answers": [
+                        "By winning the game.",
+                        "Stop the shadow from remaking the universe to its own liking."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the hypercube?",
+                    "answers": [
+                        "A hypercube (or tesseract) is the four-dimensional analogue of a cube.",
+                        "A hypercube has sixteen vertices. Your thirteen cubes and the shadow's four make seventeen, enough to build a hypercube with one left over.",
+                        "This hypercube is a construct in which the relationships of the elements represented by the cubes are used to reconstruct the universe."
+                    ]
+                },
+                {
+                    "title": "Why do I get frozen at the ending? I'm not doing anything to deserve this.",
+                    "answers": [
+                        "Your presence is threatening enough. The shadow isn't stupid; it's taking precautions to prevent you from interfering."
+                    ]
+                },
+                {
+                    "title": "I get frozen at the end and I never thaw. How can I thaw?",
+                    "answers": [
+                        "One of the cubes helps you thaw.",
+                        "If you have the Magic Cube in your possession you will thaw in five turns."
+                    ]
+                },
+                {
+                    "title": "Time runs out before I can do anything. Help!",
+                    "answers": [
+                        "If the shadow froze you a little earlier, you would thaw out earlier.",
+                        "Provoke the shadow before it decides on its own to freeze you. You will thaw out that many moves sooner and have extra time."
+                    ]
+                },
+                {
+                    "title": "When can I do something without getting noticed and frozen?",
+                    "answers": [
+                        "Read the descriptions carefully.",
+                        "Once you are frozen, the shadow doesn't think you'll thaw until it is too late to stop its plan.",
+                        "When you thaw, wait until the shadow ignores you before doing anything. Don't do anything that might get its attention, or it'll just freeze you again. Spells should work."
+                    ]
+                },
+                {
+                    "title": "Okay, now I have some time. What do I do?",
+                    "answers": [
+                        "You have to cast a spell to stop the shadow.",
+                        "None of the spells you memorized from your spell book will help.",
+                        "You would be well off to have written something on the vellum scroll that you found, and brought it along,",
+                        "Though you could have written almost any spell, GIRGOL is the most powerful one available, and GIRGOL will \"time stop\" the shadow.",
+                        "Timing is important.",
+                        "GIRGOL the shadow as it prepares to jump into the hypercube.",
+                        "Then rearrange the restructuring of the universe to thwart the shadow.",
+                        "You have to take the Magic Room cube out of the hypercube...",
+                        "...and put in something else, or the universe will be created around nothing; in other words, destroyed.",
+                        "Don't put in a magic item, or it won't change the structure of the universe, and everything will return to as it was.",
+                        "Put in a non-magical item. The favorite of Boston area college students is the smoked fish."
+                    ]
+                },
+                {
+                    "title": "Why do I get the final ranking that I do at 600 points?",
+                    "answers": [
+                        "Because magic is no more.",
+                        "The profession of magician is no longer very useful. Perhaps as a scientist you can pursue a rewarding career."
+                    ]
+                },
+                {
+                    "title": "Why isn't there an alternative ending?",
+                    "answers": [
+                        "The inevitable result of magicians wielding such unchecked power as existed before the end of the story would be the creation of another shadow. It too might be defeated, but eventually one would arise who would be victorious over its original. The outcome of such a victory is too terrible to contemplate."
+                    ]
+                }
+            ],
+            "title": "The Magic Room"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What good is the burin?",
+                    "answers": [
+                        "Did you look at it?",
+                        "Try JINDAKing it.",
+                        "It's used to inscribe words or spells.",
+                        "Can you think of any things that might be easier to tell apart if they had names?",
+                        "Use the burin to write words on the cubes. WRITE \"EARTH\" ON CUBE, for example.",
+                        "It's also useful for writing new spell scrolls."
+                    ]
+                },
+                {
+                    "title": "What good is the gold box?",
+                    "answers": [
+                        "You might try JINDAKing it.",
+                        "Notice how the decorations on the box change when a cube is placed inside it.",
+                        "Have you noticed that most cube rooms have an exit that you can't use?",
+                        "When you place a cube in the box, it opens the \"impassable\" exit in the cube room for that cube.",
+                        "That exit then leads to the location of the box, as long as it's sitting on the ground (not being carried or in a container)."
+                    ]
+                },
+                {
+                    "title": "What good is the zipper?",
+                    "answers": [
+                        "Have you tried JINDAKing it?",
+                        "Have you tried opening it?",
+                        "Have you looked inside it once it's open?",
+                        "Have you reached inside it?",
+                        "Have you gotten inside it?",
+                        "The zipper is a gateway to another dimension, and it can contain an amazingly large number of things, including yourself. It is also watertight when zipped."
+                    ]
+                },
+                {
+                    "title": "What good is the brass lantern?",
+                    "answers": [
+                        "Have you filled it with oil?",
+                        "Have you rubbed it until it's shiny?",
+                        "Have you noticed that it doesn't exist?"
+                    ]
+                },
+                {
+                    "title": "What good is the compass rose?",
+                    "answers": [
+                        "Have you tried JINDAKing it?",
+                        "Have you been west of the Changing Room? If not, stop here.",
+                        "Does the carving in the Carving Room look familiar?",
+                        "Perhaps the compass rose would fit in the carving.",
+                        "Pay attention to what happens to the compass rose when you put it in the carving.",
+                        "Don't forget to take it again!"
+                    ]
+                },
+                {
+                    "title": "What good is the moldy book?",
+                    "answers": [
+                        "It sure is moldy and disgusting, isn't it?",
+                        "Can you think of anything that might improve it?",
+                        "CASKLY the moldy book."
+                    ]
+                },
+                {
+                    "title": "What good is the wrought iron key?",
+                    "answers": [
+                        "Have you tried unlocking anything with it?",
+                        "It's too bad that the oak cabinet is so deteriorated.",
+                        "Of course, it wasn't always.",
+                        "Oh dear, did the key blow up in your face? It didn't? Good, go on to the next clue. It did? Then skip the next clue.",
+                        "Congratulations.",
+                        "Too bad."
+                    ]
+                },
+                {
+                    "title": "What good is the ogre's club?",
+                    "answers": [
+                        "You could try attacking the ogre with it.",
+                        "You could try hitting the lava fragment with it.",
+                        "You could try examining your head, since there is no ogre's club!"
+                    ]
+                },
+                {
+                    "title": "What good is the vellum scroll?",
+                    "answers": [
+                        "A blank spell scroll is a fairly valuable object.",
+                        "But then, you're not hunting treasures, are you?",
+                        "You might try writing on it.",
+                        "You could copy a spell onto it. Of course, you have all your spells in your spell book, don't you?",
+                        "Well, there was one spell that you had only on a scroll. Too bad you didn't have this blank scroll then.",
+                        "Of course, you probably aren't powerful enough to copy a really powerful spell.",
+                        "If you have the Magic Room cube, you can copy a GIRGOL scroll if you can find one."
+                    ]
+                },
+                {
+                    "title": "What good is the carpet?",
+                    "answers": [
+                        "If your carpet is red, stop here.",
+                        "Have you looked under the rug?",
+                        "You could try sitting on the rug.",
+                        "You could try going UP while sitting on the rug.",
+                        "But don't remove the label!",
+                        "And don't get lost!"
+                    ]
+                },
+                {
+                    "title": "What things can I ask Belboz about?",
+					"orderedList": false,
+                    "answers": [
+                        "The cubes.",
+                        "The shadow.",
+                        "The snake.",
+                        "Magic.",
+                        "The key."
+                    ]
+                },
+                {
+                    "title": "What things can I ask the hermit about?",
+					"orderedList": false,
+                    "answers": [
+                        "The cube.",
+                        "The hut.",
+                        "The avalanche.",
+                        "The coin."
+                    ]
+                }
+            ],
+            "title": "Stuff and Things"
+        },
+        {
+            "questions": [
+				{
+					"orderedList": false,
+					"columns": [
+						{"header": "Found in...", "width": "25%"},
+						{"header": "Decoration", "width": "25%"},
+						{"header": "Property", "width": "25%"},
+						{"header": "BLORPLE to...", "width": "25%"}
+					],
+					"answers": [
+						["Belwit Square", "Moles", "Earth", "Packed Earth"],
+						["Ogre Lair", "Dolphins", "Water", "Water Room"],
+						["Temple", "Eagles", "Air", "Air Room"],
+						["On Pillar", "Salamanders", "Fire", "Fire Room"],
+						["Plain", "Grues", "Dark", "Dark Room"],
+						["Hut", "Spiders", "Connectivity", "String Room"],
+						["Ocean Floor", "Fireflies", "Light", "Light Room"],
+						["Dungeon Cell", "Worms", "Death", "Boneyard"],
+						["Roc Nest", "Rabbits", "Life", "Soft Room"],
+						["Octagonal Room", "Owls", "Mind", "No Place"],
+						["In Pipe", "Butterflies", "Change", "Changing Room"],
+						["Outer Vault", "Turtles", "Time", "Sand Room"],
+						["Outcropping", "Unicorns", "Magic", "Magic Room"]
+					]
+				}
+			],
+            "title": "Cube Details"
+        },
+		{
+			"questions": [
+				{
+					"title": "My spells don't always work. Why?",
+					"answers": [
+						"Magic is deteriorating. If you look at your spell book, you will see that only a remnant of your repertoire of spells remains. Doing something about this is the main goal of the story.",
+						"As you get further in the story, spells work better and better.",
+						"Each cube you have increases the probability of your spells working. Each spell is also influenced strongly by two different cubes, and having those cubes makes it much more likely that the spell will work."
+					]
+				}
+			],
+			"title": "Magic Details"
+		},
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"columns": [
+						{"header": "Spell", "width": "25%"},
+						{"header": "Cubes that increase chance of success", "width": "75%"}
+					],
+					"answers": [
+						["BLORPLE", "(always works)"],
+						["FROTZ", "Change, Light (75% base chance)"],
+						["GNUSTO", "Change, Earth (75% base chance)"],
+						["LESOCH", "Air, Fire"],
+						["MALYON", "Fire, Life"],
+						["REZROV", "Change, Earth"],
+						["YOMIN", "Mind, Light"],
+						["SNAVIG", "Change, Dark"],
+						["GIRGOL", "(special, as spell is so powerful)"],
+						["LISKON", "Change, Earth"],
+						["TINSOT", "Water, Fire"],
+						["JINDAK", "Light, Connectivity"],
+						["ESPNIS", "Mind, Death"],
+						["CASKLY", "Change, Connectivity"],
+						["THROCK", "Life, Water"],
+						"If you have the cube that BLORPLEs you to the Magic Room, it gives an extra-strong power boost to all spells. With this cube in your possession, only the GIRGOL spell can ever fail under normal circumstances."
+					]
+				}, 
+				{
+					"title": "When I use a spell on a scroll, the scroll disappears and I can't use the spell again. Help!",
+					"answers": [
+						"You should GNUSTO the spell into your spell book.",
+						"Then you can memorize the spell from your book and use it repeatedly."
+					]
+				}
+			],
+			"title": "Details of Cubes' Effects on Spells"
+		}, 
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"columns": [
+						{"header": "Spell", "width": "18%"},
+						{"header": "Location", "width": "82%"}
+					],
+					"answers": [
+						["GNUSTO", "Your spell book."],
+						["REZROV", "Your spell book."],
+						["FROTZ", "Your spell book."],
+						["YOMIN", "Your spell book."],
+						["JINDAK", "Your spell book."],
+						["MALYON", "Your spell book."],
+						["LESOCH", "Your spell book."],
+						["BLORPLE", "Your spell book after the shadow leaves the Council Chamber."],
+						["THROCK", "At Cliff Middle."],
+						["CASKLY", "In Roc Nest."],
+						["GIRGOL", "In the zipper in Ruins Room."],
+						["ESPNIS", "At Ogre's Lair."],
+						["LISKON", "In the bottle in mid-ocean."],
+						["TINSOT", "At the Glacier."],
+						["SNAVIG", "In the moldy book after you CASKLY it."]
+					]
+				}
+			],
+			"title": "Spells and Their Locations"
+		}, 
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"answers": [
+						"25 points for each of 13 cubes, for a total of 325.",
+						"15 points for reading or using BLORPLE the first time.",
+						"10 points for getting the zipper.",
+						"10 points for getting the flimsy scroll.",
+						"10 points for getting the dirty scroll.",
+						"10 points for getting the stained scroll.",
+						"10 points for getting the dusty scroll.",
+						"10 points for getting the box.",
+						"10 points for getting the damp scroll.",
+						"10 points for getting the white scroll.",
+						"10 points for getting the blue carpet.",
+						"10 points for getting the moldy book.",
+						"15 points for CASKLYing the moldy book.",
+						"10 points for getting the compass rose.",
+						"25 points for answering Belboz and getting the key.",
+						"10 points for getting the vellum scroll.",
+						"25 points for establishing the past at Dungeon Cell.",
+						"25 points for establishing the past at Ruins Room.",
+						"50 points for saving the world (but destroying magic)."
+					]
+				}
+			],
+			"title": "How the Points Are Scored"
+		},
+		{
+			"questions": [
+				{
+					"title": "What did we name the cubes here at Infocom?",
+					"orderedList": false,
+					"answers": [
+						"Dave gave them boring names like \"Earth\" or \"Air.\"",
+						"Gary gave them all incomprehensible (to others) single-letter names, because he hates typing.",
+						"Max named one \"Ohio\" because he was looking for a 4-letter synonym for No Place. (Max has never visited Ohio, either.)",
+						"Spike named them \"cube1\" through \"cube13\" because, while he isn't wildly imaginative, he is very smart.",
+						"Liz named the Fire Room cube \"Bob\" after her husband.",
+						"Amy named the Dark Room cube \"Inky.\"",
+						"Suzanne named the Boneyard cube \"Camels\" after her cigarettes."
+					]
+				}, 
+				{
+					"title": "Have you tried...",
+					"orderedList": false,
+					"answers": [
+						"flying on the magic carpet to the Outcropping?",
+						"TINSOTing the magic carpet, then flying to the Outcropping?",
+						"reading the carpet label during flight?",
+						"FROTZ GRUE in a dark room (not in the Dark Room area)?",
+						"reading the pillar?",
+						"SNAVIG SERPENT or YOMIN SNAKE (before and after shrinking it?)",
+						"sleeping on the green eyed rock? Petting it?",
+						"giving fish or bread to the green eyed rock?",
+						"showing the lava fragment to the rock?",
+						"swallowing things when you're a grouper?",
+						"smelling the ogre, or smelling the ogre when you're an ogre?",
+						"trying to convince the merchant to sell you a carpet for less than 500 zorkmids?",
+						"hitting the alarm fairy?",
+						"YOMINing the shadow in the Castle?",
+						"slavering while a grue?",
+						"following the rabbit in the Meadow?",
+						"landing the magic carpet other than In Roc Nest or Guard Tower?",
+						"MALYONing the idol while you are on it?",
+						"casting a spell (other than BLORPLE) at the Plain?",
+						"following the shadow from Belwit Square?",
+						"CASKLYing the red carpet?",
+						"YOMINing any enchanter after he's been turned into an amphibian?",
+						"MALYONing the cube in the hermit's hut?",
+						"looking at a grue when you are a grue?",
+						"attacking a grue when you are a grue?",
+						"YOMIN GRUE?",
+						"examining the orange smoke or smelling it?",
+						"TINSOTing the glacier?",
+						"smelling the lava?",
+						"trying to sleep in the ogre's cave?"
+					]
+				}
+			],
+			"title": "For Your Amusement",
+			"subTitle": "(after you've finished the story)"
+		}
+    ]    
+}

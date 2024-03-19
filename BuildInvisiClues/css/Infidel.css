@@ -1,0 +1,7 @@
+.question.hieroglyphs .answer-row {
+	vertical-align: middle;
+}
+.question.hieroglyphs .answer-label {
+	text-align: left;
+	line-height: 0.9em;
+}
