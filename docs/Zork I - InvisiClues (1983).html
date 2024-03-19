@@ -1,0 +1,1611 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zork I InvisiClues</title>
+
+<style type="text/css">
+/*InvisiClues.css v2.1*/
+:root {
+	--width: 40rem;
+	--mono: "Source Code Pro", ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Fira Mono", "Droid Sans Mono", "Liberation Mono", monospace;
+	--sans: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Oxygen, Cantarell, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	cursor: default;
+	overflow-wrap: break-word;
+	-moz-tab-size: 4;
+	tab-size: 4;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+@media not (prefers-color-scheme: dark) {
+	:root {
+		--normal-weight: 400;
+		--bold-weight: 600;
+		--bg-color: #FAFAEF;
+		--link-color: #00e;
+		--visited-link-color: #551a8b;
+		--fg-color: black;
+		--link-underline-height: .14rem;
+		--line-outline-width: .1rem;
+		--summary-outline-width: .05rem;
+	}
+}
+@supports (color-scheme: dark light) {
+	@media screen and (prefers-color-scheme: dark) {
+		:root {
+			--normal-weight: 350;
+			--bold-weight: 550;
+			--bg-color: #131415;
+			--link-color: #6085ea;
+			--visited-link-color: #c999d9;
+			--fg-color: #d8d8d8;
+			--link-underline-height: .1em;
+			--line-outline-width: .07rem;
+			--summary-outline-width: .08rem;
+		}
+	}
+}
+*:where(:not(html, iframe, canvas, img, svg, video, audio, pre):not(svg *, symbol *)) {
+	all: unset;
+	display: revert;
+}
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+html {
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	font-size: 100%;
+	vertical-align: baseline;
+	font-weight: var(--normal-weight);
+	font-family: var(--sans);
+	font-size: 17px;
+	scroll-behavior: smooth;
+}
+body {
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+	line-height: 1.5;
+	margin: auto;
+	text-indent: 0;
+}
+*,
+::before,
+::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: inherit;
+	background-color: transparent;
+	color: inherit;
+}
+a {
+	text-decoration: none;
+	border-bottom: dotted var(--link-underline-height);
+	cursor: revert;
+}
+a:focus {
+	outline: var(--line-outline-width) solid;
+	outline-offset: var(--line-outline-width);
+	border-radius: .75rem;
+	border-bottom: dotted var(--link-underline-height) transparent;
+}
+a:link {
+	color: var(--link-color);
+}
+a:visited {
+	color: var(--visited-link-color);
+}
+ol,
+ul,
+menu {
+	list-style: none;
+}
+header,
+.header,
+h1,
+h2,
+h4,
+h5,
+.question,
+.topNav select,
+.indented {
+	max-width: var(--width);
+	width: 90%;			
+	margin: auto;
+}
+header .indented,
+.header .indented {
+	width: 100%;
+}
+img.indented {
+	display: block;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+h2 {
+	margin-top: 2rem;
+	font-size: 1.66rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+.header h2 {
+	margin-top: 1rem;
+}
+.indented {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+li:before {
+	font-family: var(--mono);
+	font-weight: bold;
+	content: "";
+}
+li {
+	font-size: 1.25rem;
+}
+li+li {
+	margin-top: .5rem;
+}
+ul.indented {
+	padding-left: 0;
+}
+h3,h5 {
+	font-size: 1.25rem;
+}
+h4 {
+	font-size: 0.9rem;
+	font-weight: var(--bold-weight);
+	margin-bottom: 1em;
+	margin-top: -1.50em;
+	text-align: justify;
+}
+h5 {
+	font-weight: var(--bold-weight);
+}
+.question h4 {
+	margin-top: -0.4em;
+	width: 100%;
+}
+h1.title {
+	font-size: 3rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+h1 {
+	font-size: 2.1em;
+	line-height: 1.07em;
+	margin-bottom: 1rem;
+}
+.question {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border: .1em solid currentColor;
+	border-radius: 1em;
+}
+.answer-row:hover,
+h3.hidden-title:hover {
+	outline: var(--summary-outline-width) dotted;
+}
+.answer-row:focus,
+h3.hidden-title:focus {
+	outline: var(--summary-outline-width) solid;
+}
+h3.hidden-title {
+	cursor: pointer;
+	border-radius: .75em;
+	border: var(--summary-outline-width) solid transparent;
+	padding-left: .5em;
+	margin-left: -.5em;
+}
+.answers {
+	display: table;
+	width: 100%;
+	margin-top: .5rem;
+}
+a.answer-row {
+	display: table-row;
+	cursor: pointer;
+	width: 100%;
+	border-radius: .75em;
+	border: var(--summary-outline-width) solid transparent;
+	color: var(--link-color);
+}
+.answer-label {
+	font-family: var(--mono);
+	font-style: normal;
+	font-weight: bold;
+	display: table-cell;
+	padding-left: .5em;
+	padding-right: .5em;
+	text-align: right;
+	white-space: nowrap;
+}
+.answer-cell {
+	display: table-cell;
+	width: 100%;
+	padding-right: 0.5em;
+}
+.answer {
+	display: block;
+	text-align: justify;
+}
+.gap {
+	font-size: .25em;
+}
+main {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+.header img {
+	float: left;
+	margin-right: 2em;
+	
+}
+.header::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.upper {
+	text-transform: uppercase;
+}
+.header p {
+	text-align: justify;
+	margin-bottom: 1rem;
+}
+.answer-header {
+	display: table-row;
+}
+.answer-col {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	padding-right: 0.5em;
+}
+.answer-header .answer-col {
+	vertical-align: bottom; 
+}
+em {
+	font-weight: bold;
+}
+.header img {
+	height: 200px;
+}
+.top {
+	position: fixed;
+	bottom: 20px;   
+	right: 20px;
+	width:45px;
+	display: block;
+	transition: opacity 0.5s ease-out;
+	opacity: 0;
+	cursor: default;
+	aspect-ratio:1;
+	background: #134F8F;
+	border-radius:10px;
+}
+.top.visible {
+	opacity: 1;
+	cursor: pointer;
+}
+.top:before {
+	content:"";
+	position:absolute;
+	inset:30%;
+	transform:translateY(20%) rotate(-45deg);
+	border-top:5px solid #fff;
+	border-right:5px solid #fff;
+}
+.topNav {
+	background-color: #134F8F;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	position: fixed;	
+	width: 100%;
+	display: none;
+}
+.topNav select {
+	display: block;
+	width: 100%;
+	padding: 0.375rem 2rem 0.375rem 2rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: white;
+	background-color: transparent;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 0.1em solid currentColor;
+	border-radius: 0.75em;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	appearance: none;		
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow: ellipsis;
+}
+.topNav select option,
+.topNav select optgroup {
+	color: black;
+}
+body.hasNavBar .topNav {
+	display: block;
+}
+body.hasNavBar h1,
+body.hasNavBar h2 {
+	scroll-margin-top: 5rem;
+}
+body.hasNavBar main {
+	padding-top: 5em;
+}
+</style>
+
+<script>
+/*InvisiClues.js v2.1*/
+var invisiClues = {
+	index: 1,	
+	numberedList: false,
+	displayTOC: true,
+	scrollTopPos: 0,
+	navSections: [],
+	processJSON: function() {
+		var data = JSON.parse(document.getElementById('jsonData').textContent);
+		var main = document.getElementById('section0');
+		
+		if ('numberedList' in data) {
+			this.numberedList = data.numberedList;
+		}
+		if ('displayTOC' in data) {
+			this.displayTOC = data.displayTOC;
+		}
+		
+		this.processHeader(main, data.header);
+				
+				
+		if (this.displayTOC) {
+			var tocElem = this.processTOC(main);	
+			var liElem = this.tocElement('section0', 'Introduction', true);
+			this.navElement('section0', 'Introduction');
+			tocElem.appendChild(liElem);	
+			this.navElement('toc', 'Table of Contents');
+		} else {
+			var tocElem = null;
+		};		
+		if ('sections' in data) {
+			for (var i = 0; i < data.sections.length; i++) {
+				this.processSection(main, data.sections[i], tocElem, true);
+			}
+		}
+		if (this.displayTOC) {
+			document.querySelector("body").setAttribute('class', 'hasNavBar');
+			window.addEventListener("resize", this.refreshTopPos);
+			window.addEventListener("scroll", this.toggleTopButton);
+			window.addEventListener("scrollend", this.refreshNavBar);
+			document.querySelector(".topNav select").addEventListener("change", this.navSection);			
+			this.populateNavSections();
+			this.refreshTopPos();
+			this.refreshNavBar();
+			document.querySelector(".topNav select").focus();
+		}
+	},
+	populateNavSections: function () {
+		var navSections = document.querySelectorAll('.navSection');
+		this.navSections = [...navSections];
+		this.navSections.reverse();
+	},
+	refreshTopPos: function() {
+		var toc = document.getElementById("toc");
+		invisiClues.scrollTopPos = toc.offsetTop;
+	},
+	refreshNavBar: function () {
+		for (var i = 0; i < invisiClues.navSections.length; i++) {
+			var navSection = invisiClues.navSections[i];
+			if (navSection.offsetTop < scrollY + 100) {
+				document.querySelector(".topNav select").value = '#' + navSection.id;
+				break;
+			}
+		}
+	},
+	toggleTopButton: function() {
+		var top = document.querySelector("a.top");
+		var scrollY = this.scrollY || 0;
+		if (scrollY > invisiClues.scrollTopPos + 30) {
+			top.setAttribute('class', 'top visible');
+			top.setAttribute('href', '#toc');
+		} else {
+			top.setAttribute('class', 'top');
+			top.removeAttribute('href');
+		}
+	},
+	simpleElement: function(type, data) {
+		var elem = document.createElement(type);
+		elem.innerHTML = data;
+		return elem;
+	},
+	processHeaderSection: function(headerElem, section) {
+		if ('title' in section) {
+			headerElem.appendChild(this.simpleElement('h3', section.title));
+		}
+		if ('content' in section) {
+			for (var i = 0; i < section.content.length; i++) {
+				headerElem.appendChild(this.simpleElement('p', section.content[i]));
+			}
+		}
+	},
+	processHeader: function(main, header) {
+		var headerElem = document.createElement('div');
+		headerElem.setAttribute('class', 'header');
+		if ('image' in header) {
+			var imgElem = document.createElement('img');
+			imgElem.setAttribute('src', header.image);
+			headerElem.appendChild(imgElem);
+		}
+		if ('title' in header) {
+			headerElem.appendChild(this.simpleElement('h1', header.title + ' InvisiClues™'));
+		}
+		headerElem.appendChild(this.simpleElement('h2', "Introduction"));
+		if ('section1' in header) {
+			this.processHeaderSection(headerElem, header.section1);
+		}
+		if ('section2' in header) {
+			this.processHeaderSection(headerElem, header.section2);
+		}
+		if ('sampleQuestions' in header) {
+			var sampleElem = document.createElement('div');
+			this.processSection(sampleElem, header.sampleQuestions, false);
+			headerElem.appendChild(sampleElem);
+		}
+		if ('section3' in header) {
+			this.processHeaderSection(headerElem, header.section3);
+		}
+		main.appendChild(headerElem);
+	},
+	processTOC: function(main) {
+		var tocElem = this.titleElement('Table of Contents', 'h2', false, false, true);
+		tocElem.setAttribute('id', 'toc');
+		main.appendChild(tocElem);
+		var elem = document.createElement('ul');
+		elem.setAttribute('class', 'indented');
+		main.appendChild(elem);
+		return elem;
+	},
+	tocElement: function(sectionId, title, hasQuestions) {
+		var elem = document.createElement('li');
+		if (hasQuestions) {
+			var aElem = document.createElement('a');
+			aElem.innerHTML = title;
+			aElem.setAttribute('href', '#' + sectionId);
+			elem.appendChild(aElem);
+		} else {
+			elem.innerHTML = title;
+		}
+		return elem;
+	},
+	navGroup: function (title) {
+		var optGroup = document.createElement('optgroup');
+		optGroup.setAttribute('label', title);
+		document.querySelector(".topNav select").appendChild(optGroup);
+		return optGroup;
+	},
+	navElement: function (sectionId, title, optGroup) {
+		var opt = document.createElement('option');
+		opt.setAttribute('value', '#' + sectionId);
+		opt.innerHTML = title;
+		if (optGroup) {
+			optGroup.appendChild(opt);
+		} else {
+			document.querySelector(".topNav select").appendChild(opt);
+		}
+	},
+	processSection: function(main, section, ulElem, upper, optGroup) {
+		if ('title' in section && section.title != '') {
+			if (!('toc' in section)) {
+				section.toc = true;
+			}
+			var title = section.title;
+			if ('tocTitle' in section) {
+				var tocTitle = section.tocTitle;
+			} else {
+				var tocTitle = section.title;
+			}
+			if ('upper' in section) {
+				upper = section.upper;
+			}
+			var titleElem = this.titleElement(section.title, (section.toc ? 'h2' : 'h5'), section.toc, upper, section.toc);
+			var sectionId = titleElem.getAttribute('id');
+			main.appendChild(titleElem);	
+			if (ulElem && section.toc) {
+				var hasQuestions = 'questions' in section && section.questions.length > 0;
+				var hasQuestions = hasQuestions || ('images' in section && section.images.length > 0);
+				var liElem = this.tocElement(sectionId, tocTitle, hasQuestions);
+				if (hasQuestions) {
+					this.navElement(sectionId, tocTitle, optGroup);
+				}
+				ulElem.appendChild(liElem);
+			} else {
+				var liElem = null;
+			}
+		}
+		if ('subTitle' in section && section.subTitle != '') {
+			main.appendChild(this.titleElement(section.subTitle, 'h4', false, false));
+		}
+		if ('questions' in section) {
+			for (var i = 0; i < section.questions.length; i++) {
+				main.appendChild(this.questionElement(section.questions[i]));
+			}
+		}
+		if ('images' in section) {
+			for (var i = 0; i < section.images.length; i++) {
+				main.appendChild(this.imageElement(section.images[i]));
+			}
+		}
+		if ('subSections' in section) {
+			if (section.subSections.length > 0) { 
+				var subOptGroup = this.navGroup(tocTitle);
+				for (var i = 0; i < section.subSections.length; i++) {
+					if (liElem) {
+						var ulSubElem = document.createElement('ul');
+						ulSubElem.setAttribute('class', 'indented');
+						liElem.appendChild(ulSubElem);
+					} else {
+						var ulSubElem = null;
+					}
+					this.processSection(main, section.subSections[i], ulSubElem, false, subOptGroup);
+				}
+			}
+		}
+	},
+	titleElement: function(text, type, setId, upper, navSection) {
+		var elem = document.createElement(type);
+		if (setId) {
+			elem.setAttribute('id', 'section' + this.index);
+			this.index ++;
+		}
+		var classList = [];
+		if (upper) {
+			classList.push('upper');
+		}
+		if (navSection) {
+			classList.push('navSection');
+		}
+		if (classList.length > 0) {
+			elem.setAttribute('class', classList.join(' '));
+		}
+		elem.innerHTML = text;
+		
+		return elem;
+	},
+	answerElement: function(label, ariaLabel, text, question) {
+		var elem = document.createElement('a');	
+		elem.setAttribute('class', 'answer-row');
+		if (!('alwaysShow' in question) || !question.alwaysShow) {
+			elem.addEventListener('click', this.toggle);
+		}
+		var answerLabel = document.createElement('div');
+		answerLabel.setAttribute('class', 'answer-label');
+		answerLabel.innerHTML = label;
+		elem.appendChild(answerLabel);
+		var answerCell = document.createElement('div');
+		answerCell.setAttribute('class', 'answer-cell');
+		answerCell.setAttribute('aria-label', ariaLabel);
+		answerCell.setAttribute('role', 'alert');
+		var answer = document.createElement('span');
+		answer.setAttribute('class', 'answer');
+		if (!('alwaysShow' in question) || !question.alwaysShow) {
+			answer.setAttribute('style', 'visibility:hidden');		
+		}
+		if ('columns' in question && Array.isArray(text)) {
+			for (var i = 0; i < question.columns.length; i++) {
+				var subAnswer = document.createElement('span');
+				subAnswer.setAttribute('class', 'answer-col');
+				var attributes = ['width: ' + question.columns[i].width];
+				if ('align' in question.columns[i]) {
+					attributes.push('text-align: ' + question.columns[i].align);
+				}
+				subAnswer.setAttribute('style', attributes.join('; '));
+				if (text.length > i) {
+					subAnswer.innerHTML = text[i];
+				}
+				answer.appendChild(subAnswer);
+			}
+		} else {
+			answer.innerHTML = text;
+		}
+		answerCell.appendChild(answer);
+		elem.appendChild(answerCell);
+		
+		return elem;
+	},
+	answerGap: function() {
+		var gap = document.createElement('div');
+		gap.setAttribute('class', 'gap');
+		gap.appendChild(document.createTextNode('\u2009'));
+		
+		return gap;
+	},
+	columnHeaders: function(columns) {
+		var header = document.createElement('div'); 
+		header.setAttribute("class","answer-header");
+		var answerLabel = document.createElement('div');
+		answerLabel.setAttribute('class', 'answer-label');
+		header.appendChild(answerLabel);
+		var answerCell = document.createElement('div');
+		answerCell.setAttribute('class', 'answer-cell');
+		for (var i = 0; i < columns.length; i++) {
+			var subAnswer = document.createElement('span');
+			subAnswer.setAttribute('class', 'answer-col');
+			var attributes = ['width: ' + columns[i].width];
+			if ('align' in columns[i]) {
+				attributes.push('text-align: ' + columns[i].align);
+			}
+			subAnswer.setAttribute('style', attributes.join('; '));
+			subAnswer.appendChild(document.createTextNode(columns[i].header));
+			answerCell.appendChild(subAnswer);
+		}
+		header.appendChild(answerCell);			
+		return header;
+	},
+	answersElement: function(question) {
+		var elem = document.createElement('div');
+		var classes = ['answers'];
+		if ('anyAnswer' in question && question.anyAnswer) {
+			classes.push('anyAnswer');
+		}
+		elem.setAttribute('class',classes.join(' '));
+		if ('columns' in question) {
+			if (!('columnHeaders' in question) || question.columnHeaders) {
+				elem.appendChild(this.columnHeaders(question.columns));
+			}
+		}
+		var ariaLabel = '';
+		var label = '';
+		var numberedList = this.numberedList;
+		if ('numberedList' in question) {
+			numberedList = question.numberedList;
+		}
+		
+		for (var i = 0; i < question.answers.length; i++) {
+			var answer = question.answers[i];
+			if ('customLabels' in question && question.customLabels && Array.isArray(answer)) {
+				ariaLabel = answer.shift();
+				label = ariaLabel;
+			} else if (question.orderedList) {
+				if (numberedList) {
+					ariaLabel = (i + 1).toString();
+				} else {
+					ariaLabel = String.fromCharCode(65 + i % 26).repeat(Math.floor(i / 26) + 1);
+				}			
+				if ('listPrefix' in question) {
+					ariaLabel = question.listPrefix + ariaLabel;
+				}
+				label = ariaLabel + ('listSuffix' in question ? question.listSuffix : '.');
+			} else {
+				label = '\u2022';
+				ariaLabel = '';
+			};
+			elem.appendChild(this.answerElement(label, ariaLabel, answer, question));
+			elem.appendChild(this.answerGap());						
+		}
+		return elem;
+	},
+	questionElement: function(question) {
+		var elem = document.createElement('div');	
+		var classes = ['question','indented'];
+		if ('class' in question) {
+			classes.push(question.class);
+		}
+		elem.setAttribute('class',classes.join(' '));
+		if ('title' in question && question.title != '') {
+			var titleElem = this.titleElement(question.title, 'h3', false, false);
+			var span = titleElem.querySelector('span');
+			if (span != null && span.classList.contains('hidden-title')) {
+				span.removeAttribute("class");
+				span.setAttribute("style", "visibility: hidden;");
+				var h3Elem = span.closest('h3');
+				h3Elem.setAttribute("class", "hidden-title");
+				h3Elem.addEventListener("click", this.toggleTitle);
+			}
+			elem.appendChild(titleElem);
+		}
+		if ('subTitle' in question && question.subTitle != '') {
+			elem.appendChild(this.titleElement(question.subTitle, 'h4', false, false));
+		}
+		if (!('orderedList' in question)) {
+			question.orderedList = (question.answers.length > 1);
+		}
+		elem.appendChild(this.answersElement(question));
+		return elem;
+	},
+	imageElement: function(image) {
+		var elem = document.createElement('img');
+		elem.setAttribute('class', 'indented');
+		elem.setAttribute('src', image);
+		return elem;
+	},
+	toggle: function() {
+		var span = this.querySelector('.answer');
+		var visible = (span.style.visibility !== "hidden");
+		var parent = span.closest('.answers');
+		var anyAnswer = parent.classList.contains('anyAnswer');
+		if (anyAnswer) {
+			span.setAttribute("style", visible ? "visibility: hidden;" : "visibility: visible;");
+		} else {
+			var answers = parent.querySelectorAll('.answer-row .answer-cell .answer');
+			if (visible) {
+				answers = [...answers];
+				answers.reverse();
+			}
+			for (var i = 0; i < answers.length; i++) {
+				answers[i].setAttribute("style", visible ? "visibility: hidden;" : "visibility: visible;");
+				if (span === answers[i]) {
+					break;
+				}
+			}
+		}
+	},
+	toggleTitle: function() {
+		var span = this.querySelector('span');
+		var visible = (span.style.visibility !== "hidden");
+		span.setAttribute("style", visible ? "visibility: hidden;" : "visibility: visible;");
+	},
+	navSection: function () {
+		location.href = this.value;
+		document.querySelector(".topNav select").focus();
+	}
+}
+document.addEventListener("DOMContentLoaded", function(event) { 
+	invisiClues.processJSON();
+});
+</script>
+</head>
+
+<body>
+<div class="topNav"><select></select></div>
+<main id="section0" class="navSection"></main>
+<a href="#toc" class="top"></a>
+</body>
+
+<script id="jsonData" type="application/json">
+{
+    "revision": 1.0,
+	"header": {
+		"title": "Zork I",
+		"year": "1983",
+		"copyright": "© 1983 Infocom, Inc.",
+		"image": "data:image/jpeg;base64,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",
+		"section1": {
+			"title": "What are InvisiClues?",
+			"content": [
+				"The essence of all INTERLOGIC™ games is solving problems. The purpose of InvisiClues hint booklets is to maximize your enjoyment of the game by giving you only those hints that you need to continue playing and complete the game.",
+				"The invisible hints generally progress from a gentle nudge in the right direction to a full answer. The questions, which naturally have to be visible, have been worded to give away as little as possible. You should not use the presence or absence of a question on a certain topic as an indication of importance, and you should not assume that long answers are associated with important questions. This booklet includes dummy questions and answers in order to minimize this problem."
+			]
+		},
+		"section2": {
+			"title": "How to use this booklet.",
+			"content": [
+				"If you are stuck at some point in ZORK I, find the question that most pertains to your problem. Uncap the marker and run it once over the first hint. The writing will appear within a second or two. If you are still stumped, go on to the next hint. (Remember to recap the marker when you are done to prevent it from drying out. And by the way, these books are not immortal. InvisiClues you've developed will start to fade after six months). For example:"
+			]
+		},
+		"section3": {
+			"content": [
+				"Your marker contains more than enough fluid to develop the entire booklet. However, if your marker gets lost or dried out, you can order a replacement marker for a nominal fee.",
+				"You can use the listing of how all the points are scored as a last resort. Once you have finished ZORK I, try the things in the \"For Your Amusement\" section. Don't look at them before you've finished, though — they may reveal the answers to certain problems."
+			]
+		},
+		"sampleQuestions": {
+			"questions": [
+				{
+					"title": "How many grues does it take to screw in a light bulb?",
+					"answers": [
+						"Don't go on unless you've asked WHAT IS A GRUE?",
+						"You could break a bulb, then hide and watch what happens.",
+						"None. Grues are terrified of light."
+					]
+				}
+			]
+		}
+	},
+    "sections": [
+        {
+            "questions": [
+                {
+                    "title": "Where do I find a machete?",
+                    "answers": [
+                        "There is none. The game must have <em>some</em> limitations. You can't expect to walk to the nearest airport and fly to London to see the British Museum..."
+                    ]
+                },
+                {
+                    "title": "How do I cross the mountains?",
+                    "answers": [
+                        "Play ZORK II."
+                    ]
+                },
+                {
+                    "title": "How do I kill the songbird?",
+                    "answers": [
+                        "What a concept! You need a psychiatrist."
+                    ]
+                },
+                {
+                    "title": "Is the nest useful for anything?",
+                    "answers": [
+                        "In China you might make bird's nest soup.",
+                        "This is not China.",
+                        "In other words, no."
+                    ]
+                },
+                {
+                    "title": "How do I open the egg without damaging it?",
+                    "answers": [
+                        "<em>You</em> don't.",
+                        "Have you tried saying OPEN EGG?",
+                        "It takes a great deal of manual dexterity and the proper tools.",
+                        "Someone else in the game can do it.",
+                        "Only the Thief can open the egg. Give it to him or leave it underground where he will find it."
+                    ]
+                },
+                {
+                    "title": "How do I fix the broken canary?",
+                    "answers": [
+                        "It is broken beyond repair.",
+                        "No one can fix it. Really!"
+                    ]
+                },
+                {
+                    "title": "Are the leaves useful for anything?",
+                    "answers": [
+                        "They're great for hiding gratings.",
+                        "They can be taken, counted, or burned."
+                    ]
+                },
+                {
+                    "title": "How do I open the grating?",
+                    "answers": [
+                        "You must unlock it.",
+                        "You need the skeleton key.",
+                        "It can be unlocked only from below.",
+                        "The grating and key can be found in the Maze."
+                    ]
+                },
+                {
+                    "title": "How do I get off the roof of the house?",
+                    "answers": [
+                        "How did you get up there?",
+                        "Someone from Infocom would love to hear how you did it.",
+                        "This is one of those questions which was put in here for the sole purpose of teaching a lesson — do not use the presence or absence of a question on a certain topic as an indication of what is important, and don't assume that long answers indicate important questions."                        
+                    ]
+                },
+                {
+                    "title": "Once I have the canary in an undamaged state, what do I do with it?",
+                    "answers": [
+                        "Something is attracted to its singing.",
+                        "It is also a treasure.",
+                        "Try winding it in the forest."
+                    ]
+                },
+                {
+                    "title": "How do I get the brass bauble?",
+                    "answers": [
+                        "You must open the egg first.",
+                        "See the previous question."
+                    ]
+                },
+                {
+                    "title": "How do I open the front door?",
+                    "answers": [
+                        "It cannot be knocked down.",
+                        "It cannot be destroyed.",
+                        "It cannot be opened."
+                    ]
+                },
+                {
+                    "title": "How do I get into the house?",
+                    "answers": [
+                        "Have you checked all sides?",
+                        "There's a window in the back which is partly open. Open it and climb through."
+                    ]
+                },
+                {
+                    "title": "Can I eat the lunch?",
+                    "answers": [
+                        "Try it. Try the water, too. You can't be afraid to try <em>anything</em> in ZORK I (but it may make sense to SAVE your state first)."
+                    ]
+                },
+                {
+                    "title": "How do I get into the dungeons?",
+                    "answers": [
+                        "The entrance is in the house.",
+                        "Trapdoors can be hidden.",
+                        "Move the rug."
+                    ]
+                },
+                {
+                    "title": "What is a grue?",
+                    "answers": [
+                        "Ask ZORK I."
+                    ]
+                }
+            ],
+            "title": "Above Ground"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Can the trapdoor be opened from below?",
+                    "answers": [
+                        "No. The only way to keep the trapdoor from closing behind you is to find another exit (other than the chimney, which is very limited)."
+                    ]
+                },
+                {
+                    "title": "How do I get up the ramp in the Cellar?",
+                    "answers": [
+                        "\"The ramp is too slippery to climb.\"",
+                        "Is there a way to make it less slippery?",
+                        "No. You won't ever get up the ramp."
+                    ]
+                },
+                {
+                    "title": "How do I negotiate with the Troll?",
+                    "answers": [
+                        "Trolls tend not to be conversational. They require a much more direct approach.",
+                        "You won't get past the Troll while he is conscious.",
+                        "Kill him with the sword."
+                    ]
+                },
+                {
+                    "title": "What do I do with the axe?",
+                    "answers": [
+                        "It can be used as a weapon, but isn't really necessary for anything.",
+                        "This answer left intentionally blank."
+                    ]
+                },
+                {
+                    "title": "Does the paint in the studio mean anything?",
+                    "answers": [
+                        "The artist was sloppy."
+                    ]
+                }
+            ],
+            "title": "The Cellar Area"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I get through the Maze?",
+                    "answers": [
+                        "It is essential that you make a map of the Maze.",
+                        "All ten directions are used: N, S, E, W, NE, NW, SE, SW, UP and DOWN.",
+                        "Some passages lead back to the same room.",
+                        "Rooms can be marked by dropping objects. (However, the Thief can be a pain.)",
+                        "There are 22 rooms west of the Troll Room."
+                    ]
+                },
+                {
+                    "title": "What do I do with the rusty knife?",
+                    "answers": [
+                        "If you had your sword when you took it, the pulse of blinding light should have served as a warning.",
+                        "Try throwing the knife or attacking someone with it."
+                    ]
+                },
+                {
+                    "title": "What do I do with the skeleton?",
+                    "answers": [
+                        "Let the dead rest in peace.",
+                        "This answer left intentionally blank."
+                    ]
+                },
+                {
+                    "title": "Can I use the broken lantern?",
+                    "answers": [
+                        "If you think it's useful, there's this bridge you might be interested in."
+                    ]
+                },
+                {
+                    "title": "How do I get past the Cyclops?",
+                    "answers": [
+                        "Fighting isn't always the answer.",
+                        "There are two solutions. The alternate begins at F.",
+                        "What happens if you hang around too long, or give something to the Cyclops?",
+                        "He's hungry, isn't he?",
+                        "Feed him the lunch and water.",
+                        "Do you remember your mythology?",
+                        "Take a very close look at the commandment in the black book.",
+                        "The Cyclops is scared silly of the name of his father's nemesis.",
+						"ODYSSEUS (first letter of each line in commandment — some computer screens are narrow and make this more difficult to see). The Latin version of the name, ULYSSES, is also accepted.",
+                        "For fun, try saying ODYSSEUS elsewhere."
+                    ]
+                }
+            ],
+            "title": "The Maze"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I get the platinum bar?",
+                    "answers": [
+                        "For ZORK I releases (revisions) 1 through 14, the only solution to this problem begins at G. For ZORK I releases 15 on, there are two solutions — the preferred solution begins at B, the alternate at G.",
+                        "What is causing the loud roar?",
+                        "Is there a way to control the flow of water?",
+                        "Solve the puzzle of the dam.",
+                        "Does opening or closing the dam gates affect anything downstream?",
+                        "Open the dam gates. Wait until the reservoir is empty, then close the gates. Take advantage of the silence in the Loud Room while the reservoir refills.",
+                        "This solution to the Loud Room requires no object or information from elsewhere in the game.",
+                        "The solution has something to do with the room's acoustics.",
+                        "What happens whenever you say something?  >something?<  >>something?<<",
+                        "Type ECHO."
+                    ]
+                },
+                {
+                    "title": "How do I kill the rock?",
+                    "answers": [
+                        "How silly!",
+                        "The term \"living rock\" is metaphorical, and should not be taken literally."
+                    ]
+                },
+                {
+                    "title": "Is there anything special about the mirror?",
+                    "answers": [
+                        "Breaking it is not a good idea.",
+                        "Looking into it can be fun.",
+                        "Did you ever try touching or rubbing it?",
+                        "There are two Mirror Rooms. Touching the mirror in one transports you to the other."
+                    ]
+                },
+                {
+                    "title": "How do I enter Hades?",
+                    "answers": [
+                        "You must exorcise the evil spirits.",
+                        "For a hint, turn the page in the black book.",
+                        "It requires the bell, book and candles.",
+                        "Ring the bell, light the candles, and read the black book.",
+                        "The order in which you perform the ceremony is very important. Also, you must be holding the candles when you light them. Speed is of the essence, too — don't waste any more time than is necessary between steps."
+                    ]
+                },
+                {
+                    "title": "Can I get anywhere from the Dome Room?",
+                    "answers": [
+                        "Yes. It is likely that you have seen the necessary equipment.",
+                        "It is found in the Attic.",
+                        "Tie the rope to the railing."
+                    ]
+                },
+                {
+                    "title": "Can I go up from the Torch Room?",
+                    "answers": [
+                        "No."
+                    ]
+                },
+                {
+                    "title": "How do I get out of the Temple area?",
+                    "answers": [
+                        "You'll never reach the rope.",
+                        "You can leave from the altar end by going down, but \"you haven't a prayer of getting the coffin down that hole.\"",
+                        "Or solve the puzzle of the granite walls.",
+                        "The altar has magical powers. What is usually done at altars?",
+                        "Try praying."
+                    ]
+                }
+            ],
+            "title": "The Round Room Area"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I blow up the dam?",
+                    "answers": [
+                        "What a concept!",
+                        "This answer left intentionally blank."
+                    ]
+                },
+                {
+                    "title": "How is the control panel operated?",
+                    "answers": [
+                        "You can turn the bolt.",
+                        "You need the wrench.",
+                        "You must activate the panel. (Green bubble lights up.)"
+                    ]
+                },
+                {
+                    "title": "What is the green bubble for?",
+                    "answers": [
+                        "It indicates that the control panel is activated. Use the buttons in the Maintenance Room."
+                    ]
+                },
+                {
+                    "title": "What do I do with the object which looks like a tube of toothpaste?",
+                    "answers": [
+                        "Read the tube.",
+                        "Brushing your teeth with it is not sensible.",
+                        "It doesn't oil the bolt well.",
+                        "Gooey gunk like this is good for patching leaks in water pipes or boats."
+                    ]
+                },
+                {
+                    "title": "What is the screwdriver for?",
+                    "answers": [
+                        "You'll know when the time comes."
+                    ]
+                },
+                {
+                    "title": "What do the buttons in the Maintenance Room do?",
+                    "answers": [
+                        "Try them all. You should be able to find out.",
+                        "The blue button causes a water pipe to burst.",
+                        "The red button turns the lights on and off.",
+                        "The yellow button activates the control panel at the dam. (The green bubble is now glowing.)",
+                        "The brown bubble deactivates the control panel."
+                    ]
+                },
+                {
+                    "title": "Can I stop the leak?",
+                    "answers": [
+                        "Yes, but not with your finger.",
+                        "Isn't there some sort of glop you could apply?",
+                        "Use the gunk in the tube."
+                    ]
+                },
+                {
+                    "title": "What is the pile of plastic good for?",
+                    "answers": [
+                        "What is the valve for?",
+                        "Did you try blowing into it?",
+                        "You need the air pump, which is north of the Reservoir.",
+                        "Solve the dam problem, or figure out the mirror."
+                    ]
+                }
+            ],
+            "title": "The Dam Area"
+		},
+        {
+            "questions": [
+                {
+                    "title": "Can the river be crossed?",
+                    "answers": [
+                        "Not without a boat."
+                    ]
+                },
+                {
+                    "title": "What will placate the River God?",
+                    "answers": [
+                        "What have you tried to throw into the river?",
+                        "There is no River God. Anything thrown in is lost forever."
+                    ]
+                },
+                {
+                    "title": "How do I get back from across the river?",
+                    "answers": [
+                        "If you launch the boat from Sandy Beach, you can cross the river to the west to White Cliffs South.",
+                        "It is also possible to cross the rainbow."
+                    ]
+                },
+                {
+                    "title": "How do I control the boat?",
+                    "answers": [
+                        "Read the label.",
+                        "You can say BOARD (or GET IN), DISEMBARK (or GET OUT), LAUNCH, and LAND (or a direction towards a landing area). You can also let the current carry you."
+                    ]
+                },
+                {
+                    "title": "How do I carry a pointy object onto the boat?",
+                    "answers": [
+                        "Pointy objects can puncture a plastic boat. You should not carry them on. Put them in the boat before boarding or put them into a container, such as the brown sack, first."
+                    ]
+                },
+                {
+                    "title": "How do I go over the falls?",
+                    "answers": [
+                        "Just stay in the boat and wait.",
+                        "Well, what did you expect?",
+                        "\"I see no intelligence here.\"",
+                        "By the way, have you ever taken a close look at the word ARAGAIN?"
+                    ]
+                },
+                {
+                    "title": "What is the significance of the rainbow?",
+                    "answers": [
+                        "You can cross it and get the pot of gold.",
+                        "You do not click your heels together three times while saying \"There's no place like home.\"",
+                        "The description of one of the treasures, and the result of manipulating it properly were meant to be subtle hints.",
+                        "Raise or wave the sceptre while standing at the end of the rainbow."
+                    ]
+                },
+                {
+                    "title": "How do I get through the crack in the Damp Cave?",
+                    "answers": [
+                        "\"It's too narrow for most insects.\"",
+                        "You don't."
+                    ]
+                },
+                {
+                    "title": "How do I turn myself into an insect?",
+                    "answers": [
+                        "Build a cocoon?",
+                        "Not bloody likely."
+                    ]
+                }
+            ],
+            "title": "Old Man River"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What do I do about the bat?",
+                    "answers": [
+                        "It's a vampire bat.",
+                        "Have you never watched an old horror movie?",
+                        "Use the garlic."
+                    ]
+                },
+                {
+                    "title": "How do I get beyond the Smelly Room?",
+                    "answers": [
+                        "If your lantern battery is dead, forget it."
+                    ]
+                },
+                {
+                    "title": "How do I find my way through the coal mine?",
+                    "answers": [
+                        "would think you were an expert maze-mapper by now."
+                    ]
+                },
+                {
+                    "title": "Is the basket on the chain useful?",
+                    "answers": [
+                        "Anything that complex in ZORK I is useful."
+                    ]
+                },
+                {
+                    "title": "How do I get through the narrow passage from the Timber Room?",
+                    "answers": [
+                        "\"You cannot fit through this passage with that load.\"",
+                        "Did you try dropping everything?"
+                    ]
+                },
+                {
+                    "title": "What source of light can I bring into the Drafty Room?",
+                    "answers": [
+                        "Matches.",
+                        "(Well, no one said they would work in a draft.) You can't carry a light source in. There is another way.",
+                        "Why might the room be drafty?",
+                        "Did you ever wonder where the shaft with the basket led?",
+                        "Objects, including light sources, can be placed in the basket. The basket can be lowered and raised."
+                    ]
+                },
+                {
+                    "title": "What is the timber for?",
+                    "answers": [
+                        "It makes the room more interesting and the adventurer more confused."
+                    ]
+                },
+                {
+                    "title": "How do I use the machine?",
+                    "answers": [
+                        "The switch description should remind you of something.",
+                        "Try putting something inside and turning the machine on with the screwdriver. Have a dictionary handy.",
+                        "You can make a diamond from coal."
+                    ]
+                },
+                {
+                    "title": "What is meant by the \"Granite Wall\" in the Slide Room?",
+                    "answers": [
+                        "Evidently the ancient Zorkers did not have strong truth-in-advertising laws. Take nothing for granite."
+                    ]
+                },
+                {
+                    "title": "Is the coal good for anything?",
+                    "answers": [
+                        "It is a source of carbon.",
+                        "One of the most valuable gems is made of carbon.",
+                        "Diamonds are pure carbon in crystalline form. They are created under tremendous heat and pressure."
+                    ]
+                },
+                {
+                    "title": "Is the gas of any use?",
+                    "answers": [
+                        "It's great for blowing up dim-witted adventurers who wander into a coal mine with an open flame."
+                    ]
+                }
+            ],
+            "title": "The Coal Mine Area"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I cross the chasm?",
+                    "answers": [
+                        "There's no bridge."
+                    ]
+                },
+                {
+                    "title": "How do I build a bridge?",
+                    "answers": [
+                        "An interesting idea...",
+                        "The timber might be useful.",
+                        "But then again, maybe not.",
+                        "A valiant attempt, but this is getting you nowhere."
+                    ]
+                },
+                {
+                    "title": "Why doesn't the magic word \"plugh\" work in the land beyond the chasm?",
+                    "answers": [
+                        "\"A hollow voice says Fool.\"",
+                        "Should nonsense words work anywhere in ZORK I?",
+                        "Remember the warning in the introduction. Do not let the presence or absence of questions, or the lengths of the answers, influence your game."
+                    ]
+                },
+                {
+                    "title": "After the meteor strike activates the long-dormant volcano and destroys the bridge, how do I get back across the chasm?",
+                    "answers": [
+                        "Whew! (That might actually be an interesting addition to the game.)"
+                    ]
+                }
+            ],
+            "title": "The Land Beyond the Chasm"
+        },
+      {
+        "questions": [
+          {
+            "title": "Why does the sword glow?",
+            "answers": [
+              "Elvish swords are magical, and glow with a blue light when dangers (particularly dangerous beings) are near."
+            ]
+          },
+          {
+            "title": "What do I do about the Thief?",
+            "answers": [
+              "Discretion is the better part of valor.",
+              "You can almost always avoid a confrontation by walking away. Although you may be robbed, at least you won't be killed."
+            ]
+          },
+          {
+            "title": "How many points are there in the game?",
+            "answers": [
+              "Any time you say QUIT, RESTART, or SCORE, this is pointed out."
+            ]
+          },
+          {
+            "title": "How do I get out of the dungeons?",
+            "answers": [
+              "There are six exits.",
+              "The chimney will allow you to carry one object at a time in addition to your lamp.",
+              "Once you find an exit other than the chimney, the trapdoor will not close behind you.",
+              "Probably the easiest exit (conceptually) is by way of the grating. You will probably come across the other three exits while solving some of the harder problems, but it is not necessary to find more than one to complete the game."
+            ]
+          },
+          {
+            "title": "What is the significance of all the engravings?",
+            "answers": [
+              "The knowledgeable critic, I. Q. Roundhead, wrote a ten-volume study of the engravings of the ancient Zorkers. To make a long story short, he concluded that the Zorkers were very strange people."
+            ]
+          },
+          {
+            "title": "How do I kill the Thief?",
+            "answers": [
+              "The Thief is a cunning and dangerous opponent, skilled in the martial arts. Novice Zorkers would do well to avoid him.",
+              "It is possible to distract him for one move by giving him something of value.",
+              "The nasty knife is a marginally more effective weapon to use against him.",
+              "As you gain in points, you become a better match."
+            ]
+          },
+          {
+            "title": "How can I recharge my lamp?",
+            "answers": [
+              "What makes you think you can?",
+              "It is always best to conserve resources. You can prolong its life by turning it off whenever you can and using alternate light sources."
+            ]
+          },
+          {
+            "title": "What happens when you die in ZORK I?",
+            "answers": [
+              "You may appear in the forest with your belongings scattered (valuables below ground, nonvaluables above).",
+              "You may wander as a spirit until you find a way to resurrect yourself.",
+              "ZORK I is as fair as baseball. Three strikes and you're out.",
+              "You become a spirit if you have visited a certain location before death.",
+              "The location is the altar in the South Temple.",
+              "Try praying at the altar."
+            ]
+          },
+          {
+            "title": "Who is \"the Other Occupant?\"",
+            "answers": [
+              "He of the large bag.",
+              "The Thief, of course."
+            ]
+          },
+          {
+            "title": "How do I go over the falls without killing myself?",
+            "answers": [
+              "Why not ask, \"How do I cut off my head without killing myself?\""
+            ]
+          },
+          {
+            "title": "Where is HELLO SAILOR useful?",
+            "answers": [
+              "Are you sure you want to know?",
+              "Absolutely certain?",
+              "To quote the black book, \"Oh ye who go about saying unto each: 'Hello Sailor': Dost thou know the magnitude of thy sin before the gods? ... Surely thou shalt repent of thy cunning.\"",
+              "Nowhere. (You were warned.)"
+            ]
+          },
+          {
+            "title": "Why do things move and disappear in the dungeon?",
+            "answers": [
+              "The Thief is constantly moving about.",
+              "There is a high probability that he will take valuable objects (except the gold coffin) which you have seen. There is a much lower probability that he will take a nonvaluable object (again, only if you have seen it), and he may later decide to drop it."
+            ]
+          },
+          {
+            "title": "Where are the treasures the Thief took from me?",
+            "answers": [
+              "As he wanders about stealing things, he puts them in his bag. Whenever he stops in his Treasure Room, he drops off the valuables he has collected.",
+              "You can get the contents of the bag by defeating him in a fight.",
+              "The Treasure Room is guarded by the Cyclops."
+            ]
+          },
+          {
+            "title": "What do I do with the stiletto?",
+            "answers": [
+              "Congratulations! Getting the stiletto is rare. If you keep it away from the Thief, he won't attack you.",
+              "It is a weapon, nothing more."
+            ]
+          },
+          {
+            "title": "Who is the lean and hungry gentleman?",
+            "answers": [
+              "The Thief."
+            ]
+          },
+          {
+            "title": "Where can I use the shovel?",
+            "answers": [
+              "It will dig only into very soft soil.",
+              "Try it in the sand.",
+              "The sand in the Sandy Cove is most promising."
+            ]
+          },
+          {
+            "title": "Is there any significance to all the granite walls?",
+            "answers": [
+              "There are only two true granite walls.",
+              "While next to a real granite wall, you can transport yourself to the location of the other by saying the name of the room.",
+              "The two granite walls are in the Temple and the Treasure Room."
+            ]
+          },
+          {
+            "title": "Which object is best for casting images?",
+            "answers": [
+              "What are you talking about?",
+              "This answer left intentionally blank."
+            ]
+          }
+        ],
+        "title": "General Questions"
+      },
+      {
+        "toc": false,
+        "upper":  false,
+        "title": "Many people have questions pertaining to the map. This section is for them.",
+        "questions": [
+          {
+            "title": "How do I get into the Strange Passage?",
+            "answers": [
+              "This is not necessary to complete the game.",
+              "See the alternative Cyclops answer."
+            ]
+          },
+          {
+            "title": "How do I get into the Stone Barrow?",
+            "answers": [
+              "You'll know when the time comes.",
+              "When you have all 350 points, you'll be able to enter the Barrow."
+            ]
+          }
+        ]
+      },
+        {
+            "questions": [
+				{
+					"title": "Progress Points",
+					"subTitle": "(Use only as a last resort.)",
+					"answers": [
+						"You get 10 points for getting into the house, 25 for getting into the Cellar, 5 for getting past the Troll, 13 for getting to the Drafty Room, and 25 for getting to the Treasure Room. These points plus all the treasure points make 350. When you have all 350 points the twentieth treasure will appear in the case — a map which leads (indirectly) to 400 more points (ZORK II)."
+					]
+				},
+				{
+					"orderedList": false,
+					"title": "Treasures: Their Values and Locations",
+					"subTitle": "(Use only as a last resort.)",
+					"columns": [
+						{"header": "treasure", "width": "40%"},
+						{"header": "value\n(touch)", "width": "15%"},
+						{"header": "value\n(case)", "width": "15%"},
+						{"header": "where", "width": "30%"}
+					],
+					"answers": [
+						["jewel-encrusted egg", "5", "5", "in nest in tree"],
+						["clockwork canary", "6", "4", "in the egg"],
+						["beautiful painting", "4", "6", "Gallery"],
+						["platinum bar", "10", "5", "Loud Room"],
+						["ivory torch", "14", "6", "Torch Room"],
+						["gold coffin", "10", "15", "Egypt Room"],
+						["Egyptian sceptre", "4", "6", "in the coffin"],
+						["trunk of jewels", "15", "5", "Reservoir"],
+						["crystal trident", "4", "11", "Atlantis Room"],
+						["jade figurine", "5", "5", "Bat Room"],
+						["sapphire bracelet", "5", "5", "Gas Room"],
+						["huge diamond", "10", "10", "you create it"],
+						["bag of coins", "10", "5", "in the Maze"],
+						["crystal skull", "10", "10", "Land of Living Dead"],
+						["jeweled scarab", "5", "5", "buried in Sandy Cave"],
+						["large emerald", "5", "10", "in the buoy"],
+						["silver chalice", "10", "5", "Treasure Room"],
+						["pot of gold", "10", "10", "End of Rainbow"],
+						["brass bauble", "1", "1", "the songbird has it"]
+					]
+				}
+			],
+            "title": "How Points Are Scored"           
+        },
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"title": "Have you ever:",
+					"answers": [
+						"...opened the grating from beneath while the leaves were still on it?",
+						"...tried swearing at ZORK I?",
+						"...waved the sceptre while standing on the rainbow?",
+						"...tried anything nasty with the bodies in Hades?",
+						"...burned the black book?",
+						"...damaged the painting?",
+						"...lit the candles with the torch?",
+						"...read the matchbook?",
+						"...tried to take yourself (or the Thief, Troll, or Cyclops)?",
+						"...tried cutting things with the knife or sword?",
+						"...poured water on something burning?",
+						"...said WAIT or SCORE while dead (as a spirit)?"
+					]
+				},
+				{
+					"orderedList": false,
+					"title": "Words you may not have tried:",
+					"answers": [
+						"HELLO (to Troll, Thief, Cyclops)",
+						"ZORK",
+						"OIL (lubricate)",
+						"XYZZY",
+						"WALK AROUND (in forest, outside house, or inside house)",
+						"PLUGH",
+						"FIND (especially with house, hands, teeth, me)",
+						"CHOMP",
+						"COUNT (candles, leaves, matches)",
+						"WIN",
+						"MUMBLE (or SIGH)",
+						"LISTEN (especially to the Troll, Thief, or Cyclops)",
+						"REPENT",
+						"WHAT IS (grue, zorkmid, ...)",
+						"YELL (or SCREAM)",
+						"SMELL"
+					]
+				}
+			],
+			"title": "For Your Amusement",
+			"tocTitle": "For Your Amusement (after you've finished)",
+			"subTitle": "(after you've finished the game):"
+		}
+    ]
+}
+</script>
+
+</html>

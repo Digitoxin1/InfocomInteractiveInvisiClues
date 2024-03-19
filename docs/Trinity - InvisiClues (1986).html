@@ -1,0 +1,2015 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trinity InvisiClues</title>
+
+<style type="text/css">
+/*InvisiClues.css v2.1*/
+:root {
+	--width: 40rem;
+	--mono: "Source Code Pro", ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Fira Mono", "Droid Sans Mono", "Liberation Mono", monospace;
+	--sans: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Oxygen, Cantarell, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	cursor: default;
+	overflow-wrap: break-word;
+	-moz-tab-size: 4;
+	tab-size: 4;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+@media not (prefers-color-scheme: dark) {
+	:root {
+		--normal-weight: 400;
+		--bold-weight: 600;
+		--bg-color: #FAFAEF;
+		--link-color: #00e;
+		--visited-link-color: #551a8b;
+		--fg-color: black;
+		--link-underline-height: .14rem;
+		--line-outline-width: .1rem;
+		--summary-outline-width: .05rem;
+	}
+}
+@supports (color-scheme: dark light) {
+	@media screen and (prefers-color-scheme: dark) {
+		:root {
+			--normal-weight: 350;
+			--bold-weight: 550;
+			--bg-color: #131415;
+			--link-color: #6085ea;
+			--visited-link-color: #c999d9;
+			--fg-color: #d8d8d8;
+			--link-underline-height: .1em;
+			--line-outline-width: .07rem;
+			--summary-outline-width: .08rem;
+		}
+	}
+}
+*:where(:not(html, iframe, canvas, img, svg, video, audio, pre):not(svg *, symbol *)) {
+	all: unset;
+	display: revert;
+}
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+html {
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	font-size: 100%;
+	vertical-align: baseline;
+	font-weight: var(--normal-weight);
+	font-family: var(--sans);
+	font-size: 17px;
+	scroll-behavior: smooth;
+}
+body {
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+	line-height: 1.5;
+	margin: auto;
+	text-indent: 0;
+}
+*,
+::before,
+::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: inherit;
+	background-color: transparent;
+	color: inherit;
+}
+a {
+	text-decoration: none;
+	border-bottom: dotted var(--link-underline-height);
+	cursor: revert;
+}
+a:focus {
+	outline: var(--line-outline-width) solid;
+	outline-offset: var(--line-outline-width);
+	border-radius: .75rem;
+	border-bottom: dotted var(--link-underline-height) transparent;
+}
+a:link {
+	color: var(--link-color);
+}
+a:visited {
+	color: var(--visited-link-color);
+}
+ol,
+ul,
+menu {
+	list-style: none;
+}
+header,
+.header,
+h1,
+h2,
+h4,
+h5,
+.question,
+.topNav select,
+.indented {
+	max-width: var(--width);
+	width: 90%;			
+	margin: auto;
+}
+header .indented,
+.header .indented {
+	width: 100%;
+}
+img.indented {
+	display: block;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+h2 {
+	margin-top: 2rem;
+	font-size: 1.66rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+.header h2 {
+	margin-top: 1rem;
+}
+.indented {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+li:before {
+	font-family: var(--mono);
+	font-weight: bold;
+	content: "";
+}
+li {
+	font-size: 1.25rem;
+}
+li+li {
+	margin-top: .5rem;
+}
+ul.indented {
+	padding-left: 0;
+}
+h3,h5 {
+	font-size: 1.25rem;
+}
+h4 {
+	font-size: 0.9rem;
+	font-weight: var(--bold-weight);
+	margin-bottom: 1em;
+	margin-top: -1.50em;
+	text-align: justify;
+}
+h5 {
+	font-weight: var(--bold-weight);
+}
+.question h4 {
+	margin-top: -0.4em;
+	width: 100%;
+}
+h1.title {
+	font-size: 3rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+h1 {
+	font-size: 2.1em;
+	line-height: 1.07em;
+	margin-bottom: 1rem;
+}
+.question {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border: .1em solid currentColor;
+	border-radius: 1em;
+}
+.answer-row:hover,
+h3.hidden-title:hover {
+	outline: var(--summary-outline-width) dotted;
+}
+.answer-row:focus,
+h3.hidden-title:focus {
+	outline: var(--summary-outline-width) solid;
+}
+h3.hidden-title {
+	cursor: pointer;
+	border-radius: .75em;
+	border: var(--summary-outline-width) solid transparent;
+	padding-left: .5em;
+	margin-left: -.5em;
+}
+.answers {
+	display: table;
+	width: 100%;
+	margin-top: .5rem;
+}
+a.answer-row {
+	display: table-row;
+	cursor: pointer;
+	width: 100%;
+	border-radius: .75em;
+	border: var(--summary-outline-width) solid transparent;
+	color: var(--link-color);
+}
+.answer-label {
+	font-family: var(--mono);
+	font-style: normal;
+	font-weight: bold;
+	display: table-cell;
+	padding-left: .5em;
+	padding-right: .5em;
+	text-align: right;
+	white-space: nowrap;
+}
+.answer-cell {
+	display: table-cell;
+	width: 100%;
+	padding-right: 0.5em;
+}
+.answer {
+	display: block;
+	text-align: justify;
+}
+.gap {
+	font-size: .25em;
+}
+main {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+.header img {
+	float: left;
+	margin-right: 2em;
+	
+}
+.header::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.upper {
+	text-transform: uppercase;
+}
+.header p {
+	text-align: justify;
+	margin-bottom: 1rem;
+}
+.answer-header {
+	display: table-row;
+}
+.answer-col {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	padding-right: 0.5em;
+}
+.answer-header .answer-col {
+	vertical-align: bottom; 
+}
+em {
+	font-weight: bold;
+}
+.header img {
+	height: 200px;
+}
+.top {
+	position: fixed;
+	bottom: 20px;   
+	right: 20px;
+	width:45px;
+	display: block;
+	transition: opacity 0.5s ease-out;
+	opacity: 0;
+	cursor: default;
+	aspect-ratio:1;
+	background: #134F8F;
+	border-radius:10px;
+}
+.top.visible {
+	opacity: 1;
+	cursor: pointer;
+}
+.top:before {
+	content:"";
+	position:absolute;
+	inset:30%;
+	transform:translateY(20%) rotate(-45deg);
+	border-top:5px solid #fff;
+	border-right:5px solid #fff;
+}
+.topNav {
+	background-color: #134F8F;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	position: fixed;	
+	width: 100%;
+	display: none;
+}
+.topNav select {
+	display: block;
+	width: 100%;
+	padding: 0.375rem 2rem 0.375rem 2rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: white;
+	background-color: transparent;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 0.1em solid currentColor;
+	border-radius: 0.75em;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	appearance: none;		
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow: ellipsis;
+}
+.topNav select option,
+.topNav select optgroup {
+	color: black;
+}
+body.hasNavBar .topNav {
+	display: block;
+}
+body.hasNavBar h1,
+body.hasNavBar h2 {
+	scroll-margin-top: 5rem;
+}
+body.hasNavBar main {
+	padding-top: 5em;
+}
+</style>
+
+<script>
+/*InvisiClues.js v2.1*/
+var invisiClues = {
+	index: 1,	
+	numberedList: false,
+	displayTOC: true,
+	scrollTopPos: 0,
+	navSections: [],
+	processJSON: function() {
+		var data = JSON.parse(document.getElementById('jsonData').textContent);
+		var main = document.getElementById('section0');
+		
+		if ('numberedList' in data) {
+			this.numberedList = data.numberedList;
+		}
+		if ('displayTOC' in data) {
+			this.displayTOC = data.displayTOC;
+		}
+		
+		this.processHeader(main, data.header);
+				
+				
+		if (this.displayTOC) {
+			var tocElem = this.processTOC(main);	
+			var liElem = this.tocElement('section0', 'Introduction', true);
+			this.navElement('section0', 'Introduction');
+			tocElem.appendChild(liElem);	
+			this.navElement('toc', 'Table of Contents');
+		} else {
+			var tocElem = null;
+		};		
+		if ('sections' in data) {
+			for (var i = 0; i < data.sections.length; i++) {
+				this.processSection(main, data.sections[i], tocElem, true);
+			}
+		}
+		if (this.displayTOC) {
+			document.querySelector("body").setAttribute('class', 'hasNavBar');
+			window.addEventListener("resize", this.refreshTopPos);
+			window.addEventListener("scroll", this.toggleTopButton);
+			window.addEventListener("scrollend", this.refreshNavBar);
+			document.querySelector(".topNav select").addEventListener("change", this.navSection);			
+			this.populateNavSections();
+			this.refreshTopPos();
+			this.refreshNavBar();
+			document.querySelector(".topNav select").focus();
+		}
+	},
+	populateNavSections: function () {
+		var navSections = document.querySelectorAll('.navSection');
+		this.navSections = [...navSections];
+		this.navSections.reverse();
+	},
+	refreshTopPos: function() {
+		var toc = document.getElementById("toc");
+		invisiClues.scrollTopPos = toc.offsetTop;
+	},
+	refreshNavBar: function () {
+		for (var i = 0; i < invisiClues.navSections.length; i++) {
+			var navSection = invisiClues.navSections[i];
+			if (navSection.offsetTop < scrollY + 100) {
+				document.querySelector(".topNav select").value = '#' + navSection.id;
+				break;
+			}
+		}
+	},
+	toggleTopButton: function() {
+		var top = document.querySelector("a.top");
+		var scrollY = this.scrollY || 0;
+		if (scrollY > invisiClues.scrollTopPos + 30) {
+			top.setAttribute('class', 'top visible');
+			top.setAttribute('href', '#toc');
+		} else {
+			top.setAttribute('class', 'top');
+			top.removeAttribute('href');
+		}
+	},
+	simpleElement: function(type, data) {
+		var elem = document.createElement(type);
+		elem.innerHTML = data;
+		return elem;
+	},
+	processHeaderSection: function(headerElem, section) {
+		if ('title' in section) {
+			headerElem.appendChild(this.simpleElement('h3', section.title));
+		}
+		if ('content' in section) {
+			for (var i = 0; i < section.content.length; i++) {
+				headerElem.appendChild(this.simpleElement('p', section.content[i]));
+			}
+		}
+	},
+	processHeader: function(main, header) {
+		var headerElem = document.createElement('div');
+		headerElem.setAttribute('class', 'header');
+		if ('image' in header) {
+			var imgElem = document.createElement('img');
+			imgElem.setAttribute('src', header.image);
+			headerElem.appendChild(imgElem);
+		}
+		if ('title' in header) {
+			headerElem.appendChild(this.simpleElement('h1', header.title + ' InvisiClues™'));
+		}
+		headerElem.appendChild(this.simpleElement('h2', "Introduction"));
+		if ('section1' in header) {
+			this.processHeaderSection(headerElem, header.section1);
+		}
+		if ('section2' in header) {
+			this.processHeaderSection(headerElem, header.section2);
+		}
+		if ('sampleQuestions' in header) {
+			var sampleElem = document.createElement('div');
+			this.processSection(sampleElem, header.sampleQuestions, false);
+			headerElem.appendChild(sampleElem);
+		}
+		if ('section3' in header) {
+			this.processHeaderSection(headerElem, header.section3);
+		}
+		main.appendChild(headerElem);
+	},
+	processTOC: function(main) {
+		var tocElem = this.titleElement('Table of Contents', 'h2', false, false, true);
+		tocElem.setAttribute('id', 'toc');
+		main.appendChild(tocElem);
+		var elem = document.createElement('ul');
+		elem.setAttribute('class', 'indented');
+		main.appendChild(elem);
+		return elem;
+	},
+	tocElement: function(sectionId, title, hasQuestions) {
+		var elem = document.createElement('li');
+		if (hasQuestions) {
+			var aElem = document.createElement('a');
+			aElem.innerHTML = title;
+			aElem.setAttribute('href', '#' + sectionId);
+			elem.appendChild(aElem);
+		} else {
+			elem.innerHTML = title;
+		}
+		return elem;
+	},
+	navGroup: function (title) {
+		var optGroup = document.createElement('optgroup');
+		optGroup.setAttribute('label', title);
+		document.querySelector(".topNav select").appendChild(optGroup);
+		return optGroup;
+	},
+	navElement: function (sectionId, title, optGroup) {
+		var opt = document.createElement('option');
+		opt.setAttribute('value', '#' + sectionId);
+		opt.innerHTML = title;
+		if (optGroup) {
+			optGroup.appendChild(opt);
+		} else {
+			document.querySelector(".topNav select").appendChild(opt);
+		}
+	},
+	processSection: function(main, section, ulElem, upper, optGroup) {
+		if ('title' in section && section.title != '') {
+			if (!('toc' in section)) {
+				section.toc = true;
+			}
+			var title = section.title;
+			if ('tocTitle' in section) {
+				var tocTitle = section.tocTitle;
+			} else {
+				var tocTitle = section.title;
+			}
+			if ('upper' in section) {
+				upper = section.upper;
+			}
+			var titleElem = this.titleElement(section.title, (section.toc ? 'h2' : 'h5'), section.toc, upper, section.toc);
+			var sectionId = titleElem.getAttribute('id');
+			main.appendChild(titleElem);	
+			if (ulElem && section.toc) {
+				var hasQuestions = 'questions' in section && section.questions.length > 0;
+				var hasQuestions = hasQuestions || ('images' in section && section.images.length > 0);
+				var liElem = this.tocElement(sectionId, tocTitle, hasQuestions);
+				if (hasQuestions) {
+					this.navElement(sectionId, tocTitle, optGroup);
+				}
+				ulElem.appendChild(liElem);
+			} else {
+				var liElem = null;
+			}
+		}
+		if ('subTitle' in section && section.subTitle != '') {
+			main.appendChild(this.titleElement(section.subTitle, 'h4', false, false));
+		}
+		if ('questions' in section) {
+			for (var i = 0; i < section.questions.length; i++) {
+				main.appendChild(this.questionElement(section.questions[i]));
+			}
+		}
+		if ('images' in section) {
+			for (var i = 0; i < section.images.length; i++) {
+				main.appendChild(this.imageElement(section.images[i]));
+			}
+		}
+		if ('subSections' in section) {
+			if (section.subSections.length > 0) { 
+				var subOptGroup = this.navGroup(tocTitle);
+				for (var i = 0; i < section.subSections.length; i++) {
+					if (liElem) {
+						var ulSubElem = document.createElement('ul');
+						ulSubElem.setAttribute('class', 'indented');
+						liElem.appendChild(ulSubElem);
+					} else {
+						var ulSubElem = null;
+					}
+					this.processSection(main, section.subSections[i], ulSubElem, false, subOptGroup);
+				}
+			}
+		}
+	},
+	titleElement: function(text, type, setId, upper, navSection) {
+		var elem = document.createElement(type);
+		if (setId) {
+			elem.setAttribute('id', 'section' + this.index);
+			this.index ++;
+		}
+		var classList = [];
+		if (upper) {
+			classList.push('upper');
+		}
+		if (navSection) {
+			classList.push('navSection');
+		}
+		if (classList.length > 0) {
+			elem.setAttribute('class', classList.join(' '));
+		}
+		elem.innerHTML = text;
+		
+		return elem;
+	},
+	answerElement: function(label, ariaLabel, text, question) {
+		var elem = document.createElement('a');	
+		elem.setAttribute('class', 'answer-row');
+		if (!('alwaysShow' in question) || !question.alwaysShow) {
+			elem.addEventListener('click', this.toggle);
+		}
+		var answerLabel = document.createElement('div');
+		answerLabel.setAttribute('class', 'answer-label');
+		answerLabel.innerHTML = label;
+		elem.appendChild(answerLabel);
+		var answerCell = document.createElement('div');
+		answerCell.setAttribute('class', 'answer-cell');
+		answerCell.setAttribute('aria-label', ariaLabel);
+		answerCell.setAttribute('role', 'alert');
+		var answer = document.createElement('span');
+		answer.setAttribute('class', 'answer');
+		if (!('alwaysShow' in question) || !question.alwaysShow) {
+			answer.setAttribute('style', 'visibility:hidden');		
+		}
+		if ('columns' in question && Array.isArray(text)) {
+			for (var i = 0; i < question.columns.length; i++) {
+				var subAnswer = document.createElement('span');
+				subAnswer.setAttribute('class', 'answer-col');
+				var attributes = ['width: ' + question.columns[i].width];
+				if ('align' in question.columns[i]) {
+					attributes.push('text-align: ' + question.columns[i].align);
+				}
+				subAnswer.setAttribute('style', attributes.join('; '));
+				if (text.length > i) {
+					subAnswer.innerHTML = text[i];
+				}
+				answer.appendChild(subAnswer);
+			}
+		} else {
+			answer.innerHTML = text;
+		}
+		answerCell.appendChild(answer);
+		elem.appendChild(answerCell);
+		
+		return elem;
+	},
+	answerGap: function() {
+		var gap = document.createElement('div');
+		gap.setAttribute('class', 'gap');
+		gap.appendChild(document.createTextNode('\u2009'));
+		
+		return gap;
+	},
+	columnHeaders: function(columns) {
+		var header = document.createElement('div'); 
+		header.setAttribute("class","answer-header");
+		var answerLabel = document.createElement('div');
+		answerLabel.setAttribute('class', 'answer-label');
+		header.appendChild(answerLabel);
+		var answerCell = document.createElement('div');
+		answerCell.setAttribute('class', 'answer-cell');
+		for (var i = 0; i < columns.length; i++) {
+			var subAnswer = document.createElement('span');
+			subAnswer.setAttribute('class', 'answer-col');
+			var attributes = ['width: ' + columns[i].width];
+			if ('align' in columns[i]) {
+				attributes.push('text-align: ' + columns[i].align);
+			}
+			subAnswer.setAttribute('style', attributes.join('; '));
+			subAnswer.appendChild(document.createTextNode(columns[i].header));
+			answerCell.appendChild(subAnswer);
+		}
+		header.appendChild(answerCell);			
+		return header;
+	},
+	answersElement: function(question) {
+		var elem = document.createElement('div');
+		var classes = ['answers'];
+		if ('anyAnswer' in question && question.anyAnswer) {
+			classes.push('anyAnswer');
+		}
+		elem.setAttribute('class',classes.join(' '));
+		if ('columns' in question) {
+			if (!('columnHeaders' in question) || question.columnHeaders) {
+				elem.appendChild(this.columnHeaders(question.columns));
+			}
+		}
+		var ariaLabel = '';
+		var label = '';
+		var numberedList = this.numberedList;
+		if ('numberedList' in question) {
+			numberedList = question.numberedList;
+		}
+		
+		for (var i = 0; i < question.answers.length; i++) {
+			var answer = question.answers[i];
+			if ('customLabels' in question && question.customLabels && Array.isArray(answer)) {
+				ariaLabel = answer.shift();
+				label = ariaLabel;
+			} else if (question.orderedList) {
+				if (numberedList) {
+					ariaLabel = (i + 1).toString();
+				} else {
+					ariaLabel = String.fromCharCode(65 + i % 26).repeat(Math.floor(i / 26) + 1);
+				}			
+				if ('listPrefix' in question) {
+					ariaLabel = question.listPrefix + ariaLabel;
+				}
+				label = ariaLabel + ('listSuffix' in question ? question.listSuffix : '.');
+			} else {
+				label = '\u2022';
+				ariaLabel = '';
+			};
+			elem.appendChild(this.answerElement(label, ariaLabel, answer, question));
+			elem.appendChild(this.answerGap());						
+		}
+		return elem;
+	},
+	questionElement: function(question) {
+		var elem = document.createElement('div');	
+		var classes = ['question','indented'];
+		if ('class' in question) {
+			classes.push(question.class);
+		}
+		elem.setAttribute('class',classes.join(' '));
+		if ('title' in question && question.title != '') {
+			var titleElem = this.titleElement(question.title, 'h3', false, false);
+			var span = titleElem.querySelector('span');
+			if (span != null && span.classList.contains('hidden-title')) {
+				span.removeAttribute("class");
+				span.setAttribute("style", "visibility: hidden;");
+				var h3Elem = span.closest('h3');
+				h3Elem.setAttribute("class", "hidden-title");
+				h3Elem.addEventListener("click", this.toggleTitle);
+			}
+			elem.appendChild(titleElem);
+		}
+		if ('subTitle' in question && question.subTitle != '') {
+			elem.appendChild(this.titleElement(question.subTitle, 'h4', false, false));
+		}
+		if (!('orderedList' in question)) {
+			question.orderedList = (question.answers.length > 1);
+		}
+		elem.appendChild(this.answersElement(question));
+		return elem;
+	},
+	imageElement: function(image) {
+		var elem = document.createElement('img');
+		elem.setAttribute('class', 'indented');
+		elem.setAttribute('src', image);
+		return elem;
+	},
+	toggle: function() {
+		var span = this.querySelector('.answer');
+		var visible = (span.style.visibility !== "hidden");
+		var parent = span.closest('.answers');
+		var anyAnswer = parent.classList.contains('anyAnswer');
+		if (anyAnswer) {
+			span.setAttribute("style", visible ? "visibility: hidden;" : "visibility: visible;");
+		} else {
+			var answers = parent.querySelectorAll('.answer-row .answer-cell .answer');
+			if (visible) {
+				answers = [...answers];
+				answers.reverse();
+			}
+			for (var i = 0; i < answers.length; i++) {
+				answers[i].setAttribute("style", visible ? "visibility: hidden;" : "visibility: visible;");
+				if (span === answers[i]) {
+					break;
+				}
+			}
+		}
+	},
+	toggleTitle: function() {
+		var span = this.querySelector('span');
+		var visible = (span.style.visibility !== "hidden");
+		span.setAttribute("style", visible ? "visibility: hidden;" : "visibility: visible;");
+	},
+	navSection: function () {
+		location.href = this.value;
+		document.querySelector(".topNav select").focus();
+	}
+}
+document.addEventListener("DOMContentLoaded", function(event) { 
+	invisiClues.processJSON();
+});
+</script>
+</head>
+
+<body>
+<div class="topNav"><select></select></div>
+<main id="section0" class="navSection"></main>
+<a href="#toc" class="top"></a>
+</body>
+
+<script id="jsonData" type="application/json">
+{
+    "revision": 1.0,
+  "header": {
+    "title": "Trinity",
+    "year": "1986",
+    "copyright": "© 1986 Infocom, Inc.",
+    "image": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QBoRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAExAAIAAAARAAAATgAAAAAAAABgAAAAAQAAAGAAAAABcGFpbnQubmV0IDUuMC4xMwAA/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxERExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgBkAECAwESAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A6iivzI/awooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACig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",
+    "section1": {
+      "title": "What are InvisiClues?",
+      "content": [
+        "Since a major element of interactive fiction is solving puzzles, players sometimes get stuck at various points in the story. The purpose of InvisiClues hint booklets is to give you just enough of a hint to allow you to still solve the puzzle on your own. Thus, you can still have the thrill of discovering the solution, and can then continue onward in the story.",
+        "The invisible hints generally progress from a gentle nudge in the right direction to a full answer. The questions, which naturally have to be visible, have been worded to give away as little as possible. You should not use the presence, absence, or length of a question as an indication of the importance of the question's topic. Dummy questions and answers have been inserted to prevent you from using this hint booklet in that manner."
+      ]
+    },
+    "section2": {
+      "title": "How to use this booklet",
+      "content": [
+        "If you are stuck at some point in Trinity, find the question that most pertains to your problem. Uncap the marker and run it once over the first hint. The writing will appear in a second or two. If, after reading and thinking about this clue, you are still stumped, go on to the next hint. (Remember to recap the marker when you are done or it will dry out. And by the way, this book is not immortal. InvisiClues you've developed will begin to irrevocably fade after around six months.)",
+        "Here's a sample question for you to try:"
+      ]
+    },
+    "section3": {
+      "content": [
+        "Your marker contains more than enough fluid to develop the entire booklet. However, if your marker gets lost or dries out, you can order a replacement marker for a nominal fee.",
+        "Once you have finished the game, look at the \"For Your Amusement\" section. Don't develop this section until you've finished, though, or you'll probably have many of the puzzles spoiled for you."
+      ]
+    },
+    "sampleQuestions": {
+      "questions": [
+        {
+          "title": "How do I fold a piece of paper to make it look like a bird?",
+          "answers": [
+            "Follow the instructions in your <em>Trinity</em> package.",
+            "Find better instructions somewhere else.",
+            "Don't bother; buy another Infocom game instead."
+          ]
+        }
+      ]
+    }
+  },
+    "sections": [
+        {
+            "questions": [
+                {
+                    "title": "Who is the bird woman?",
+                    "answers": [
+                        "She sells bags of crumbs to tourists.",
+                        "She's also a ripe source of information. You can ASK HER ABOUT many things.",
+                        "Ask her about Trinity, especially."
+                    ]
+                },
+                {
+                    "title": "What's a \"p\"?",
+                    "answers": [
+                        "It's British slang for pence."
+                    ]
+                },
+                {
+                    "title": "How do I buy a bag of crumbs?",
+                    "answers": [
+                        "INVENTORY.",
+                        "TAKE THE CREDIT CARD THEN GIVE IT TO THE BIRD WOMAN.",
+                        "If that doesn't work, try the seven-sided coin."
+                    ]
+                },
+                {
+                    "title": "Should I feed the pigeons?",
+                    "answers": [
+                        "Feel free."
+                    ]
+                },
+                {
+                    "title": "A roadrunner just took off with my ruby! How do I get it back?",
+                    "answers": [
+                        "Don't just stand there. CHASE THE ROADRUNNER.",
+                        "Too late, eh? Maybe you should ASK THE BIRD WOMAN ABOUT THE ROADRUNNER.",
+                        "Or ASK HER ABOUT THE RUBY.",
+                        "Don't worry about the ruby right now. You'll have a chance to get it back."
+                    ]
+                },
+                {
+                    "title": "What should I do with the paper bird?",
+                    "answers": [
+                        "It's floating just within reach.",
+                        "TAKE THE PAPER BIRD.",
+                        "EXAMINE THE PAPER BIRD.",
+                        "UNFOLD THE PAPER BIRD.",
+                        "READ THE PAPER BIRD."
+                    ]
+                },
+                {
+                    "title": "How do I get the bubble-making equipment from the boy?",
+                    "answers": [
+                        "You can't."
+                    ]
+                },
+                {
+                    "title": "How do I stop the boy from leaving?",
+                    "answers": [
+                        "If you leave the boy alone, he won't leave."
+                    ]
+                },
+                {
+                    "title": "Who is the woman with the umbrella?",
+                    "answers": [
+                        "EXAMINE HER. You might learn something."
+                    ]
+                },
+                {
+                    "title": "Why won't the sign painter let me use the stepladder?",
+                    "answers": [
+                        "Wait until he climbs down.",
+                        "When he climbs down, show him the gallon of purple paint.",
+                        "Sign painter? Stepladder? Purple paint?",
+                        "Remember the warning in the introductions: Don't let the presence or absence of questions, or the length of the answers, influence the way you play."
+                    ]
+                },
+                {
+                    "title": "How do I stop the perambulator from sliding out from under me?",
+                    "answers": [
+                        "Don't stand in it."
+                    ]
+                },
+                {
+                    "title": "How do I get the parasol?",
+                    "answers": [
+                        "Maybe you can dislodge it from the branch.",
+                        "Throw something at it.",
+                        "THROW THE SOCCER BALL AT THE PARASOL.",
+                        "Once you've got the parasol, forget the ball. You won't need it later."
+                    ]
+                },
+                {
+                    "title": "What is a \"Wabe\"?",
+                    "answers": [
+                        "EXAMINE THE SUNDIAL."
+                    ]
+                },
+                {
+                    "title": "Is there anything useful in the Wabe?",
+                    "answers": [
+                        "EXAMINE THE SUNDIAL. Now you know what a Wabe is.",
+                        "EXAMINE THE GNOMON.",
+                        "It's possible to remove the gnomon.",
+                        "UNSCREW THE GNOMON THEN GET IT."
+                    ]
+                },
+                {
+                    "title": "What do the symbols on the sundial mean?",
+                    "answers": [
+                        "They represent various planets, constellations and characters from the Greek alphabet.",
+                        "They are, clockwise from seven o'clock: <br>1. Omega (last letter of the Greek alphabet) <br>2. Mercury (swift messenger of the Roman gods) <br>3. Pluto (Greek god of the underworld) <br>4. Neptune (Roman god of the sea) <br>5. Libra (the Scales; seventh constellation of the Zodiac) <br>6. Mars (Roman god of war) <br>7. Alpha (first letter of the Greek alphabet)"
+                    ]
+                },
+                {
+                    "title": "How can I survive the hydrogen bomb attack?",
+                    "answers": [
+                        "You have to get out of the Kensington Gardens.",
+                        "The exits are hopelessly blocked by nannies and tourists.",
+                        "There's an event you want to witness at the right time and place.",
+                        "Try reading the message on the paper bird."
+                    ]
+                },
+                {
+                    "title": "Is there a way to cross the grass?",
+                    "answers": [
+                        "Walking on the grass is not the answer.",
+                        "Did you notice the bicyclists?",
+                        "The grass didn't bother the bicyclists. If only you could find a bicycle.",
+                        "Or some other wheeled vehicle.",
+                        "A perambulator, perhaps?",
+                        "You need to get in the perambulator and find a means of propulsion.",
+                        "Nobody will give you a push. But there's a strong wind.",
+                        "Use the umbrella as a sail to move you while you're in the pram.",
+                        "GET IN PRAM. OPEN UMBRELLA."
+                    ]
+                },
+                {
+                    "title": "The wind is blowing the wrong way! What do I do?",
+                    "answers": [
+                        "You need to do what the bird woman is telling you to do.",
+                        "BUY A BAG OF CRUMBS. GET BAG. FEED THE BIRDS.",
+                        "The wind direction mysteriously changes when the roadrunner steals the ruby. Eerie, isn't it?"
+                    ]
+                },
+                {
+                    "title": "What do I do at the Long Water?",
+                    "answers": [
+                        "Examine your surroundings carefully.",
+                        "Get everything you can.",
+                        "Don't take too long. Time is slowed, but not stopped.",
+                        "GO EAST THEN ENTER THE WHITE DOOR to leave the Kensington Gardens."
+                    ]
+                }
+            ],
+            "title": "The Kensington Gardens"
+        },
+        {
+            "questions": [
+                {
+                    "title": "Where am I?",
+                    "answers": [
+                        "Wherever you go, there you are."
+                    ]
+                },
+                {
+                    "title": "How can I get the ichor in the flytrap?",
+                    "answers": [
+                        "You can't.",
+                        "It's a lure to trap people and insects.",
+                        "Good thing you got away in time."
+                    ]
+                },
+                {
+                    "title": "Who is the boy?",
+                    "answers": [
+                        "He blows bubbles.",
+                        "BIG bubbles. After all, he's a BIG boy (physically, not emotionally).",
+                        "Don't annoy him too much. He's bigger than you now."
+                    ]
+                },
+                {
+                    "title": "How can I get the bubble-blowing equipment from the boy?",
+                    "answers": [
+                        "You can't."
+                    ]
+                },
+                {
+                    "title": "What's a pergola?",
+                    "answers": [
+                        "It's a framework for supporting climbing plants.",
+                        "You can climb it, too.",
+                        "Watch out, it twists and turns in more ways than you might expect."
+                    ]
+                },
+                {
+                    "title": "Who is Felix Klein?",
+                    "answers": [
+                        "He was a German mathematician who described a solid with only one surface, essentially a three-dimensional version of the Mobius strip. This construct is commonly referred to as a Klein bottle.",
+                        "If you don't know what a Mobius strip is, you can look it up in an encyclopedia."
+                    ]
+                },
+                {
+                    "title": "Everything is backwards! What happened?",
+                    "answers": [
+                        "If by backwards you mean east is west and left is right then ...",
+                        "... you flipped the universe (changed its handedness) by your actions.",
+                        "Specifically, by your movement.",
+                        "You moved through the pergola loop, which is really a Klein bottle. (See previous question for details.)",
+                        "Every time you completely move around the pergola loop, everything outside changes handedness.",
+                        "This is mostly confusing, but it also comes in handy."
+                    ]
+                },
+                {
+                    "title": "Where can I find a light source?",
+                    "answers": [
+                        "See anything that glows besides the lump?",
+                        "Anything phosphorescent?",
+                        "The log glows.",
+                        "It also disintegrates into an easily carried splinter."
+                    ]
+                },
+                {
+                    "title": "My candle won't stay lit!",
+                    "answers": [
+                        "That's what you get for using cheap candles.",
+                        "There are no candles in this story, cheap or otherwise."
+                    ]
+                },
+                {
+                    "title": "How can I get to the mesa?",
+                    "answers": [
+                        "The tree nearby would be useful if you could cross the chasm on a branch.",
+                        "But you can't climb the tree.",
+                        "Maybe you can build a bridge.",
+                        "Chop down the tree with the axe.",
+                        "Don't forget to push the tree in the direction you want it to fall in.",
+                        "CHOP THE OAK TREE WITH THE AXE. PUSH THE TREE NORTH."
+                    ]
+                },
+                {
+                    "title": "I need a cutting tool. Where's the nearest hardware store?",
+                    "answers": [
+                        "There are no hardware stores in this story.",
+                        "But there are a couple of cutting tools.",
+                        "One of them is hidden in a dark place.",
+                        "You'll need a light to find it.",
+                        "There's a silver axe at the top of the pergola."
+                    ]
+                },
+                {
+                    "title": "Who is \"Wabewalker\"?",
+                    "answers": [
+                        "Keep playing. The answer will dawn on you."
+                    ]
+                },
+                {
+                    "title": "How do I open the crypt?",
+                    "answers": [
+                        "You have to move the heavy lid.",
+                        "Aristotle said he could lift the world with a long-enough lever.",
+                        "Use something that's sturdy enough not to break.",
+                        "What you need is inside one of the mushrooms.",
+                        "OPEN THE CRYPT WITH THE SPADE."
+                    ]
+                },
+                {
+                    "title": "An iron door is blocking the tunnel! How do I get out of the barrow?",
+                    "answers": [
+                        "First you have to get past the barrow wight to the north.",
+                        "There's some significance to the hole in the wall.",
+                        "It's a keyhole.",
+                        "There's a key that opens all kinds of locks.",
+                        "A skeleton key.",
+                        "See any skeletons around?",
+                        "In the Ossuary, perhaps?",
+                        "SEARCH THE BONES.",
+                        "When you get the key it will fit in the hole; turning it will open a secret way out of the barrow."
+                    ]
+                },
+                {
+                    "title": "How do I stop the barrow wight from killing me?",
+                    "answers": [
+                        "Barrow wights don't like light.",
+                        "As long as you have a working light source, he'll leave you alone and let you pass him.",
+                        "And don't forget that!"
+                    ]
+                },
+                {
+                    "title": "How can I carry water?",
+                    "answers": [
+                        "Water would be easy to carry if it weren't a liquid that spilled all over the place.",
+                        "You can't carry water. Not in its liquid state, anyway."
+                    ]
+                },
+                {
+                    "title": "How can I get the lump of metal?",
+                    "answers": [
+                        "You need to cool off the lump first.",
+                        "You can't use water, since you have nothing to carry liquids in.",
+                        "Use frozen water.",
+                        "Use an icicle.",
+                        "Great, big icicles are hanging in the Ice Cave behind the waterfall.",
+                        "Unfortunately, the melting icicle will slip out of your grasp before you can carry it to the lump...",
+                        "...unless you stop the icicle from melting too quickly.",
+                        "Maybe you can refreeze the icicle. There are some places that are cold enough to do this.",
+                        "High altitudes are cold.",
+                        "You can refreeze the icicle at the Vertex.",
+                        "Take the icicle to the Vertex on the way to the lump. From the Ice Cave go E. E. E. U. U. The icicle will refreeze. D. D. NE. E. E. will get you to the crater in time to PUT THE ICICLE ON THE LUMP. (Note: you might have to go W & NW instead of E & NE.)"
+                    ]
+                },
+                {
+                    "title": "The icicles are out of reach! How do I get one?",
+                    "answers": [
+                        "Try solving this problem the way you solved another problem.",
+                        "Throw something at the icicles. One (and only one) will fall for you."
+                    ]
+                },
+                {
+                    "title": "What is the significance of the giant book?",
+                    "answers": [
+                        "It's a book of records.",
+                        "It records every move you make.",
+                        "\"Curiouser and curiouser.\""
+                    ]
+                },
+                {
+                    "title": "What is the liquid in the cauldron?",
+                    "answers": [
+                        "It's a boiling potion, magically heated.",
+                        "Maybe you can drink the potion.",
+                        "You shold finish brewing it first.",
+                        "There's a formula around here somewhere."
+                    ]
+                },
+                {
+                    "title": "What is the magpie babbling about?",
+                    "answers": [
+                        "Magpies just repeat what they hear.",
+                        "When it's not repeating you, it's repeating something else it's heard.",
+                        "Maybe what is has to say is important. You should listen to it.",
+                        "Hmm. Sounds like a recipe.",
+                        "A recipe for a magic spell!"
+                    ]
+                },
+                {
+                    "title": "Where can I find some milk?",
+                    "answers": [
+                        "There are no animals around to provide milk.",
+                        "However, you can get milk from other sources.",
+                        "The source of milk is inside one of the mushrooms.",
+                        "The coconut on the tropical island is a source of milk."
+                    ]
+                },
+                {
+                    "title": "How do I milk a grue?",
+                    "answers": [
+                        "Very carefully.",
+                        "There are no grues in this story.",
+                        "But there are plenty of grues in <em>Wishbringer</em>&reg;, our best-selling introductory fantasy which <em>inCider</em> magazine called \"beautiful and imaginative\" and <em>Compute!'s Gazette</em> praised as \"a very enjoyable game.\" Look for it at your favorite Infocom dealer. (<em>Wishbringer is a registered trademark of Infocom, Inc.</em>)"
+                    ]
+                },
+                {
+                    "title": "I still don't have any milk. How do I get some?",
+                    "answers": [
+                        "The milk is inside the coconut.",
+                        "You have to find a way of opening the coconut.",
+                        "Break the coconut with something heavy.",
+                        "DROP COCONUT. BREAK COCONUT WITH AXE. GET COCONUT. Then you can either drink the milk or pour the milk into something."
+                    ]
+                },
+                {
+                    "title": "Where can I get some honey?",
+                    "answers": [
+                        "Where is honey usually made?",
+                        "In a beehive. EXAMINE THE BEEHIVE.",
+                        "REACH INTO THE BEEHIVE.",
+                        "You'll get a bee the first time.",
+                        "If you reach in a second time, you'll get honey.",
+                        "Don't be too greedy!"
+                    ]
+                },
+                {
+                    "title": "How can I get the honey off my hand?",
+                    "answers": [
+                        "You need to dissolve the honey.",
+                        "The honey will dissolve in water.",
+                        "Stick your hand in some water.",
+                        "You should stick your hand in the cauldron so that the honey is added to the recipe. Ouch!"
+                    ]
+                },
+                {
+                    "title": "How can I stop the bee from chasing and killing me?",
+                    "answers": [
+                        "Keep moving. It can't sting you if you are on the run, nor will it follow you indoors or through toadstools. (This is one of those puzzles that you don't really have to solve. But if you really want to get rid of the bee, then continue.)",
+                        "Bees love pollen or other sweet-smelling objects.",
+                        "Move near the flytrap. The bee will get distracted by the ichor and get trapped and eaten. But first, make sure the flytrap is open."
+                    ]
+                },
+                {
+                    "title": "Where can I find a lizard?",
+                    "answers": [
+                        "Study \"The Illustrated Story of the Atom Bomb\" carefully.",
+                        "It's inside one of the mushrooms.",
+                        "It's the skink in the underground area."
+                    ]
+                },
+                {
+                    "title": "Where can I find garlic?",
+                    "answers": [
+                        "Garlic is an herb.",
+                        "Maybe there's some in the Herb Garden.",
+                        "LOOK IN THE PILE OF REFUSE. There's a clove of garlic there."
+                    ]
+                },
+                {
+                    "title": "I've got all the ingredients for the spell, but what do I do with them?",
+                    "answers": [
+                        "There's a potion already brewing in the cauldron.",
+                        "Why not dump the items into the cauldron?",
+                        "\"Then stand back! 'Cause it go BOOM!\""
+                    ]
+                },
+                {
+                    "title": "How do I survive the explosion?",
+                    "answers": [
+                        "Don't be in the room when it occurs."
+                    ]
+                },
+                {
+                    "title": "I have a dead animal in the cage. What happened?",
+                    "answers": [
+                        "It's probably incinerated. Don't leave caged animals in the Cottage when you brew the potion."
+                    ]
+                },
+                {
+                    "title": "Why are the shades crossing the river?",
+                    "answers": [
+                        "To get to the other side."
+                    ]
+                },
+                {
+                    "title": "How do I cross the river?",
+                    "answers": [
+                        "Remember when you died? (If you don't remember, or haven't died yet, try the next clue.)",
+                        "Do as the shades do.",
+                        "Of course you have to look like a shade first.",
+                        "You need the proper attire (not London vacation clothes).",
+                        "Since you can't borrow the clothes you need from the shades, maybe you can get them from a dead body.",
+                        "Open the crypt and get the burial shroud to wear over your clothes. Then get on the boat and pay the oarsman to cross the river.",
+                        "WEAR THE BURIAL SHROUD. BOARD THE DORY THEN GIVE THE COIN TO THE OARSMAN."
+                    ]
+                },
+                {
+                    "title": "The oarsman won't take my 20 p. Where can I find a silver coin like the shades have?",
+                    "answers": [
+                        "The shades have their coins because they were buried with them.",
+                        "Maybe the body on which you found the shroud also has a silver coin.",
+                        "Remove the bandage and look in the mouth. The silver coin is hidden there."
+                    ]
+                }
+            ],
+            "title": "Beyond the White Door"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I open the doors in the toadstools?",
+                    "answers": [
+                        "You don't; something else does.",
+                        "Watch a toadstool for a while; just WAIT around.",
+                        "The door opens when the shadow is on the door.",
+                        "All you have to do is be in the right place at the right time."
+                    ]
+                },
+                {
+                    "title": "I'm inside a toadstool but the door closed on me. How do I get out?",
+                    "answers": [
+                        "The shadow that opened the door kept moving.",
+                        "The door closed behind you when the shadow moved on.",
+                        "Too bad the shadow won't come around again until after the bomb explodes. You need to stop the shadow on the door."
+                    ]
+                },
+                {
+                    "title": "How can I stop the shadow?",
+                    "answers": [
+                        "Have you been to the Vertex?",
+                        "There's a gnomon missing from the sundial.",
+                        "If you screw the gnomon from Kensington Gardens into the hole, a lever will appear. Easier said than done.",
+                        "Aristotle said he could lift the world with a long-enough lever. You can stop the world with your lever!",
+                        "The shadow stops moving when the lever is lowered. Or is it the sun that stops?"
+                    ]
+                },
+                {
+                    "title": "My threads clash. What do I do?",
+                    "answers": [
+                        "Get a better tailor.",
+                        "Seriously, you need to reverse one set of threads.",
+                        "Look around and see if you can make things reverse.",
+                        "The writing on the sculpture in the Arboretum will reverse.",
+                        "To do this, walk completely through the pergola. N. U. S. D.",
+                        "This switches the handedness of everything outside the pergola.",
+                        "If you carry the gnomon with you, it won't switch, and the hole at the vertex will, allowing you to screw the gnomon into the hole.",
+                        "This will probably mess up your map, but you can fix that by going through the pergola without the gnomon."
+                    ]
+                },
+                {
+                    "title": "How do I get the shadow to stop on the toadstools?",
+                    "answers": [
+                        "If you don't know how to stop the shadow, look two questions earlier.",
+                        "There is an easy way and a hard way.",
+                        "The hard way is to lower the lever as the shadow moves across a symbol.",
+                        "The easy way is to use the ring. Lower the lever, stopping the shadow, then turn the ring (and the sun along with it) so that the arrow on it points to where you want the shadow to stop."
+                    ]
+                }
+            ],
+            "title": "The Toadstools"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I survive in Earth Orbit?",
+                    "answers": [
+                        "You need to bring an air supply along with you.",
+                        "If you could only make a \"space suit.\" You need to be entirely enclosed.",
+                        "Have you noticed the boy at Promontory?",
+                        "Gotten in his soap dish?",
+                        "If you get in his soap dish, you'll eventually end up inside a bubble.",
+                        "Use the bubble as a space suit, but hurry before it pops."
+                    ]
+                },
+                {
+                    "title": "How do I get to the satellite?",
+                    "answers": [
+                        "You need to change your trajectory, but when enclosed inside a soap bubble that's hard to do.",
+                        "You can't change your momentum by propulsion because of the bubble.",
+                        "Gravity is too weak; try another fundamental force of nature.",
+                        "Try magnetism.",
+                        "The satellite is metallic, so if you had a strong magnet you might be drawn there. You never know till you try.",
+                        "Carry the lump of metal — it's a magnet — along with you into space. It will be attracted to the satellite, taking the bubble along with it."
+                    ]
+                },
+                {
+                    "title": "How do I get back to the white door?",
+                    "answers": [
+                        "The satellite is heading in the direction you are coming from.",
+                        "Getting on the satellite will help you get back to the door.",
+                        "You have to enter the white door when it reappears.",
+                        "However, the bubble is anchoring you to the satellite.",
+                        "Break the bubble with something sharp. The backblast of the expanding air off of the satellite will propel you through the white door."
+                    ]
+                },
+                {
+                    "title": "Big deal! I came, I saw and I left. What's there to do in space?",
+                    "answers": [
+                        "Did you examine your surroundings?",
+                        "EXAMINE THE MOON.",
+                        "It's a crescent moon. Ring a bell? The magpie mentioned a crescent moon.",
+                        "You are supposed to kill the skink in the light of a crescent moon.",
+                        "Earth Orbit is the perfect location to KILL THE SKINK."
+                    ]
+                }
+            ],
+            "title": "The Mercury Door"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I catch the skink?",
+                    "answers": [
+                        "It avoids light.",
+                        "It runs into the crevice to avoid light.",
+                        "You have to put some light source in the crevice to drive it out.",
+                        "The only light source that fits is the splinter.",
+                        "Now it runs away from the crevice because there's still some light from the splinter.",
+                        "You need to turn on the lantern to track it down.",
+                        "It runs away from the lit lantern, but never runs into the bomb room.",
+                        "If you leave the lantern in the middle underground room while lit, the",
+                        "skink will go the room with the crevice. It's a creature of habit.",
+                        "Once you've trapped the skink between the two lights it'll be totally flummoxed and you'll be able to get it."
+                    ]
+                },
+                {
+                    "title": "How do I keep the skink once I've caught it?",
+                    "answers": [
+                        "The skink will eventually jump out of your hands, so you need to carry it in a container.",
+                        "The wicker of the cage is too widely spaced to hold the skink.",
+                        "Remember that it likes dark places.",
+                        "Your nice dark pocket would be the perfect place to carry a skink."
+                    ]
+                },
+                {
+                    "title": "Where do I kill the skink?",
+                    "answers": [
+                        "Where the magpie says.",
+                        "Under the light of a crescent moon.",
+                        "Finding the moon is your problem. Continue only if you can't find a moon.",
+                        "It's through one of the mushroom doors.",
+                        "At Earth Orbit, through the mushroom near the waterfall."
+                    ]
+                },
+                {
+                    "title": "How do I fix the talk button on the walkie-talkie?",
+                    "answers": [
+                        "By taking apart the walkie-talkie, getting out your soldering iron, using the talkie diagram to figure out the wiring, and rewiring the talkie thereby voiding its warranty.",
+                        "You can't."
+                    ]
+                },
+                {
+                    "title": "How do I know what to tune the walkie-talkie to?",
+                    "answers": [
+                        "It starts off tuned to the frequency used by the people testing the bomb that's underground.",
+                        "You can also use it to listen to radio traffic once you go through the \"alpha\" mushroom (seventh on the ring)."
+                    ]
+                },
+                {
+                    "title": "My light went out. What happened?",
+                    "answers": [
+                        "Your battery ran out.",
+                        "You should have conserved your light. You'll need it later."
+                    ]
+                }
+            ],
+            "title": "The Pluto Door"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I get out of the building?",
+                    "answers": [
+                        "There's a button somewhere that will open the sliding dors.",
+                        "OPEN THE BOX THEN PUSH THE RED BUTTON."
+                    ]
+                },
+                {
+                    "title": "How do I get past the crabs?",
+                    "answers": [
+                        "There sure are a lot of them.",
+                        "You can't."
+                    ]
+                },
+                {
+                    "title": "How do I get the coconut?",
+                    "answers": [
+                        "You need some help to get the coconut.",
+                        "There's a friendly dolphin nearby.",
+                        "The dolphin can't get the coconut until the coconut starts floating on the water.",
+                        "Then DOLPHIN, GET ME THE COCONUT will work."
+                    ]
+                },
+                {
+                    "title": "What are those messages I keep hearing?",
+                    "answers": [
+                        "You must have flipped the toggle switch in the box.",
+                        "It's the countdown for the bomb that's about to explode on your nice tropical island."
+                    ]
+                }
+            ],
+            "title": "The Neptune Door"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I get a rodent?",
+                    "answers": [
+                        "You have to find one that isn't moving.",
+                        "Go to the Cliff Edge. It's a distance NE from the Platform.",
+                        "LOOK IN THE CREVICE THEN GET THE LEMMING."
+                    ]
+                },
+                {
+                    "title": "How do I keep a lemming?",
+                    "answers": [
+                        "The lemming will eventually jump out of your hands, so you need to carry it in a container.",
+                        "Lemmings hate being trapped and will escape if they can.",
+                        "It'll fit in the cage.",
+                        "You'll have to let the magpie go.",
+                        "PUT THE LEMMING IN THE CAGE THEN CLOSE THE CAGE."
+                    ]
+                },
+                {
+                    "title": "How do I infiltrate the Russian camp?",
+                    "answers": [
+                        "Put on the Russian uniform you got from the guard on the platform.",
+                        "Uniform? Guard?",
+                        "You can't infiltrate the camp. You probably couldn't speak Russian, and if you could you wouldn't know the password anyway.",
+                        "Password?"
+                    ]
+                },
+                {
+                    "title": "What are those messages I keep hearing?",
+                    "answers": [
+                        "They are in Russian.",
+                        "It's the countdown for the bomb that's about to explode in your nice grim permafrost."
+                    ]
+                }
+            ],
+            "title": "The Libra Door"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How do I survive falling?",
+                    "answers": [
+                        "You need to slow your descent.",
+                        "An umbrella will make a great parachute.",
+                        "OPEN THE UMBRELLA after entering the white door."
+                    ]
+                },
+                {
+                    "title": "Who is the little girl?",
+                    "answers": [
+                        "She's one of the schoolchildren.",
+                        "She likes umbrella-twirling and origami."
+                    ]
+                },
+                {
+                    "title": "How do I survive the bomb?",
+                    "answers": [
+                        "The bomb shelter isn't good enough.",
+                        "You can't survive it.",
+                        "You have to get out the way you came in."
+                    ]
+                },
+                {
+                    "title": "How do I get back to the white door?",
+                    "answers": [
+                        "You need to fly back up to the door.",
+                        "No airplanes available? Try something else.",
+                        "Did you notice the origami around the school?",
+                        "There are origami birds.",
+                        "Birds can fly.",
+                        "The children know how to fold origami, unlike you.",
+                        "Try giving the small girl the piece of rice paper. It used to be a bird.",
+                        "She refolds it, and the bird now twinkles because it's magical.",
+                        "The girl won't give you the paper bird unless you give her something she wants in return.",
+                        "GIVE THE UMBRELLA TO THE LITTLE GIRL.",
+                        "The paper bird she refolds will magically enlarge outside the shelter. The bird will carry you back to the white door if you get on it."
+                    ]
+                }
+            ],
+            "title": "The Mars Door"
+        },
+        {
+            "questions": [
+                {
+                    "title": "How can I get back through the white door? It closed on me.",
+                    "answers": [
+                        "Run in circles, scream and shout.",
+                        "You can't."
+                    ]
+                },
+                {
+                    "title": "What do the lines on the bookmark mean?",
+                    "answers": [
+                        "It's a circuit diagram.",
+                        "Hold onto it. You'll need it later."
+                    ]
+                },
+                {
+                    "title": "How do I open the access panel?",
+                    "answers": [
+                        "EXAMINE THE ACCESS PANEL.",
+                        "Looks like you'll need a screwdriver.",
+                        "Go get it then come back and open the panel."
+                    ]
+                },
+                {
+                    "title": "What's all the commotion below the shack?",
+                    "answers": [
+                        "The people below are completing some last-minute preparations.",
+                        "They are getting away before the bomb in the shack explodes.",
+                        "You should get away, too.",
+                        "But wait for the others to get away first. If they see you..."
+                    ]
+                },
+                {
+                    "title": "How long do I have before the bomb explodes?",
+                    "answers": [
+                        "Consult \"The Illustrated Story of the Atom Bomb.\"",
+                        "Look at your watch.",
+                        "Subtract B from A."
+                    ]
+                },
+                {
+                    "title": "How do I open the wooden box?",
+                    "answers": [
+                        "EXAMINE THE WOODEN BOX.",
+                        "Looks like you need a key.",
+                        "Go get the key then come back."
+                    ]
+                },
+                {
+                    "title": "I don't have time to do everything before the bomb explodes!",
+                    "answers": [
+                        "There's a lot of ground to cover in moving around. Optimize your movements.",
+                        "If optimizing your movements doesn't help, then continue.",
+                        "If you could only move around faster...",
+                        "The boots you saw in the crypt can help you move faster.",
+                        "Of course, they must be magically energized first.",
+                        "Did you notice the color of the boots?",
+                        "Other items in the story match the color of the boots.",
+                        "The ruby and the emerald. If you don't have the emerald then RESTORE back to the middle section and complete the magpie's magic spell.",
+                        "PUT THE EMERALD IN THE GREEN BOOT. PUT THE RUBY IN THE RED BOOT. This will help you move faster when you're wearing the boots."
+                    ]
+                },
+                {
+                    "title": "How can I find the correct frequency to tune my walkie-talkie?",
+                    "answers": [
+                        "The correct frequency is that used by the people you heard earlier at the bottom of the tower.",
+                        "It's located on another radio.",
+                        "That radio is in the jeep, on the Paved Road leading northwest.",
+                        "ENTER JEEP. LOOK AT RADIO. LOOK AT OVERSIZED DIAL. Don't forget to turn on the walkie-talkie and raise the antenna or it won't work."
+                    ]
+                },
+                {
+                    "title": "Who are \"Able,\" \"Baker\" and \"Pittsburg\"?",
+                    "answers": [
+                        "Consult the map in your Trinity package."
+                    ]
+                },
+                {
+                    "title": "What do I do in the shallow crater?",
+                    "answers": [
+                        "You can search it if you like.",
+                        "But you won't find anything useful.",
+                        "The crater is included only for the sake of historical accuracy. It marks the place where the Trinity scientists conducted a test explosion of 100 tons of TNT on May 7, 1945. The test was used to calibrate their instruments and develop safety procedures for the full-scale test on July 16."
+                    ]
+                },
+                {
+                    "title": "Where can I find a screwdriver?",
+                    "answers": [
+                        "Consult \"The Illustrated Story of the Atom Bomb.\"",
+                        "Maybe there's still one in the ranch house.",
+                        "Look around the Assembly Room.",
+                        "The screwdriver is under the brown paper in the Assembly Room."
+                    ]
+                },
+                {
+                    "title": "I got bitten by the snake! What do I do now?",
+                    "answers": [
+                        "First aid won't work in time.",
+                        "RESTORE."
+                    ]
+                },
+                {
+                    "title": "How can I search the Assembly Room wihout getting bitten by the snake?",
+                    "answers": [
+                        "Get rid of the snake first. Otherwise you can't.",
+                        "It's hungry, and would rather bite food than you.",
+                        "Find it something to eat.",
+                        "It will eat the lemming. The hard part is feeding the lemming to the snake.",
+                        "The lemming won't leave the cage if it can see the snake.",
+                        "The lemming won't run towards the snake if it doesn't have to.",
+                        "Put yourself in a position where a freed lemming will have to try to escape by running past the snake.",
+                        "Did you notice the open closet in the Assembly Room?",
+                        "ENTER THE CLOSET. CLOSE THE DOOR. OPEN THE CAGE. OPEN THE CLOSET DOOR."
+                    ]
+                },
+                {
+                    "title": "I fell in the reservoir and lost what I was carrying. Where did it all go?",
+                    "answers": [
+                        "You dropped it when you fell.",
+                        "It's at the bottom of the dark, murky reservoir.",
+                        "You'll need a light to see down there."
+                    ]
+                },
+                {
+                    "title": "How do I get the binoculars?",
+                    "answers": [
+                        "GET THE BINOCULARS.",
+                        "Oops, you fell into the reservoir. Now the binoculars are at the bottom.",
+                        "DIVE.",
+                        "You'll need a light to see down here.",
+                        "Don't carry the unlit lantern with you when you fall into the reservoir.",
+                        "TURN ON THE LANTERN just before you try to GET THE BINOCULARS on the Windmill.",
+                        "Or DROP THE LANTERN outside the reservoir, go for the binoculars, then get the lantern and go diving for the binoculars with a lit lantern."
+                    ]
+                },
+                {
+                    "title": "I have a dead animal in the cage. What happened?",
+                    "answers": [
+                        "It's probably drowned. Don't take caged animals with you when you get the binoculars or go diving."
+                    ]
+                },
+                {
+                    "title": "What's the purpose of the vessel hanging in the steel frame?",
+                    "answers": [
+                        "The mysterious vessel is included for the sake of historical accuracy. \"Jumbo,\" as it was affectionately known, was built to contain the Trinity device and prevent the loss of its precious plutonium in the event of a misfire. In the end, the scientists decided not to use Jumbo, and hung it near the shot tower to see what would happen to it. (The steel framework was utterly demolished, but Jumbo survived more or less intact.)",
+                        "Don't worry. You don't need Jumbo to complete the story."
+                    ]
+                },
+                {
+                    "title": "How do I prevent the roadrunner from eating all my crumbs? I need to drop the bag of crumbs so it doesn't get ruined by water.",
+                    "answers": [
+                        "Don't leave the bag unattended and accessible around the roadrunner.",
+                        "Gary drops the bag at the bottom of the tower on his way from the jeep to the ranch, while the roadrunner isn't in sight.",
+                        "Suzanne leaves the bag of crumbs on the edge of the reservoir. The roadrunner never goes there.",
+                        "Amy hides the bag of crumbs in the closet.",
+                        "Liz puts the bag of crumbs in the cage, and closes the cage while she's still in the closet with the lemming.",
+                        "Max is cruel. He puts the roadrunner in the cage and leaves the bag outside the cage."
+                    ]
+                },
+                {
+                    "title": "How do I get into the shelter or blockhouse?",
+                    "answers": [
+                        "You can't. You'll get caught if you try."
+                    ]
+                },
+                {
+                    "title": "Where do I find the key to the lock?",
+                    "answers": [
+                        "The people who locked the box probably have it.",
+                        "It is in one of the outposts.",
+                        "There's only one place you can see into without being caught.",
+                        "You can see into the south shelter, while hiding behind the shed.",
+                        "LOOK IN THE SHELTER.",
+                        "You're too far away to see anything clearly.",
+                        "There is a way to make things look closer.",
+                        "Use the binoculars.",
+                        "LOOK IN THE SHELTER THROUGH THE BINOCULARS."
+                    ]
+                },
+                {
+                    "title": "How do I get the key?",
+                    "answers": [
+                        "You can't enter the shelter to get it without being caught.",
+                        "Maybe someone or something will get it for you.",
+                        "Surely not one of the GIs.",
+                        "Not the thin man in the hat.",
+                        "How about your pal, the roadrunner?",
+                        "ROADRUNNER, GET ME THE KEY."
+                    ]
+                },
+                {
+                    "title": "Can I do anything with what's inside the box without getting caught?",
+                    "answers": [
+                        "Yes.",
+                        "You need the walkie-talkie turned on and tuned to the correct frequency when you open the circuit breaker.",
+                        "Listen closely to what they say over the walkie-talkie. There are two pieces of information you need to know.",
+                        "You need to know the circuit that you've broken. WARNING: the circuit changes each time you open the breaker for the first time in the game. POS=positive, INF=informer, GND=ground, or DET=detonator.",
+                        "CLOSE THE BREAKER before they scrub the test and come get you!",
+                        "Did you hear what they said about scrubbing the test?",
+                        "If the circuit goes dead AFTER the autosequencer starts (at zero minus 45 seconds), they will let it go, thinking it's just a damp line."
+                    ]
+                },
+                {
+                    "title": "How do I get back up to the top of the tower without getting arrested?",
+                    "answers": [
+                        "You need to not be seen by the people manning the searchlight.",
+                        "If you could knock out or divert the searchlight long enough they won't get a confirmed sighting on you.",
+                        "It helps a lot to have your walkie-talkie on and tuned while you try to attempt to regain the tower."
+                    ]
+                },
+                {
+                    "title": "How do I prevent the roadrunner from waking up the dog while I'm there?",
+                    "answers": [
+                        "You can put the roadrunner in the cage.",
+                        "You can also drop the bag of crumbs (with crumbs in it) for the roadrunner to eat. However, this only lasts for a few moves before the roadrunner starts to bother the dog."
+                    ]
+                },
+                {
+                    "title": "How do I get rid of the searchlight?",
+                    "answers": [
+                        "You'll get caught if you try to damage the searchlight.",
+                        "The searchlight isn't the problem. The people using it are.",
+                        "Maybe you can divert them.",
+                        "Did you notice that the roadrunner picks a fight with the German shepherd?",
+                        "The people in the blockhouse move the searchlight to see what all the commotion is about.",
+                        "If you leave right after the roadrunner hops up on the dog you won't get caught, but neither will you make it to the tower before the searchlight is moved back.",
+                        "There's a clever way to delay the fight.",
+                        "If there are crumbs left in the bag, dropping the bag will keep the roadrunner occupied eating crumbs long enough for you to get back to the tower before the roadrunner picks a fight with the dog. Just in time for you to climb the ladder when the searchlight moves away.",
+                        "WAIT at the dog until the roadrunner appears and starts pecking on the dog. DROP THE BAG OF CRUMBS. The roadrunner will start eating the crumbs. NE. NE. NE. NE. U. U. E. You can also drop the bag before the roadrunner shows up. In this case he'll go straight for the bag and leave the dog alone until he's finished the crumbs."
+                    ]
+                },
+                {
+                    "title": "How do I sabotage the bomb?",
+                    "answers": [
+                        "You need to open the access panel in the shack and cut a wire without having the test stopped by the people running it. Piece of cake."
+                    ]
+                },
+                {
+                    "title": "How can I see the wires in the access panel? It's dark in there.",
+                    "answers": [
+                        "You can turn on your lantern.",
+                        "Or you can PULL THE CHAIN to turn on the light bulb in the shack."
+                    ]
+                },
+                {
+                    "title": "Which is the correct wire?",
+                    "answers": [
+                        "There are two pieces of information you need.",
+                        "You need to read the circuit diagram for the color coding of the wires.",
+                        "You need to know which circuit they will ignore being cut. See the question about what's inside the box.",
+                        "RD is red, WH is white, ST is striped, and BL is blue.",
+                        "Check the circuit diagram to see which circuit is which color and cut that colored wire."
+                    ]
+                },
+                {
+                    "title": "I sabotage the bomb but still lose. Why?",
+                    "answers": [
+                        "You may not have known which wire to cut. Did you read the diagram and open the circuit breaker?",
+                        "You may have figured out the wire color incorrectly. (Note: the identity of the \"correct\" wire changes. Be very careful when you RESTORE.)",
+                        "You may have cut the wire too soon. You should cut the wire AFTER the autosequencer has taken over the countdown. Listen carefully to the countdown on the walkie-talkie."
+                    ]
+                }
+            ],
+            "title": "The Alpha Door"
+        },
+        {
+            "questions": [
+                {
+                    "title": "What's going on?",
+                    "answers": [
+                        "Read the Emily Dickinson quote."
+                    ]
+                },
+                {
+                    "title": "What do I do now?",
+                    "answers": [
+                        "Feel free to do what you like.",
+                        "Read all the text carefully, and don't type new commands until you've read all the text on the screen. Otherwise you may miss the ending."
+                    ]
+                }
+            ],
+            "title": "Epilogue"
+        },
+        {
+            "questions": [
+				{
+					"numberedList": true,
+					"anyAnswer": true,
+					"answers": [
+						"LOOK AT THE SUNDIAL in the Wabe. The quotation is from Lewis Carroll's <em>Through the Looking-Glass</em>.",
+						"LOOK AT THE SYMBOLS on either sundial. The quotation is from \"The Gospel of St. Matthew\" in The New Testament.",
+						"Watch a bubble pop at Inverness Terrace or the Promontory. The quote is from Alexander Pope's \"An Essay on Man.\"",
+						"Wait for the air raid sirens in the Kensington Gardens. The quote is from Henry David Thoreau's article \"A Natural History of Massachusetts.\"",
+						"LOOK AT THE SUNDIAL on the Vertex. The line from Arthur Rimbaud's poem \"Enfance\" means \"There is a clock that makes no sound.\"",
+						"LOOK AT THE SCULPTURE in the Arboretum. Clarke's quotation is from his book <em>Profiles of the Future</em>. Dave Lebling's version appears in the <em>InvisiClues</em> hint booklet for <em>Spellbreaker</em>.",
+						"LOOK AT THE CHILDREN in Nagasaki. The quotation is from Hawthorne's <em>American Notebooks</em>.",
+						"LOOK AT THE SPHERE in the Shack. The quotation is from \"The Tail\" chapter of Herman Melville's <em>Moby Dick</em>.",
+						"READ THE POEM on the bookmark. The anonymous ditty is noted in several books about the history of the Trinity Test and Los Alamos.",
+						"ENTER THE DOOR in the shack. The quotation is from David Byrne's song \"Once in a Lifetime,\" from Talking Heads' album <em>Remain in Light</em>.",
+						"EXAMINE THE THIN MAN. The lines appear in \"Song of Myself,\" from Walt Whitman's <em>Leaves of Grass</em>.",
+						"The epilogue quote is from an untitled Emily Dickinson poem (number 376 in Johnson's <em>Complete Poems</em>).",
+						"The quote on the bottom of the sundial in the package is from another untitled Emily Dickinson poem (Johnson 1478).",
+						"The phrase \"All prams lead to the Kensington Gardens\" is from J. M. Barrie's <em>The Little White Bird</em>."
+					]
+				}
+			],
+            "title": "The Quotations"            
+        },
+		{
+			"questions": [
+				{
+					"orderedList": false,
+					"columns": [
+						{"header": "Action", "width": "80%"},
+						{"header": "Points", "width": "20%", "align": "right"}
+					],
+					"answers": [
+						["GET THE BALL", "1"],
+						["GET THE GNOMON", "5"],
+						["BUY A BAG OF CRUMBS", "1"],
+						["GET THE UMBRELLA", "5"],
+						["GET THE PAPER BIRD", "3"],
+						["Kensington Gardens Total", "15"],
+						["GET THE SPLINTER", "1"],
+						["GET THE AXE", "1"],
+						["SCREW THE GNOMON INTO THE HOLE", "5"],
+						["GET THE GARLIC", "1"],
+						["GET THE CAGE", "1"],
+						["GET THE SPADE", "1"],
+						["GIVE THE UMBRELLA AND PAPER TO THE GIRL", "3"],
+						["PUT THE LEMMING IN THE CAGE", "1"],
+						["PUSH THE TREE NORTH", "3"],
+						["GET THE COCONUT", "3"],
+						["GET THE SKELETON KEY", "1"],
+						["GET THE LANTERN", "1"],
+						["GET THE SKINK", "3"],
+						["GET THE WALKIE-TALKIE", "1"],
+						["TURN THE KEY IN THE HOLE", "1"],
+						["GET THE ICICLE", "1"],
+						["PUT THE ICICLE ON THE LUMP OF METAL", "3"],
+						["GET THE LUMP OF METAL", "1"],
+						["KILL THE SKINK", "3"],
+						["REACH INTO THE HIVE", "3"],
+						["BREAK THE COCONUT WITH THE AXE", "1"],
+						["POUR THE MILK INTO THE CAULDRON", "1"],
+						["PUT THE DEAD SKINK INTO THE CALDRON", "1"],
+						["PUT GARLIC IN CAULDRON", "1"],
+						["PUT MY HAND IN THE CAULDRON (honey on hand)", "1"],
+						["GET THE EMERALD", "1"],
+						["MOVE THE LID WITH THE SPADE", "3"],
+						["GET THE BURIAL SHROUD", "1"],
+						["GET THE SILVER COIN", "1"],
+						["PUT THE EMERALD IN THE GREEN BOOT", "1"],
+						["Wabe Total", "50"],
+						["GET THE CARDBOARD SLIP", "1"],
+						["LOOK AT THE DIAGRAM", "3"],
+						["GET THE RUBY", "1"],
+						["PUT THE RUBY IN THE RED BOOT", "1"],
+						["LOOK AT THE OVERSIZED DIAL", "3"],
+						["TURN WALKIE-TALKIE TO ??", "3"],
+						["GET THE STEAK KNIFE", "1"],
+						["OPEN THE CLOSET DOOR (snake eats lemming)", "3"],
+						["GET THE SCREWDRIVER", "1"],
+						["GET THE BINOCULARS", "1"],
+						["LOOK IN THE SHELTER THROUGH THE BINOCULARS", "3"],
+						["BIRD, GET THE KEY", "3"],
+						["GET THE KEY", "1"],
+						["OPEN THE BOX WITH KEY", "1"],
+						["CLOSE THE BREAKER", "1"],
+						["OPEN THE ENCLOSURE WITH THE SCREWDRIVER", "3"],
+						["CUT THE ?? WIRE WITH THE STEAK KNIFE", "5"],
+						["Trinity Site Total", "35"],
+						["GRAND TOTAL", "100"]
+					]
+				}
+			],
+			"title": "How Points Are Scored"
+		},
+		{
+			"questions": [				
+				{
+					"title": "Things You Can Ask the Bird Woman About",
+					"orderedList": false,
+					"answers": [
+						"TRINITY or PLUTONIUM",
+						"ROADRUNNER (before and after you see it)",
+						"WATCH",
+						"RUBY (before and after you see it)",
+						"LONDON",
+						"SOCCER BALL",
+						"ROUND POND",
+						"LONG WATER",
+						"STATUE OF QUEEN VICTORIA",
+						"BAG OF CRUMBS",
+						"GNOMON",
+						"PIGEONS",
+						"CHANGE",
+						"CREDIT CARD",
+						"PERAMBULATOR",
+						"BOY",
+						"GRASS",
+						"PAPER BIRD",
+						"PIECE OF RICE PAPER",
+						"UMBRELLA",
+						"ALBERT MEMORIAL",
+						"HERSELF",
+						"WABEWALKER"
+					]
+				},
+				{
+					"title": "Have You Tried...",
+					"orderedList": false,
+					"answers": [
+						"to stand in the perambulator?",
+						"to give the credit card or small coin to the oarsman or the bird woman?",
+						"to hit the small boy or the giant boy?",
+						"to put things in the Klein bottle, then going to the top of the pergola?",
+						"to read the book in the cottage several times?",
+						"to look inside the hole in the tunnel wall?",
+						"to eat the skink?",
+						"to pet the roadrunner?",
+						"to ask the roadrunner to look under the brown paper?",
+						"to look at the boy in the photo in the wallet in the jeep?",
+						"to sit on the missile at Long Water?",
+						"to eat a toadstool?",
+						"to unscrew the underground bomb?",
+						"to refer to:",
+						"&nbsp;&nbsp;&nbsp;The river as Styx?",
+						"&nbsp;&nbsp;&nbsp;The fin as Jaws?",
+						"&nbsp;&nbsp;&nbsp;The dolphin as Flipper?",
+						"&nbsp;&nbsp;&nbsp;The rodents as lemmings before you recognize the species?",
+						"&nbsp;&nbsp;&nbsp;The Japanese city as Nagasaki (or Hiroshima) while falling?",
+						"&nbsp;&nbsp;&nbsp;The oarsman as Charon?",
+						"&nbsp;&nbsp;&nbsp;The thin man as Oppenheimer?",
+						"to die by:",
+						"&nbsp;&nbsp;&nbsp;Kissing the wight?",
+						"&nbsp;&nbsp;&nbsp;Jumping in the chasm with an open umbrella or inside a bubble?",
+						"&nbsp;&nbsp;&nbsp;Chopping at a bomb with the axe?",
+						"&nbsp;&nbsp;&nbsp;Jumping off the cliff with the lemmings?",
+						"&nbsp;&nbsp;&nbsp;Going to the Russian buildings in the tundra?",
+						"&nbsp;&nbsp;&nbsp;Reaching into the beehive a third time?"
+					]
+				}
+			],
+			"title": "For Your Amusement",
+			"subTitle": "(after you've finished the story)"
+		}
+    ]
+}
+</script>
+
+</html>
